@@ -1,5 +1,15 @@
+import Footer from "./layouts/footer/footer";
+import Header from "./layouts/header/header";
+import Main from "./layouts/main/main";
+
 function App() {
-  return <div className="a">Zlata, this application for you ♡</div>;
+  return (
+    <div>
+      <Header />
+      <Main />
+      <Footer />
+    </div>
+  );
 }
 
 export default App;
