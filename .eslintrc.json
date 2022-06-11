@@ -7,9 +7,11 @@
         "no-unused-vars": "error",
         "no-console": "error",
         "no-alert": "error",
-        // "quotes": ["error", "single"],
         "jsx-quotes": ["error", "prefer-double"],
         "prefer-const": "error",
-        "indent": ["error", 2]
+        "indent": ["error", 2],
+        "no-restricted-imports": ["error", {
+            "patterns": [".*"]
+        }]
     }
 }

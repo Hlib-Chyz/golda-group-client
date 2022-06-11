@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-restricted-imports
 import styles from "./button.module.css";
 
 function Button({ text }: { text: string }) {
