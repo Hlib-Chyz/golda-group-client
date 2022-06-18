@@ -45,6 +45,7 @@
   "devDependencies": {
     "@craco/craco": "^6.4.3",
     "husky": "^8.0.1",
+    "node-sass": "^7.0.1",
     "typescript": "4.7.3"
   }
 }
