@@ -4,11 +4,11 @@ import Main from "@layouts/main/main";
 
 function App() {
   return (
-    <div>
+    <>
       <Header />
       <Main />
       <Footer />
-    </div>
+    </>
   );
 }
 

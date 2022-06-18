@@ -1,0 +1,17 @@
+.wrapper {
+  margin: 140px 0;
+  .container {
+    h3 {
+      margin-bottom: 125px;
+      text-align: center;
+      font-weight: 500;
+      font-size: 48px;
+      line-height: 1.25;
+    }
+    .reasons {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}

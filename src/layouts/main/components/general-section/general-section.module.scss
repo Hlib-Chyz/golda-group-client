@@ -1,0 +1,25 @@
+.wrapper {
+  margin-top: 210px;
+  margin-bottom: 140px;
+  .container {
+    display: flex;
+    align-items: flex-end;
+    .leftSide {
+      width: 60%;
+      h1 {
+        font-size: 64px;
+        font-weight: 600;
+        line-height: 1.4;
+        margin-bottom: 60px;
+      }
+      .buttons {
+        .buttonsItem:not(:last-child) {
+          margin-bottom: 60px;
+        }
+      }
+    }
+    .rightSide {
+      width: 40%;
+    }
+  }
+}
