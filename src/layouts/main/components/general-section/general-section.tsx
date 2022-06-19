@@ -6,6 +6,9 @@ import superwoman from "@assets/images/superwoman.svg";
 function GeneralSection() {
   return (
     <div className={styles.wrapper}>
+      <div className={styles.elipseLeft}></div>
+      <div className={styles.elipseRightTop}></div>
+      <div className={styles.elipseTigthBottom}></div>
       <div className={styles.container}>
         <section className={styles.leftSide}>
           <h1>Мы создали порядок для твоей головы</h1>

@@ -1,2 +1,16 @@
 .main {
 }
+
+.elipseLeftTop {
+  position: absolute;
+  width: 156px;
+  height: 146px;
+  left: -92px;
+  top: -34px;
+  background: linear-gradient(
+    213.36deg,
+    rgba(94, 205, 255, 0.6) -73.9%,
+    rgba(94, 205, 255, 0.168) 80.15%
+  );
+  filter: blur(200px);
+}

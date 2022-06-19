@@ -6,6 +6,7 @@ import WhyWeAreTheBest from "@layouts/main/components/why-we-are-the-best/why-we
 function Main() {
   return (
     <div className={styles.main}>
+      <div className={styles.elipseLeftTop}></div>
       <GeneralSection />
       <WhyWeAreTheBest />
     </div>
