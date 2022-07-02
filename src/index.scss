@@ -33,7 +33,6 @@ aside {
 html,
 body {
   height: 100%;
-  max-width: $max-width-content;
   margin: 0 auto;
   font-size: 100%;
   line-height: 1;
@@ -46,8 +45,7 @@ body {
   font-family: "Quicksand", sans-serif;
   font-size: 20px;
   font-weight: 400px;
-  margin-right: 20px;
-  margin-left: 20px;
+  line-height: 1.25;
   color: #030305;
 }
 
@@ -105,3 +103,21 @@ h6 {
   font-weight: 400;
 }
 /*--------------------*/
+
+.wrapper {
+  background-image: url("/assets/images/background-header.png");
+  background-repeat: no-repeat;
+  background-position: top;
+  -webkit-background-size: 100% 1006px;
+  -moz-background-size: 100% 1006px;
+  -o-background-size: 100% 1006px;
+  background-size: 100% 1006px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .container {
+    margin-right: 20px;
+    margin-left: 20px;
+    min-width: $max-width-content;
+  }
+}

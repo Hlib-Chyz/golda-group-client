@@ -1,0 +1,21 @@
+.container {
+  width: 330px;
+  .blockPicture {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 280px;
+    background: linear-gradient(
+      360deg,
+      #bce6ff 0%,
+      rgba(62, 183, 255, 0.35) 100%
+    );
+    border-radius: 30px;
+  }
+  p {
+    font-weight: 500;
+    font-size: 24px;
+    color: #0a0808;
+    margin-top: 30px;
+  }
+}

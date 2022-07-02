@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  p {
+    font-weight: 600;
+  }
+  .text {
+    font-size: 20px;
+    color: #30366c;
+    padding-right: 23px;
+    text-align: right;
+  }
+  .number {
+    font-size: 40px;
+    color: #4a74ba;
+  }
+}
+
+.rightText {
+  flex-direction: row-reverse;
+  .text {
+    padding-right: 0;
+    padding-left: 23px;
+    text-align: left;
+  }
+}

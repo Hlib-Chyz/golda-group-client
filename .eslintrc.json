@@ -5,7 +5,7 @@
     ],
     "rules": {
         "no-unused-vars": "error",
-        "no-console": "error",
+        "no-console": "warn",
         "no-alert": "error",
         "jsx-quotes": ["error", "prefer-double"],
         "prefer-const": "error",

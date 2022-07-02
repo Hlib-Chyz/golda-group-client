@@ -1,14 +1,13 @@
 // eslint-disable-next-line no-restricted-imports
 import styles from "./main.module.scss";
-import GeneralSection from "@layouts/main/components/general-section/general-section";
-import WhyWeAreTheBest from "@layouts/main/components/why-we-are-the-best/why-we-are-the-best";
+import ForWhomTraining from "@layouts/main/components/for-whom-training/for-whom-training";
+import AfterTrainingYouWillBeAble from "@layouts/main/components/after-training-you-will-be-able/after-training-you-will-be-able";
 
 function Main() {
   return (
     <div className={styles.main}>
-      <div className={styles.elipseLeftTop}></div>
-      <GeneralSection />
-      <WhyWeAreTheBest />
+      <ForWhomTraining />
+      <AfterTrainingYouWillBeAble />
     </div>
   );
 }

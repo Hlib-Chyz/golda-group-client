@@ -1,0 +1,29 @@
+@import "styles/variables.scss";
+
+.subheader {
+  display: flex;
+  align-items: center;
+  margin-top: 74px;
+  .leftSide {
+    width: 50%;
+    color: #30366c;
+    h1 {
+      font-weight: 600;
+      font-size: 64px;
+      margin-bottom: 30px;
+    }
+    p {
+      font-weight: 600;
+      font-size: 28px;
+      margin-bottom: 50px;
+    }
+  }
+  .rightSide {
+    width: 50%;
+    img {
+      height: 847px;
+      width: 574px;
+      margin-left: 160px;
+    }
+  }
+}

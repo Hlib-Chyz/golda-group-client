@@ -6,8 +6,8 @@ module.exports = {
   webpack: {
     baseUrl: "./src",
     alias: {
-      '@components': resolvePath('./src/components'),
       '@assets': resolvePath('./src/assets'),
+      '@components': resolvePath('./src/components'),
       '@services': resolvePath('./src/services'),
       '@pages': resolvePath('./src/pages'),
       '@layouts': resolvePath('./src/layouts')

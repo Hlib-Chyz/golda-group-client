@@ -1,43 +1,69 @@
 @import "styles/variables.scss";
-
 .header {
-  width: 100%;
-  position: sticky;
-  z-index: 1000;
-  top: 0;
-  left: 0;
-}
-
-.container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 60px 0;
-  height: 60px;
+  margin-top: 34px;
   .leftSide {
     display: flex;
     align-items: center;
     .logo {
-      font-weight: 500;
-      font-size: 48px;
-      line-height: 1.25;
-      margin-right: 100px;
+      font-weight: 600;
+      font-size: 40px;
+      color: #30366c;
+      margin-right: 118px;
     }
-    nav {
+    .nav {
       ul {
         display: flex;
+        align-items: center;
         li {
-          line-height: 1.25;
-        }
-        li:not(:last-child) {
-          margin-right: 70px;
+          margin-right: 42px;
+          display: flex;
+          align-items: center;
+          .name {
+            cursor: pointer;
+          }
+          .dash {
+            display: inline-block;
+            height: 34px;
+            width: 1px;
+            margin-left: 42px;
+            background-color: #4a74ba;
+          }
         }
       }
     }
   }
   .rightSide {
-    .heart {
-      margin-right: 20px;
+    display: flex;
+    align-items: center;
+    .languages {
+      font-weight: 600;
+      font-size: 24px;
+      margin-right: 78px;
+      color: #30366c;
+      button {
+        font-weight: 600;
+        font-size: 24px;
+        opacity: 0.25;
+        color: black;
+      }
+      button.active {
+        opacity: 1;
+        color: #30366c;
+      }
+    }
+    .icons {
+      display: flex;
+      align-items: center;
+      button {
+        height: 40px;
+        width: 40px;
+      }
+      .heart {
+        margin-right: 4px;
+      }
     }
   }
 }

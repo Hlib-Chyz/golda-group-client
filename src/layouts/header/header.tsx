@@ -1,38 +1,95 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
 // eslint-disable-next-line no-restricted-imports
 import styles from "./header.module.scss";
 import heart from "@assets/images/heart.svg";
 import basket from "@assets/images/basket.svg";
+import { Languages } from "enums";
+import { useEffect, useState } from "react";
+import Subheader from "@layouts/header/subheader";
 
 function Header() {
+  const navigation: { name: string }[] = [
+    {
+      name: "О курсах",
+    },
+    {
+      name: "О нас",
+    },
+    {
+      name: "Тарифы",
+    },
+  ];
+
+  const [isLanguageUa, setLanguageUa] = useState<boolean>(true);
+
+  useEffect(() => {
+    checkLanguage();
+  }, []);
+
+  function setLenguage(language: Languages): void {
+    localStorage.setItem("language", language);
+    checkLanguage();
+  }
+
+  function checkLanguage(): void {
+    if (localStorage.getItem("language") === Languages.UA) {
+      setLanguageUa(true);
+      return;
+    }
+    setLanguageUa(false);
+  }
+
   return (
-    <header className={styles.header}>
-      <div className={styles.container}>
+    <>
+      <header className={styles.header}>
         <div className={styles.leftSide}>
           <div className={styles.logo}>Golda Group</div>
-          <nav>
+          <nav className={styles.nav}>
             <ul>
-              <li>
-                <button>Главная</button>
-              </li>
-              <li>
-                <button>Тарифы</button>
-              </li>
-              <li>
-                <button>О курсах</button>
-              </li>
+              {navigation.map((infoNav: { name: string }, index: number) => (
+                <li key={infoNav.name}>
+                  {index === navigation.length - 1 ? (
+                    <span className={styles.name}>{infoNav.name}</span>
+                  ) : (
+                    <>
+                      <span className={styles.name}>{infoNav.name}</span>
+                      <span className={styles.dash}></span>
+                    </>
+                  )}
+                </li>
+              ))}
             </ul>
           </nav>
         </div>
         <div className={styles.rightSide}>
-          <button className={styles.heart}>
-            <img src={heart} alt="heart" />
-          </button>
-          <button className={styles.basket}>
-            <img src={basket} alt="basket" />
-          </button>
+          <div className={styles.languages}>
+            <button
+              onClick={() => setLenguage(Languages.UA)}
+              className={isLanguageUa ? styles.active : ""}
+            >
+              {Languages.UA}
+            </button>{" "}
+            /{" "}
+            <button
+              onClick={() => setLenguage(Languages.RU)}
+              className={isLanguageUa ? "" : styles.active}
+            >
+              {Languages.RU}
+            </button>
+          </div>
+          <div className={styles.icons}>
+            <button className={styles.heart}>
+              <img src={heart} alt="heart" />
+            </button>
+            <button className={styles.basket}>
+              <img src={basket} alt="basket" />
+            </button>
+          </div>
         </div>
-      </div>
-    </header>
+      </header>
+      <Subheader />
+    </>
   );
 }
 
