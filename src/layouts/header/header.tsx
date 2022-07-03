@@ -7,17 +7,21 @@ import basket from "@assets/images/basket.svg";
 import { Languages } from "enums";
 import { useEffect, useState } from "react";
 import Subheader from "@layouts/header/subheader";
+import TextLanguage from "@components/text-language/text-language";
 
 function Header() {
-  const navigation: { name: string }[] = [
+  const navigation: { name: string; nameUa: string }[] = [
     {
       name: "О курсах",
+      nameUa: "Про курси",
     },
     {
       name: "О нас",
+      nameUa: "Про нас",
     },
     {
       name: "Тарифы",
+      nameUa: "Тарифи",
     },
   ];
 
@@ -47,18 +51,30 @@ function Header() {
           <div className={styles.logo}>Golda Group</div>
           <nav className={styles.nav}>
             <ul>
-              {navigation.map((infoNav: { name: string }, index: number) => (
-                <li key={infoNav.name}>
-                  {index === navigation.length - 1 ? (
-                    <span className={styles.name}>{infoNav.name}</span>
-                  ) : (
-                    <>
-                      <span className={styles.name}>{infoNav.name}</span>
-                      <span className={styles.dash}></span>
-                    </>
-                  )}
-                </li>
-              ))}
+              {navigation.map(
+                (infoNav: { name: string; nameUa: string }, index: number) => (
+                  <li key={infoNav.name}>
+                    {index === navigation.length - 1 ? (
+                      <span className={styles.name}>
+                        <TextLanguage
+                          textRu={infoNav.name}
+                          textUa={infoNav.nameUa}
+                        />
+                      </span>
+                    ) : (
+                      <>
+                        <span className={styles.name}>
+                          <TextLanguage
+                            textRu={infoNav.name}
+                            textUa={infoNav.nameUa}
+                          />
+                        </span>
+                        <span className={styles.dash}></span>
+                      </>
+                    )}
+                  </li>
+                )
+              )}
             </ul>
           </nav>
         </div>
