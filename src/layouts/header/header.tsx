@@ -4,24 +4,24 @@
 import styles from "./header.module.scss";
 import heart from "@assets/images/heart.svg";
 import basket from "@assets/images/basket.svg";
-import { Languages } from "enums";
+import { Languages, Props } from "enums";
 import { useEffect, useState } from "react";
 import Subheader from "@layouts/header/subheader";
 import TextLanguage from "@components/text-language/text-language";
 
 function Header() {
-  const navigation: { name: string; nameUa: string }[] = [
+  const navigation: { prop: string; href: string }[] = [
     {
-      name: "О курсах",
-      nameUa: "Про курси",
+      prop: Props.AboutCourse,
+      href: "afterTrainingYouWillBeAble",
     },
     {
-      name: "О нас",
-      nameUa: "Про нас",
+      prop: Props.AboutUs,
+      href: "afterTrainingYouWillBeAbl",
     },
     {
-      name: "Тарифы",
-      nameUa: "Тарифи",
+      prop: Props.Tariffs,
+      href: "afterTrainingYouWillBeAble",
     },
   ];
 
@@ -52,23 +52,20 @@ function Header() {
           <nav className={styles.nav}>
             <ul>
               {navigation.map(
-                (infoNav: { name: string; nameUa: string }, index: number) => (
-                  <li key={infoNav.name}>
+                (
+                  { prop, href }: { prop: string; href: string },
+                  index: number
+                ) => (
+                  <li key={prop}>
                     {index === navigation.length - 1 ? (
-                      <span className={styles.name}>
-                        <TextLanguage
-                          textRu={infoNav.name}
-                          textUa={infoNav.nameUa}
-                        />
-                      </span>
+                      <a href={"#" + href} className={styles.name}>
+                        <TextLanguage prop={prop} />
+                      </a>
                     ) : (
                       <>
-                        <span className={styles.name}>
-                          <TextLanguage
-                            textRu={infoNav.name}
-                            textUa={infoNav.nameUa}
-                          />
-                        </span>
+                        <a href={"#" + href} className={styles.name}>
+                          <TextLanguage prop={prop} />
+                        </a>
                         <span className={styles.dash}></span>
                       </>
                     )}

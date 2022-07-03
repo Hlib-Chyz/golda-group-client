@@ -2,21 +2,24 @@
 import styles from "./subheader.module.scss";
 import Button from "@components/button/button";
 import zlataFirst from "@assets/images/zlata-first.svg";
+import { Props } from "enums";
+import TextLanguage from "@components/text-language/text-language";
 
 function Subheader() {
   return (
     <div className={styles.subheader}>
       <section className={styles.leftSide}>
         <h1>
-          Знания -<br />
-          это сокровище
+          <TextLanguage prop={Props.HeadingH1First} />
+          <br />
+          <TextLanguage prop={Props.HeadingH1Second} />
         </h1>
         <p>
-          Получи сокровище, которое
+          <TextLanguage prop={Props.SubHeadingH1First} />
           <br />
-          объеденяет мир
+          <TextLanguage prop={Props.SubHeadingH1Second} />
         </p>
-        <Button text="Начать обучение" />
+        <Button text={Props.StartLearning} />
       </section>
       <div className={styles.rightSide}>
         <img src={zlataFirst} alt="Zlata" />

@@ -1,5 +1,6 @@
 // eslint-disable-next-line no-restricted-imports
 import styles from "./what-will-be-able.module.scss";
+import TextLanguage from "@components/text-language/text-language";
 
 function WhatWillBeAble({
   text,
@@ -28,8 +29,9 @@ function WhatWillBeAble({
       }
     >
       <p className={styles.text}>
-        {text} <br />
-        {text2}
+        <TextLanguage prop={text} />
+        <br />
+        <TextLanguage prop={text2} />
       </p>
       <p className={styles.number}>{number}</p>
     </div>
