@@ -1,5 +1,8 @@
 @import "styles/variables.scss";
+
 .header {
+  width: $max-width-content;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;

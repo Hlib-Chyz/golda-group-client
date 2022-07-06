@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-restricted-imports
 import styles from "./subheader.module.scss";
 import Button from "@components/button/button";
-import zlataFirst from "@assets/images/zlata-first.svg";
+import bitcoinMining from "@assets/images/bitcoin-mining.svg";
 import { Props } from "enums";
 import TextLanguage from "@components/text-language/text-language";
 
@@ -22,7 +22,7 @@ function Subheader() {
         <Button text={Props.StartLearning} />
       </section>
       <div className={styles.rightSide}>
-        <img src={zlataFirst} alt="Zlata" />
+        <img src={bitcoinMining} alt="Zlata" />
       </div>
     </div>
   );

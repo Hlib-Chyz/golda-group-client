@@ -1,6 +1,9 @@
+@import "styles/variables.scss";
+
 .container {
-  margin-top: 244px;
   text-align: center;
+  width: $max-width-content;
+  margin: 244px auto 0;
   .reasons {
     display: flex;
     justify-content: space-between;

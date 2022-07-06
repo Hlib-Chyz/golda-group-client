@@ -34,6 +34,7 @@ function TextLanguage({ prop }: { prop: string }) {
       WhatWillBeAble5Second: "однодумців",
       WhatWillBeAble6First: "Збільшити словниковий",
       WhatWillBeAble6Second: "запас",
+      CourseProgram: "Программа курса",
     },
     RU: {
       AboutCourse: "О курсах",
@@ -61,6 +62,7 @@ function TextLanguage({ prop }: { prop: string }) {
       WhatWillBeAble5Second: "единомышленников",
       WhatWillBeAble6First: "Увеличить словарный",
       WhatWillBeAble6Second: "запас",
+      CourseProgram: "Програма курсу",
     },
   };
 

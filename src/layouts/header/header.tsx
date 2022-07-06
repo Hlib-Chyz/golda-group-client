@@ -6,7 +6,6 @@ import heart from "@assets/images/heart.svg";
 import basket from "@assets/images/basket.svg";
 import { Languages, Props } from "enums";
 import { useEffect, useState } from "react";
-import Subheader from "@layouts/header/subheader";
 import TextLanguage from "@components/text-language/text-language";
 
 function Header() {
@@ -101,7 +100,6 @@ function Header() {
           </div>
         </div>
       </header>
-      <Subheader />
     </>
   );
 }

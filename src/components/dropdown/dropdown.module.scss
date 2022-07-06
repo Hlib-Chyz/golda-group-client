@@ -1,0 +1,23 @@
+.dropdown {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: #e1f5ff;
+  color: #30366c;
+
+  border: 1px solid #4a74ba;
+  border-radius: 16px;
+  width: 200px;
+  padding: 10px 16px;
+  margin-right: 24px;
+
+  cursor: pointer;
+
+  .arrow {
+    height: 11px;
+    img {
+      height: 11px;
+    }
+  }
+}

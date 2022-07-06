@@ -30,6 +30,7 @@ export enum Props {
   WhatWillBeAble5Second = "WhatWillBeAble5Second",
   WhatWillBeAble6First = "WhatWillBeAble6First",
   WhatWillBeAble6Second = "WhatWillBeAble6Second",
+  CourseProgram = "CourseProgram",
 }
 
 export type PosipilityProps = keyof typeof Props;

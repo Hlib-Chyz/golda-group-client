@@ -1,9 +1,10 @@
 @import "styles/variables.scss";
 
 .subheader {
+  width: $max-width-content;
+  margin: 74px auto 0;
   display: flex;
   align-items: center;
-  margin-top: 74px;
   .leftSide {
     width: 50%;
     color: #30366c;
@@ -20,10 +21,5 @@
   }
   .rightSide {
     width: 50%;
-    img {
-      height: 847px;
-      width: 574px;
-      margin-left: 160px;
-    }
   }
 }

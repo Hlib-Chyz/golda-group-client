@@ -1,0 +1,57 @@
+.container {
+  margin-top: 244px;
+  display: flex;
+  justify-content: center;
+  .content {
+    .dropdowns {
+      display: flex;
+      margin-bottom: 32px;
+    }
+
+    .info {
+      display: flex;
+      position: relative;
+
+      width: 988px;
+      min-height: 400px;
+      height: 100%;
+      padding: 60px 30px;
+
+      background-color: white;
+      box-shadow: 0px 8px 20px 4px #e3ebf9;
+      border-radius: 16px;
+
+      .infoLeft,
+      .infoRight {
+        width: 50%;
+      }
+
+      .dash {
+        width: 1px;
+        background-color: #4a74ba;
+        height: 100%;
+        min-height: 100px;
+      }
+
+      .infoLeft {
+        .fake {
+          height: 50px;
+        }
+      }
+
+      .infoRight {
+        padding-left: 32px;
+
+        .fake {
+          height: 50px;
+        }
+      }
+
+      .homeEducation {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+      }
+    }
+  }
+}

@@ -2,12 +2,13 @@
   background-image: url("/assets/images/background-what.png");
   background-repeat: no-repeat;
   background-position: top;
-  -webkit-background-size: cover 1020px;
-  -moz-background-size: cover 1020px;
-  -o-background-size: cover 1020px;
-  background-size: cover 1020px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   margin-top: 286px;
   padding: 103px 0 209px;
+  width: 100%;
   .content {
     display: flex;
     justify-content: center;
