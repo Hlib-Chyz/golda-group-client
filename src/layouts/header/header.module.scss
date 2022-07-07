@@ -1,74 +1,87 @@
 @import "styles/variables.scss";
 
+.header.backgroundWhite {
+  background-color: white;
+  box-shadow: 0px 1px 20px black;
+}
+
 .header {
-  width: $max-width-content;
-  margin: 0 auto;
+  position: fixed;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 34px;
-  .leftSide {
+  justify-content: center;
+  z-index: 1000;
+  transition: all 0.5s ease-in-out;
+
+  width: 100%;
+  padding: 34px 0;
+  .container {
+    width: $max-width-content;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    .logo {
-      font-weight: 600;
-      font-size: 40px;
-      color: #30366c;
-      margin-right: 118px;
-    }
-    .nav {
-      ul {
-        display: flex;
-        align-items: center;
-        li {
-          margin-right: 42px;
+    .leftSide {
+      display: flex;
+      align-items: center;
+      .logo {
+        font-weight: 600;
+        font-size: 40px;
+        color: #30366c;
+        margin-right: 118px;
+      }
+      .nav {
+        ul {
           display: flex;
           align-items: center;
-          .name {
-            cursor: pointer;
-            font-weight: 500;
-            font-size: 24px;
-            color: #0a0808;
-          }
-          .dash {
-            display: inline-block;
-            height: 34px;
-            width: 1px;
-            margin-left: 42px;
-            background-color: #4a74ba;
+          li {
+            margin-right: 42px;
+            display: flex;
+            align-items: center;
+            .name {
+              cursor: pointer;
+              font-weight: 500;
+              font-size: 24px;
+              color: #0a0808;
+            }
+            .dash {
+              display: inline-block;
+              height: 34px;
+              width: 1px;
+              margin-left: 42px;
+              background-color: #4a74ba;
+            }
           }
         }
       }
     }
-  }
-  .rightSide {
-    display: flex;
-    align-items: center;
-    .languages {
-      font-weight: 600;
-      font-size: 24px;
-      margin-right: 78px;
-      color: #30366c;
-      button {
-        font-weight: 600;
-        font-size: 24px;
-        opacity: 0.25;
-        color: black;
-      }
-      button.active {
-        opacity: 1;
-        color: #30366c;
-      }
-    }
-    .icons {
+    .rightSide {
       display: flex;
       align-items: center;
-      button {
-        height: 40px;
-        width: 40px;
+      .languages {
+        font-weight: 600;
+        font-size: 24px;
+        margin-right: 78px;
+        color: #30366c;
+        button {
+          font-weight: 600;
+          font-size: 24px;
+          opacity: 0.25;
+          color: black;
+        }
+        button.active {
+          opacity: 1;
+          color: #30366c;
+        }
       }
-      .heart {
-        margin-right: 4px;
+      .icons {
+        display: flex;
+        align-items: center;
+        button {
+          height: 40px;
+          width: 40px;
+        }
+        .heart {
+          margin-right: 4px;
+        }
       }
     }
   }

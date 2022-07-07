@@ -5,10 +5,14 @@ import styles from "./header.module.scss";
 import heart from "@assets/images/heart.svg";
 import basket from "@assets/images/basket.svg";
 import { Languages, Props } from "enums";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import TextLanguage from "@components/text-language/text-language";
+import { Context } from "index";
+import { observer } from "mobx-react-lite";
 
-function Header() {
+const Header = observer(() => {
+  const { language } = useContext(Context)!;
+
   const navigation: { prop: string; href: string }[] = [
     {
       prop: Props.AboutCourse,
@@ -24,84 +28,91 @@ function Header() {
     },
   ];
 
-  const [isLanguageUa, setLanguageUa] = useState<boolean>(true);
+  const [isScrollStarted, setScrollStarted] = useState<boolean>(false);
 
   useEffect(() => {
-    checkLanguage();
+    window.addEventListener("scroll", handleScroll);
   }, []);
 
-  function setLenguage(language: Languages): void {
-    localStorage.setItem("language", language);
-    checkLanguage();
-  }
-
-  function checkLanguage(): void {
-    if (localStorage.getItem("language") === Languages.UA) {
-      setLanguageUa(true);
-      return;
+  function handleScroll() {
+    if (window.pageYOffset > 0) {
+      setScrollStarted(true);
+    } else {
+      setScrollStarted(false);
     }
-    setLanguageUa(false);
   }
 
   return (
     <>
-      <header className={styles.header}>
-        <div className={styles.leftSide}>
-          <div className={styles.logo}>Golda Group</div>
-          <nav className={styles.nav}>
-            <ul>
-              {navigation.map(
-                (
-                  { prop, href }: { prop: string; href: string },
-                  index: number
-                ) => (
-                  <li key={prop}>
-                    {index === navigation.length - 1 ? (
-                      <a href={"#" + href} className={styles.name}>
-                        <TextLanguage prop={prop} />
-                      </a>
-                    ) : (
-                      <>
+      <header
+        className={
+          isScrollStarted
+            ? styles.backgroundWhite + " " + styles.header
+            : styles.header
+        }
+      >
+        <div className={styles.container}>
+          <div className={styles.leftSide}>
+            <div className={styles.logo}>Golda Group</div>
+            <nav className={styles.nav}>
+              <ul>
+                {navigation.map(
+                  (
+                    { prop, href }: { prop: string; href: string },
+                    index: number
+                  ) => (
+                    <li key={prop}>
+                      {index === navigation.length - 1 ? (
                         <a href={"#" + href} className={styles.name}>
                           <TextLanguage prop={prop} />
                         </a>
-                        <span className={styles.dash}></span>
-                      </>
-                    )}
-                  </li>
-                )
-              )}
-            </ul>
-          </nav>
-        </div>
-        <div className={styles.rightSide}>
-          <div className={styles.languages}>
-            <button
-              onClick={() => setLenguage(Languages.UA)}
-              className={isLanguageUa ? styles.active : ""}
-            >
-              {Languages.UA}
-            </button>{" "}
-            /{" "}
-            <button
-              onClick={() => setLenguage(Languages.RU)}
-              className={isLanguageUa ? "" : styles.active}
-            >
-              {Languages.RU}
-            </button>
+                      ) : (
+                        <>
+                          <a href={"#" + href} className={styles.name}>
+                            <TextLanguage prop={prop} />
+                          </a>
+                          <span className={styles.dash}></span>
+                        </>
+                      )}
+                    </li>
+                  )
+                )}
+              </ul>
+            </nav>
           </div>
-          <div className={styles.icons}>
-            <button className={styles.heart}>
-              <img src={heart} alt="heart" />
-            </button>
-            <button className={styles.basket}>
-              <img src={basket} alt="basket" />
-            </button>
+          <div className={styles.rightSide}>
+            <div className={styles.languages}>
+              <button
+                onClick={() => language.setLanguage(Languages.UA)}
+                className={
+                  language.getLanguage === Languages.UA ? styles.active : ""
+                }
+              >
+                {Languages.UA}
+              </button>{" "}
+              /{" "}
+              <button
+                onClick={() => language.setLanguage(Languages.RU)}
+                className={
+                  language.getLanguage === Languages.UA ? "" : styles.active
+                }
+              >
+                {Languages.RU}
+              </button>
+            </div>
+            <div className={styles.icons}>
+              <button className={styles.heart}>
+                <img src={heart} alt="heart" />
+              </button>
+              <button className={styles.basket}>
+                <img src={basket} alt="basket" />
+              </button>
+            </div>
           </div>
         </div>
       </header>
     </>
   );
-}
+});
 
 export default Header;

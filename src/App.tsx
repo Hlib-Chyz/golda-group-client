@@ -4,17 +4,9 @@ import Header from "@layouts/header/header";
 import Main from "@layouts/main/main";
 import ContacrtOffer from "@pages/contract-offer/contract-offer";
 import PrivacyPolicy from "@pages/privacy-policy/privacy-policy";
-import { Languages } from "enums";
-import { useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
-  useEffect(() => {
-    if (!localStorage.getItem("language")) {
-      localStorage.setItem("language", Languages.UA);
-    }
-  }, []);
-
   return (
     <div className="wrapper">
       <div className="container">

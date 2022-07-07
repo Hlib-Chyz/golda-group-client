@@ -31,6 +31,22 @@ export enum Props {
   WhatWillBeAble6First = "WhatWillBeAble6First",
   WhatWillBeAble6Second = "WhatWillBeAble6Second",
   CourseProgram = "CourseProgram",
+  Format = "Format",
+  Language = "Language",
+  Level = "Level",
+  Grammar = "Grammar",
+  Sets = "Sets",
+  Result = "Result",
+  Tools = "Tools",
+  Textbook = "Textbook",
+  TutorialWithTeacher = "TutorialWithTeacher",
+  TutorialWithZlata = "TutorialWithZlata",
+  English = "English",
+  French = "French",
+  Deutsch = "Deutsch",
+  A1A2 = "A1A2",
+  B1 = "B1",
+  B2 = "B2",
 }
 
 export type PosipilityProps = keyof typeof Props;

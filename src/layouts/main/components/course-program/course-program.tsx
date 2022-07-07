@@ -13,14 +13,27 @@ function CourseProgram() {
         <Heading text={Props.CourseProgram} />
         <div className={styles.content}>
           <div className={styles.dropdowns}>
-            <Dropdown text="Формат" />
-            <Dropdown text="Язык" />
-            <Dropdown text="Уровень" />
+            <Dropdown
+              prop={Props.Format}
+              formats={[
+                Props.Textbook,
+                Props.TutorialWithTeacher,
+                Props.TutorialWithZlata,
+              ]}
+            />
+            <Dropdown
+              prop={Props.Language}
+              formats={[Props.English, Props.Deutsch, Props.French]}
+            />
+            <Dropdown
+              prop={Props.Level}
+              formats={[Props.A1A2, Props.B1, Props.B2]}
+            />
           </div>
           <div className={styles.info}>
             <div className={styles.infoLeft}>
               <Describe
-                heading="Грамматика"
+                heading={Props.Grammar}
                 what={[
                   "Времена категории Simple",
                   "Предлоги",
@@ -31,7 +44,7 @@ function CourseProgram() {
               />
               <div className={styles.fake}></div>
               <Describe
-                heading="Наборы"
+                heading={Props.Sets}
                 what={[
                   "Набор семья",
                   "Набор рутина",
@@ -44,7 +57,7 @@ function CourseProgram() {
             <div className={styles.dash}></div>
             <div className={styles.infoRight}>
               <Describe
-                heading="Результат"
+                heading={Props.Result}
                 what={[
                   "Понимание базовой грамматики",
                   "Освоение основных тем",
@@ -54,7 +67,7 @@ function CourseProgram() {
               />
               <div className={styles.fake}></div>
               <Describe
-                heading="Инструменты"
+                heading={Props.Tools}
                 what={["Наш учебник"]}
                 isDone={true}
               />

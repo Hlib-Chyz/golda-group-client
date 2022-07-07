@@ -1,9 +1,12 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react-hooks/exhaustive-deps */
 import { PosipilityProps } from "enums";
-import { useEffect, useState } from "react";
+import { Context } from "index";
+import { observer } from "mobx-react-lite";
+import { useContext } from "react";
 
-function TextLanguage({ prop }: { prop: string }) {
+const TextLanguage = observer(({ prop }: { prop: string }) => {
+  const { language } = useContext(Context)!;
   const textAllLanguages: {
     UA: { [key in PosipilityProps]: string };
     RU: { [key in PosipilityProps]: string };
@@ -34,7 +37,23 @@ function TextLanguage({ prop }: { prop: string }) {
       WhatWillBeAble5Second: "однодумців",
       WhatWillBeAble6First: "Збільшити словниковий",
       WhatWillBeAble6Second: "запас",
-      CourseProgram: "Программа курса",
+      CourseProgram: "Програма курсу",
+      Format: "Формат",
+      Language: "Мова",
+      Level: "Рівень",
+      Grammar: "Граматика",
+      Sets: "Набори",
+      Result: "Результат",
+      Tools: "Інструменти",
+      Textbook: "Підручник",
+      TutorialWithTeacher: "Підручник із викладачем",
+      TutorialWithZlata: "Підручник із Златою",
+      English: "Англійська",
+      French: "Французька",
+      Deutsch: "Німецька",
+      A1A2: "A1 - A2",
+      B1: "B1",
+      B2: "B2",
     },
     RU: {
       AboutCourse: "О курсах",
@@ -62,17 +81,27 @@ function TextLanguage({ prop }: { prop: string }) {
       WhatWillBeAble5Second: "единомышленников",
       WhatWillBeAble6First: "Увеличить словарный",
       WhatWillBeAble6Second: "запас",
-      CourseProgram: "Програма курсу",
+      CourseProgram: "Программа курса",
+      Format: "Формат",
+      Language: "Язык",
+      Level: "Уровень",
+      Grammar: "Грамматика",
+      Sets: "Наборы",
+      Result: "Результат",
+      Tools: "Инструменты",
+      Textbook: "Учебник",
+      TutorialWithTeacher: "Учебник с преподавателем",
+      TutorialWithZlata: "Учебник со Златой",
+      English: "Английский",
+      French: "Французский",
+      Deutsch: "Немецкий",
+      A1A2: "A1 - A2",
+      B1: "B1",
+      B2: "B2",
     },
   };
 
-  const [language, setLanguage] = useState<string>();
-
-  useEffect(() => {
-    setLanguage(localStorage.getItem("language")!);
-  }, [localStorage.getItem("language")]);
-
-  return <>{(textAllLanguages as any)?.[language!]?.[prop]}</>;
-}
+  return <>{(textAllLanguages as any)?.[language.getLanguage!]?.[prop]}</>;
+});
 
 export default TextLanguage;
