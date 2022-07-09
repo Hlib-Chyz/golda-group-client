@@ -3,8 +3,12 @@ import ReactDOM from "react-dom/client";
 import "index.scss";
 import App from "App";
 import LanguageStore from "store/language";
+import CourseProgramStore from "store/course-program";
 
-export const Context = createContext<{ language: LanguageStore } | null>(null);
+export const Context = createContext<{
+  language: LanguageStore;
+  courseProgram: CourseProgramStore;
+} | null>(null);
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -15,6 +19,7 @@ root.render(
     <Context.Provider
       value={{
         language: new LanguageStore(),
+        courseProgram: new CourseProgramStore(),
       }}
     >
       <App />

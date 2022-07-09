@@ -16,15 +16,15 @@ const Header = observer(() => {
   const navigation: { prop: string; href: string }[] = [
     {
       prop: Props.AboutCourse,
-      href: "afterTrainingYouWillBeAble",
+      href: "courseProgram",
     },
     {
       prop: Props.AboutUs,
-      href: "afterTrainingYouWillBeAbl",
+      href: "aboutUs",
     },
     {
       prop: Props.Tariffs,
-      href: "afterTrainingYouWillBeAble",
+      href: "tariffs",
     },
   ];
 

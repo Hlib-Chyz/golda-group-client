@@ -10,7 +10,7 @@ import { Props } from "enums";
 
 function ForWhomTraining() {
   return (
-    <section id="afterTrainingYouWillBeAble" className={styles.container}>
+    <section className={styles.container}>
       <Heading text={Props.HeadingForWhomeTraining} />
       <div className={styles.reasons}>
         <Reason text={Props.Reason1} img={girlPicture} />

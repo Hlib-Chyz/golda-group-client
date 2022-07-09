@@ -50,3 +50,21 @@ export enum Props {
 }
 
 export type PosipilityProps = keyof typeof Props;
+
+export enum LevelOfStudyEnum {
+  A1A2 = "A1A2",
+  B1 = "B1",
+  B2 = "B2",
+}
+
+export enum LanguageOfStudyEnum {
+  English = "English",
+  French = "French",
+  Deutsch = "Deutsch",
+}
+
+export enum FormatOfStudyEnum {
+  Textbook = "Textbook",
+  TutorialWithTeacher = "TutorialWithTeacher",
+  TutorialWithZlata = "TutorialWithZlata",
+}

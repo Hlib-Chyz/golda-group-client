@@ -1,12 +1,38 @@
 // eslint-disable-next-line no-restricted-imports
 import styles from "./course-program.module.scss";
 import Heading from "@components/heading/heading";
-import { Props } from "enums";
+import {
+  FormatOfStudyEnum,
+  LanguageOfStudyEnum,
+  LevelOfStudyEnum,
+  Props,
+} from "enums";
 import Dropdown from "@components/dropdown/dropdown";
 import Describe from "@layouts/main/components/course-program/describe";
 import homeEducation from "@assets/images/home-education.svg";
+import { useContext } from "react";
+import { Context } from "index";
+import { observer } from "mobx-react-lite";
 
-function CourseProgram() {
+const CourseProgram = observer(() => {
+  const { courseProgram } = useContext(Context)!;
+
+  function getTools(): string[] {
+    if (courseProgram.getFormat === FormatOfStudyEnum.Textbook) {
+      return ["Наш учебник"];
+    }
+
+    if (courseProgram.getFormat === FormatOfStudyEnum.TutorialWithTeacher) {
+      return ["Наш учебник", "Чат с преподом"];
+    }
+
+    if (courseProgram.getFormat === FormatOfStudyEnum.TutorialWithZlata) {
+      return ["Наш учебник", "Чат с мармеладкой"];
+    }
+
+    return [];
+  }
+
   return (
     <section id="courseProgram" className={styles.container}>
       <div>
@@ -14,20 +40,44 @@ function CourseProgram() {
         <div className={styles.content}>
           <div className={styles.dropdowns}>
             <Dropdown
-              prop={Props.Format}
+              prop={Props[courseProgram.getFormat]}
+              width="330px"
+              setter={(format: FormatOfStudyEnum) =>
+                courseProgram.setFormat(format)
+              }
               formats={[
-                Props.Textbook,
-                Props.TutorialWithTeacher,
-                Props.TutorialWithZlata,
+                { id: FormatOfStudyEnum.Textbook, prop: Props.Textbook },
+                {
+                  id: FormatOfStudyEnum.TutorialWithTeacher,
+                  prop: Props.TutorialWithTeacher,
+                },
+                {
+                  id: FormatOfStudyEnum.TutorialWithZlata,
+                  prop: Props.TutorialWithZlata,
+                },
               ]}
             />
             <Dropdown
-              prop={Props.Language}
-              formats={[Props.English, Props.Deutsch, Props.French]}
+              prop={Props[courseProgram.getLanguage]}
+              setter={(language: LanguageOfStudyEnum) =>
+                courseProgram.setLanguage(language)
+              }
+              formats={[
+                { id: LanguageOfStudyEnum.English, prop: Props.English },
+                { id: LanguageOfStudyEnum.Deutsch, prop: Props.Deutsch },
+                { id: LanguageOfStudyEnum.French, prop: Props.French },
+              ]}
             />
             <Dropdown
-              prop={Props.Level}
-              formats={[Props.A1A2, Props.B1, Props.B2]}
+              prop={Props[courseProgram.getLevel]}
+              setter={(level: LevelOfStudyEnum) =>
+                courseProgram.setLevel(level)
+              }
+              formats={[
+                { id: LevelOfStudyEnum.A1A2, prop: Props.A1A2 },
+                { id: LevelOfStudyEnum.B1, prop: Props.B1 },
+                { id: LevelOfStudyEnum.B2, prop: Props.B2 },
+              ]}
             />
           </div>
           <div className={styles.info}>
@@ -66,11 +116,7 @@ function CourseProgram() {
                 isDone={true}
               />
               <div className={styles.fake}></div>
-              <Describe
-                heading={Props.Tools}
-                what={["Наш учебник"]}
-                isDone={true}
-              />
+              <Describe heading={Props.Tools} what={getTools()} isDone={true} />
             </div>
             <div className={styles.homeEducation}>
               <img src={homeEducation} alt="home education" />{" "}
@@ -80,6 +126,6 @@ function CourseProgram() {
       </div>
     </section>
   );
-}
+});
 
 export default CourseProgram;

@@ -4,6 +4,8 @@ import ForWhomTraining from "@layouts/main/components/for-whom-training/for-whom
 import AfterTrainingYouWillBeAble from "@layouts/main/components/after-training-you-will-be-able/after-training-you-will-be-able";
 import CourseProgram from "@layouts/main/components/course-program/course-program";
 import Subheader from "@layouts/main/components/subheader/subheader";
+import AboutUs from "@layouts/main/components/about-us/about-us";
+import Tarrifs from "@layouts/main/components/tarrifs/tarrifs";
 
 function Main() {
   return (
@@ -12,6 +14,8 @@ function Main() {
       <ForWhomTraining />
       <AfterTrainingYouWillBeAble />
       <CourseProgram />
+      <AboutUs />
+      <Tarrifs />
     </div>
   );
 }

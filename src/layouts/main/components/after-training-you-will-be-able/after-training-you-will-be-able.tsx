@@ -7,7 +7,7 @@ import { Props } from "enums";
 
 function AfterTrainingYouWillBeAble() {
   return (
-    <section id="afterTrainingYouWillBeAblx`" className={styles.container}>
+    <section className={styles.container}>
       <Heading text={Props.HeadingAfterTrainingYouWillBeAble} />
       <div className={styles.content}>
         <div className={styles.what}>

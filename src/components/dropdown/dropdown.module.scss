@@ -1,4 +1,5 @@
 .container {
+  margin-right: 24px;
   .dropdown {
     display: inline-flex;
     align-items: center;
@@ -9,9 +10,7 @@
 
     border: 1px solid #4a74ba;
     border-radius: 16px;
-    width: 200px;
     padding: 10px 16px;
-    margin-right: 24px;
 
     cursor: pointer;
 
@@ -45,7 +44,8 @@
       cursor: pointer;
       margin: 3px 0;
 
-      &:hover {
+      &:hover,
+      &.active {
         color: rgba(74, 116, 186, 1);
       }
     }
