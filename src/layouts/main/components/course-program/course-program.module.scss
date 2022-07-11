@@ -1,7 +1,9 @@
+@import "styles/variables.scss";
+
 .container {
-  margin-top: 244px;
   display: flex;
   justify-content: center;
+  padding: $padding-beetwen-blocks 0;
   .content {
     .dropdowns {
       display: flex;

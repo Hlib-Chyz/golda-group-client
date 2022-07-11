@@ -6,16 +6,25 @@ import CourseProgram from "@layouts/main/components/course-program/course-progra
 import Subheader from "@layouts/main/components/subheader/subheader";
 import AboutUs from "@layouts/main/components/about-us/about-us";
 import Tarrifs from "@layouts/main/components/tarrifs/tarrifs";
+import { Refs } from "App";
 
-function Main() {
+function Main({ refs }: { refs: Refs }) {
   return (
-    <div className={styles.main}>
-      <Subheader />
-      <ForWhomTraining />
-      <AfterTrainingYouWillBeAble />
-      <CourseProgram />
-      <AboutUs />
-      <Tarrifs />
+    <div className={styles.wrapper}>
+      <div className={styles.container}>
+        <Subheader />
+        <ForWhomTraining />
+        <AfterTrainingYouWillBeAble />
+        <div ref={refs.courseProgramRef}>
+          <CourseProgram />
+        </div>
+        <div ref={refs.aboutUsRef}>
+          <AboutUs />
+        </div>
+        <div ref={refs.tariffsRef}>
+          <Tarrifs />
+        </div>
+      </div>
     </div>
   );
 }

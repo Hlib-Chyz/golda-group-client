@@ -2,5 +2,6 @@
 
 .container {
   width: $max-width-content;
-  margin: 286px auto 0;
+  margin: 0 auto;
+  padding: $padding-beetwen-blocks 0;
 }

@@ -3,7 +3,8 @@
 .container {
   text-align: center;
   width: $max-width-content;
-  margin: 244px auto 0;
+  margin: 0 auto;
+  padding: 200px 0 $padding-beetwen-blocks;
   .reasons {
     display: flex;
     justify-content: space-between;

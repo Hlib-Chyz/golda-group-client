@@ -43,7 +43,7 @@ body {
 
 body {
   font-family: "Quicksand", sans-serif;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 400px;
   line-height: 1.25;
   color: #030305;
@@ -103,19 +103,3 @@ h6 {
   font-weight: 400;
 }
 /*--------------------*/
-
-.wrapper {
-  background-image: url("/assets/images/background-header.png");
-  background-repeat: no-repeat;
-  background-position: top;
-  -webkit-background-size: 100% 1006px;
-  -moz-background-size: 100% 1006px;
-  -o-background-size: 100% 1006px;
-  background-size: 100% 1006px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  .container {
-    width: 100%;
-  }
-}

@@ -2,8 +2,8 @@
 
 .container {
   width: $max-width-content;
-  margin: 286px auto 0;
-
+  margin: 0 auto;
+  padding: $padding-beetwen-blocks 0;
   .section {
     .firstBlock {
       display: flex;
@@ -20,7 +20,7 @@
           }
           p {
             font-weight: 600;
-            font-size: 14px;
+            font-size: 12px;
             color: #30366c;
           }
         }
@@ -46,7 +46,7 @@
             }
             .text {
               font-weight: 500;
-              font-size: 14px;
+              font-size: 12px;
               color: #30366c;
 
               margin-left: 16px;
@@ -63,7 +63,7 @@
         background-color: white;
         p {
           font-weight: 500;
-          font-size: 24px;
+          font-size: 22px;
           color: #0a0808;
           &:first-child {
             margin-bottom: 40px;
@@ -89,7 +89,7 @@
 
         h3 {
           font-weight: 600;
-          font-size: 28px;
+          font-size: 26px;
           color: #0a0808;
         }
       }
@@ -104,7 +104,7 @@
         padding: 85px 400px 64px 60px;
         p {
           font-weight: 500;
-          font-size: 24px;
+          font-size: 22px;
           color: #0a0808;
           &:first-child {
             margin-bottom: 40px;

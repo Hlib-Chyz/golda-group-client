@@ -13,7 +13,7 @@
   transition: all 0.5s ease-in-out;
 
   width: 100%;
-  padding: 34px 0;
+  padding: 24px 0;
   .container {
     width: $max-width-content;
     display: flex;
@@ -24,7 +24,7 @@
       align-items: center;
       .logo {
         font-weight: 600;
-        font-size: 40px;
+        font-size: 38px;
         color: #30366c;
         margin-right: 118px;
       }
@@ -39,7 +39,7 @@
             .name {
               cursor: pointer;
               font-weight: 500;
-              font-size: 24px;
+              font-size: 22px;
               color: #0a0808;
             }
             .dash {
@@ -58,12 +58,12 @@
       align-items: center;
       .languages {
         font-weight: 600;
-        font-size: 24px;
+        font-size: 22px;
         margin-right: 78px;
         color: #30366c;
         button {
           font-weight: 600;
-          font-size: 24px;
+          font-size: 22px;
           opacity: 0.25;
           color: black;
         }

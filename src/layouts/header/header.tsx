@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
 // eslint-disable-next-line no-restricted-imports
@@ -5,26 +6,30 @@ import styles from "./header.module.scss";
 import heart from "@assets/images/heart.svg";
 import basket from "@assets/images/basket.svg";
 import { Languages, Props } from "enums";
-import { useContext, useEffect, useState } from "react";
+import { RefObject, useContext, useEffect, useState } from "react";
 import TextLanguage from "@components/text-language/text-language";
 import { Context } from "index";
 import { observer } from "mobx-react-lite";
+import { Refs } from "App";
 
-const Header = observer(() => {
+const Header = observer(({ refs }: { refs: Refs }) => {
   const { language } = useContext(Context)!;
 
-  const navigation: { prop: string; href: string }[] = [
+  const navigation: {
+    prop: string;
+    ref: RefObject<HTMLDivElement>;
+  }[] = [
     {
       prop: Props.AboutCourse,
-      href: "courseProgram",
+      ref: refs.courseProgramRef,
     },
     {
       prop: Props.AboutUs,
-      href: "aboutUs",
+      ref: refs.aboutUsRef,
     },
     {
       prop: Props.Tariffs,
-      href: "tariffs",
+      ref: refs.tariffsRef,
     },
   ];
 
@@ -35,11 +40,7 @@ const Header = observer(() => {
   }, []);
 
   function handleScroll() {
-    if (window.pageYOffset > 0) {
-      setScrollStarted(true);
-    } else {
-      setScrollStarted(false);
-    }
+    setScrollStarted(window.pageYOffset > 0);
   }
 
   return (
@@ -58,17 +59,35 @@ const Header = observer(() => {
               <ul>
                 {navigation.map(
                   (
-                    { prop, href }: { prop: string; href: string },
+                    {
+                      prop,
+                      ref,
+                    }: {
+                      prop: string;
+                      ref: RefObject<HTMLDivElement>;
+                    },
                     index: number
                   ) => (
                     <li key={prop}>
                       {index === navigation.length - 1 ? (
-                        <a href={"#" + href} className={styles.name}>
+                        <a
+                          onClick={() =>
+                            ref.current?.scrollIntoView({ behavior: "smooth" })
+                          }
+                          className={styles.name}
+                        >
                           <TextLanguage prop={prop} />
                         </a>
                       ) : (
                         <>
-                          <a href={"#" + href} className={styles.name}>
+                          <a
+                            onClick={() =>
+                              ref.current?.scrollIntoView({
+                                behavior: "smooth",
+                              })
+                            }
+                            className={styles.name}
+                          >
                             <TextLanguage prop={prop} />
                           </a>
                           <span className={styles.dash}></span>

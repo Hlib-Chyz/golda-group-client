@@ -1,2 +1,15 @@
-.main {
+.wrapper {
+  background-image: url("/assets/images/background-header.png");
+  background-repeat: no-repeat;
+  background-position: top;
+  -webkit-background-size: 100% 900px;
+  -moz-background-size: 100% 900px;
+  -o-background-size: 100% 900px;
+  background-size: 100% 900px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .container {
+    width: 100%;
+  }
 }
