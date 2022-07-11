@@ -4,4 +4,9 @@
   width: $max-width-content;
   margin: 0 auto;
   padding: $padding-beetwen-blocks 0;
+
+  .tariffs {
+    display: flex;
+    justify-content: space-between;
+  }
 }

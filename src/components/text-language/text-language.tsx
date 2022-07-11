@@ -54,6 +54,7 @@ const TextLanguage = observer(({ prop }: { prop: string }) => {
       A1A2: "A1 - A2",
       B1: "B1",
       B2: "B2",
+      ChooseTariff: "Вибрати тариф",
     },
     RU: {
       AboutCourse: "О курсах",
@@ -98,6 +99,7 @@ const TextLanguage = observer(({ prop }: { prop: string }) => {
       A1A2: "A1 - A2",
       B1: "B1",
       B2: "B2",
+      ChooseTariff: "Выбрать тариф",
     },
   };
 

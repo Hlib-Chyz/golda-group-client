@@ -5,7 +5,7 @@ import AfterTrainingYouWillBeAble from "@layouts/main/components/after-training-
 import CourseProgram from "@layouts/main/components/course-program/course-program";
 import Subheader from "@layouts/main/components/subheader/subheader";
 import AboutUs from "@layouts/main/components/about-us/about-us";
-import Tarrifs from "@layouts/main/components/tarrifs/tarrifs";
+import Tariffs from "@layouts/main/components/tariffs/tariffs";
 import { Refs } from "App";
 
 function Main({ refs }: { refs: Refs }) {
@@ -15,14 +15,16 @@ function Main({ refs }: { refs: Refs }) {
         <Subheader />
         <ForWhomTraining />
         <AfterTrainingYouWillBeAble />
-        <div ref={refs.courseProgramRef}>
-          <CourseProgram />
-        </div>
         <div ref={refs.aboutUsRef}>
           <AboutUs />
         </div>
-        <div ref={refs.tariffsRef}>
-          <Tarrifs />
+        <div className={styles.backgroundTarrifs}>
+          <div ref={refs.courseProgramRef}>
+            <CourseProgram />
+          </div>
+          <div ref={refs.tariffsRef}>
+            <Tariffs />
+          </div>
         </div>
       </div>
     </div>
