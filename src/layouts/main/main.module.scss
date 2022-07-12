@@ -11,5 +11,16 @@
   align-items: center;
   .container {
     width: 100%;
+
+    .backgroundTarrifs {
+      background-image: url("/assets/images/background-what.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      padding: 100px 0;
+    }
   }
 }

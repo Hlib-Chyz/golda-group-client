@@ -11,6 +11,7 @@ import TextLanguage from "@components/text-language/text-language";
 import { Context } from "index";
 import { observer } from "mobx-react-lite";
 import { Refs } from "App";
+import { NavLink } from "react-router-dom";
 
 const Header = observer(({ refs }: { refs: Refs }) => {
   const { language } = useContext(Context)!;
@@ -54,7 +55,9 @@ const Header = observer(({ refs }: { refs: Refs }) => {
       >
         <div className={styles.container}>
           <div className={styles.leftSide}>
-            <div className={styles.logo}>Golda Group</div>
+            <div className={styles.logo}>
+              <NavLink to="/">Golda Group</NavLink>
+            </div>
             <nav className={styles.nav}>
               <ul>
                 {navigation.map(
@@ -117,14 +120,6 @@ const Header = observer(({ refs }: { refs: Refs }) => {
                 }
               >
                 {Languages.RU}
-              </button>
-            </div>
-            <div className={styles.icons}>
-              <button className={styles.heart}>
-                <img src={heart} alt="heart" />
-              </button>
-              <button className={styles.basket}>
-                <img src={basket} alt="basket" />
               </button>
             </div>
           </div>

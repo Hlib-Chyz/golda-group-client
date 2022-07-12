@@ -4,6 +4,7 @@ import Button from "@components/button/button";
 import { Props } from "enums";
 import hryvnia from "@assets/images/hryvnia.svg";
 import hryvniaSmall from "@assets/images/hryvnia-small.svg";
+import { NavLink } from "react-router-dom";
 
 function Tariff({
   whatHaveThisTariff,
@@ -55,14 +56,16 @@ function Tariff({
               <img src={hryvnia} alt="hryvnia" />
             </div>
           </div>
-          <Button
-            customStyle={{
-              padding: "20px 32px",
-              fontSize: "16px",
-              backgroundColor: backgroundColorButton ?? "",
-            }}
-            text={Props.ChooseTariff}
-          />
+          <NavLink to="/orderForm">
+            <Button
+              customStyle={{
+                padding: "20px 32px",
+                fontSize: "16px",
+                backgroundColor: backgroundColorButton ?? "",
+              }}
+              text={Props.ChooseTariff}
+            />
+          </NavLink>
           <img className={styles.imgEducation} src={img} alt="describe" />
         </div>
       </div>

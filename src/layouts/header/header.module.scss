@@ -23,10 +23,12 @@
       display: flex;
       align-items: center;
       .logo {
-        font-weight: 600;
-        font-size: 38px;
-        color: #30366c;
         margin-right: 118px;
+        a {
+          font-weight: 600;
+          font-size: 38px;
+          color: #30366c;
+        }
       }
       .nav {
         ul {
@@ -59,7 +61,6 @@
       .languages {
         font-weight: 600;
         font-size: 22px;
-        margin-right: 78px;
         color: #30366c;
         button {
           font-weight: 600;
@@ -70,17 +71,6 @@
         button.active {
           opacity: 1;
           color: #30366c;
-        }
-      }
-      .icons {
-        display: flex;
-        align-items: center;
-        button {
-          height: 40px;
-          width: 40px;
-        }
-        .heart {
-          margin-right: 4px;
         }
       }
     }

@@ -1,4 +1,42 @@
 @import "/src/styles/variables.scss";
 
-.text {
+.container {
+  width: $max-width-content;
+  margin: 0 auto;
+  padding: 190px 0 100px;
+  .heading {
+    font-weight: 600;
+    font-size: 28px;
+    color: #000000;
+    padding-bottom: 22px;
+  }
+
+  .dash {
+    width: 310px;
+    height: 1px;
+    background-color: rgba(255, 168, 87, 0.9);
+    margin-bottom: 22px;
+  }
+
+  .text {
+    font-weight: 500;
+    font-size: 20px;
+    color: #0a0808;
+    padding-bottom: 30px;
+  }
+}
+
+.subheading {
+  font-weight: 600;
+  font-size: 24px;
+  color: #878383;
+
+  padding: 22px 0 45px;
+}
+
+.subsubheading {
+  font-weight: 500;
+  font-size: 20px;
+  color: rgba(135, 131, 131, 1);
+  padding: 100px 0 30px;
 }

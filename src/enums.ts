@@ -47,6 +47,7 @@ export enum Props {
   A1A2 = "A1A2",
   B1 = "B1",
   B2 = "B2",
+  Сheckout = "Сheckout",
   ChooseTariff = "ChooseTariff",
 }
 
