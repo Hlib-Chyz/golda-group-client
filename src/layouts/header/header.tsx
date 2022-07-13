@@ -3,8 +3,6 @@
 /* eslint-disable no-unused-vars */
 // eslint-disable-next-line no-restricted-imports
 import styles from "./header.module.scss";
-import heart from "@assets/images/heart.svg";
-import basket from "@assets/images/basket.svg";
 import { Languages, Props } from "enums";
 import { RefObject, useContext, useEffect, useState } from "react";
 import TextLanguage from "@components/text-language/text-language";
@@ -56,7 +54,12 @@ const Header = observer(({ refs }: { refs: Refs }) => {
         <div className={styles.container}>
           <div className={styles.leftSide}>
             <div className={styles.logo}>
-              <NavLink to="/">Golda Group</NavLink>
+              <NavLink
+                onClick={() => window.scroll({ top: 0, behavior: "smooth" })}
+                to="/"
+              >
+                Golda Group
+              </NavLink>
             </div>
             <nav className={styles.nav}>
               <ul>

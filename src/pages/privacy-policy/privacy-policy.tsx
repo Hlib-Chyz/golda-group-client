@@ -211,7 +211,6 @@ function PrivacyPolicy() {
         полученного запроса или в случаях, прямо предусмотренных
         законодательством.
       </p>
-      <p className={styles.text}>13-06-20</p>
     </section>
   );
 }

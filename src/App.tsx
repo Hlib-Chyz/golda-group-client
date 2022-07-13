@@ -3,6 +3,7 @@ import Footer from "@layouts/footer/footer";
 import Header from "@layouts/header/header";
 import Main from "@layouts/main/main";
 import ContacrtOffer from "@pages/contract-offer/contract-offer";
+import DeliveryPayment from "@pages/delivery-payment/delivery-payment";
 import OrderForm from "@pages/order-form/order-form";
 import PrivacyPolicy from "@pages/privacy-policy/privacy-policy";
 import { RefObject, useRef } from "react";
@@ -33,6 +34,7 @@ function App(): JSX.Element {
             />
             <Route path="/contacrtOffer" element={<ContacrtOffer />} />
             <Route path="/privacyPolicy" element={<PrivacyPolicy />} />
+            <Route path="/deliveryPayment" element={<DeliveryPayment />} />
             <Route path="/orderForm" element={<OrderForm />} />
           </Routes>
           <Footer />
