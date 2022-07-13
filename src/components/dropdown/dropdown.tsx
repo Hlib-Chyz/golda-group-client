@@ -59,12 +59,7 @@ function Dropdown({
         </div>
         <div
           style={{
-            width,
-            padding: isOpen ? "10px 16px" : 0,
-            visibility: isOpen ? "visible" : "hidden",
-            fontSize: isOpen ? "20px" : 0,
-            border: isOpen ? "1px solid #4a74ba" : "none",
-            transition: "all 0.5s",
+            display: isOpen ? "block" : "none",
           }}
           className={styles.items}
         >
