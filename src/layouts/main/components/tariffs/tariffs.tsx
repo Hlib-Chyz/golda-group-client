@@ -18,11 +18,25 @@ function Tariffs() {
           img={homeEducation}
           backgroundColor="#EBF8FF"
           whatHaveThisTariff={[
-            "Грамматика уровней А1 - А2, В1, В2",
-            "Упражнения",
-            "Видео материалы",
+            {
+              value: Props.GrammarLevelsA1A2B1B2,
+            },
+            {
+              value: Props.Exercises,
+            },
+            {
+              value: Props.VideoMaterials,
+            },
           ]}
-          whatDoesNotHaveThisTariff={["Чат с преподавателем", "Speaking Clubs"]}
+          whatDoesNotHaveThisTariff={[
+            {
+              value: Props.ChatWithTeacher,
+            },
+            {
+              value: "Speaking Clubs",
+              isNotProp: true,
+            },
+          ]}
         />
         <Tariff
           oldPrice="1490"
@@ -30,14 +44,29 @@ function Tariffs() {
           img={freelancer}
           backgroundColor="rgba(255, 221, 189, 0.9)"
           whatHaveThisTariff={[
-            "Грамматика уровней А1 - А2, В1, В2",
-            "Упражнения",
-            "Видео материалы",
-            "Чат с преподавателем",
-            "Speaking Clubs",
+            {
+              value: Props.GrammarLevelsA1A2B1B2,
+            },
+            {
+              value: Props.Exercises,
+            },
+            {
+              value: Props.VideoMaterials,
+            },
+            {
+              value: Props.ChatWithTeacher,
+            },
+            {
+              value: "Speaking Clubs",
+              isNotProp: true,
+            },
           ]}
-          whatDoesNotHaveThisTariff={["2 Урока со Златой"]}
-          heading="с учителем"
+          whatDoesNotHaveThisTariff={[
+            {
+              value: Props.TwoLessonsWithZlata,
+            },
+          ]}
+          heading={Props.WithTeacher}
         />
         <Tariff
           oldPrice="3390"
@@ -45,14 +74,27 @@ function Tariffs() {
           img={datingChat}
           backgroundColor="#FFA857"
           whatHaveThisTariff={[
-            "Грамматика уровней А1 - А2, В1, В2",
-            "Упражнения",
-            "Видео материалы",
-            "Чат со Златой",
-            "Speaking Clubs",
-            "2 Урока со Златой",
+            {
+              value: Props.GrammarLevelsA1A2B1B2,
+            },
+            {
+              value: Props.Exercises,
+            },
+            {
+              value: Props.VideoMaterials,
+            },
+            {
+              value: Props.ChatWithZlata,
+            },
+            {
+              value: "Speaking Clubs",
+              isNotProp: true,
+            },
+            {
+              value: Props.TwoLessonsWithZlata,
+            },
           ]}
-          heading="со Златой"
+          heading={Props.WithZlata}
           backgroundColorButton="#E1F5FF"
         />
       </div>

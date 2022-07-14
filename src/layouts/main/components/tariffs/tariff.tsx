@@ -5,6 +5,7 @@ import { Props } from "enums";
 import hryvnia from "@assets/images/hryvnia.svg";
 import hryvniaSmall from "@assets/images/hryvnia-small.svg";
 import { NavLink } from "react-router-dom";
+import TextLanguage from "@components/text-language/text-language";
 
 function Tariff({
   whatHaveThisTariff,
@@ -16,13 +17,13 @@ function Tariff({
   heading,
   backgroundColorButton,
 }: {
-  whatHaveThisTariff: string[];
+  whatHaveThisTariff: { value: string | Props; isNotProp?: boolean }[];
   backgroundColor: string;
   img: string;
   oldPrice: string;
   newPrice: string;
-  whatDoesNotHaveThisTariff?: string[];
-  heading?: string;
+  whatDoesNotHaveThisTariff?: { value: string | Props; isNotProp?: boolean }[];
+  heading?: Props;
   backgroundColorButton?: string;
 }) {
   return (
@@ -32,16 +33,35 @@ function Tariff({
       className={styles.container}
     >
       <h4>
-        BOOK <strong>{heading}</strong>
+        BOOK{" "}
+        <strong>
+          <TextLanguage prop={heading} />
+        </strong>
       </h4>
       <div className={styles.content}>
         <ul className={styles.top}>
-          {whatHaveThisTariff.map((item: string) => (
-            <li>{item}</li>
-          ))}
-          {whatDoesNotHaveThisTariff?.map((item: string) => (
-            <li className={styles.inactive}>{item}</li>
-          ))}
+          {whatHaveThisTariff.map(
+            (item: { value: string | Props; isNotProp?: boolean }) => (
+              <li>
+                {item.isNotProp ? (
+                  item.value
+                ) : (
+                  <TextLanguage prop={item.value} />
+                )}
+              </li>
+            )
+          )}
+          {whatDoesNotHaveThisTariff?.map(
+            (item: { value: string | Props; isNotProp?: boolean }) => (
+              <li className={styles.inactive}>
+                {item.isNotProp ? (
+                  item.value
+                ) : (
+                  <TextLanguage prop={item.value} />
+                )}
+              </li>
+            )
+          )}
         </ul>
         <div className={styles.bottom}>
           <div className={styles.price + " " + styles.oldPrice}>

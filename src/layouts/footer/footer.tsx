@@ -5,6 +5,8 @@ import email from "@assets/images/email.svg";
 import mastercard from "@assets/images/mastercard.svg";
 import visa from "@assets/images/visa.svg";
 import { useEffect, useState } from "react";
+import TextLanguage from "@components/text-language/text-language";
+import { Props } from "enums";
 
 function Footer() {
   const [currentPath, setCurrentPath] = useState<string>("");
@@ -78,7 +80,7 @@ function Footer() {
             onClick={() => setCurrentPathAndMoveToTop("contacrtOffer")}
             to="/contacrtOffer"
           >
-            Договор Оферты
+            <TextLanguage prop={Props.ContractOffer} />
           </NavLink>
           <span className={styles.dash}></span>
           <NavLink
@@ -86,7 +88,7 @@ function Footer() {
             onClick={() => setCurrentPathAndMoveToTop("privacyPolicy")}
             to="/privacyPolicy"
           >
-            Политика конфиденциальности
+            <TextLanguage prop={Props.PrivacyPolicy} />
           </NavLink>
           <span className={styles.dash}></span>
           <NavLink
@@ -94,12 +96,12 @@ function Footer() {
             onClick={() => setCurrentPathAndMoveToTop("deliveryPayment")}
             to="/deliveryPayment"
           >
-            Доставка и оплата
+            <TextLanguage prop={Props.ShippingAndPayment} />
           </NavLink>
         </div>
         <div className={styles.dash}></div>
         <div className={styles.bottom}>
-          <p>Copyright to Golda Group - 2022. All rights reserved.</p>
+          <p> Copyright to Golda Group - 2022. All rights reserved.</p>
         </div>
       </footer>
     </div>
