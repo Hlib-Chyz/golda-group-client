@@ -4,14 +4,14 @@
   background-image: url("/assets/images/background-header.png");
   background-repeat: no-repeat;
   background-position: top;
-  -webkit-background-size: 100% 900px;
-  -moz-background-size: 100% 900px;
-  -o-background-size: 100% 900px;
-  background-size: 100% 900px;
+  -webkit-background-size: 100% 100vh;
+  -moz-background-size: 100% 100vh;
+  -o-background-size: 100% 100vh;
+  background-size: 100% 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
   padding: 190px 0 100px;
+  height: 100vh;
 
   .content {
     width: $max-width-content;
@@ -26,24 +26,56 @@
     .form {
       display: inline-flex;
       flex-direction: column;
+      .inputError {
+        padding-bottom: 10px;
 
-      input {
-        margin-bottom: 26px;
-        background-color: #ebf8ff;
-        border-radius: 8px;
-        height: 50px;
-        padding: 0 16px;
-        font-weight: 500;
-        font-size: 16px;
-        color: #0a0808;
-
-        &:focus {
-          background-color: #d5efff;
+        &:hover {
+          label,
+          input {
+            border: 1px solid rgba(188, 230, 255, 1);
+          }
         }
 
-        &:invalid {
-          border: 1px solid #ff4d4d;
+        label {
+          padding: 14px;
+          background-color: #e1f5ff;
+          border-radius: 8px;
+          border: 1px solid transparent;
+
+          font-size: 16px;
+          color: #0a0808;
+          font-weight: 500;
+
+          position: absolute;
+
+          &.error {
+            border: 1px solid #ff4d4d;
+            background-color: #ebf8ff;
+            color: #ff4d4d;
+          }
+        }
+
+        input {
           background-color: #ebf8ff;
+          border-radius: 8px;
+          height: 50px;
+          padding: 0 16px 0 30px;
+          font-weight: 500;
+          font-size: 16px;
+          color: #0a0808;
+          border: 1px solid transparent;
+
+          &.error {
+            border: 1px solid #ff4d4d;
+            background-color: #ebf8ff;
+            color: #ff4d4d;
+          }
+        }
+
+        .errorMessage {
+          padding-top: 10px;
+          font-weight: 500;
+          font-size: 13px;
           color: #ff4d4d;
         }
       }

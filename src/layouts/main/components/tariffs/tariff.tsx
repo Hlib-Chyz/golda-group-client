@@ -42,7 +42,7 @@ function Tariff({
         <ul className={styles.top}>
           {whatHaveThisTariff.map(
             (item: { value: string | Props; isNotProp?: boolean }) => (
-              <li>
+              <li key={item.value}>
                 {item.isNotProp ? (
                   item.value
                 ) : (
@@ -53,7 +53,7 @@ function Tariff({
           )}
           {whatDoesNotHaveThisTariff?.map(
             (item: { value: string | Props; isNotProp?: boolean }) => (
-              <li className={styles.inactive}>
+              <li key={item.value} className={styles.inactive}>
                 {item.isNotProp ? (
                   item.value
                 ) : (

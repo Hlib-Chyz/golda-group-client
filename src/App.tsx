@@ -21,25 +21,45 @@ function App(): JSX.Element {
   const aboutUsRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div className="wrapper">
-      <div className="container">
-        <BrowserRouter>
-          <Header refs={{ courseProgramRef, tariffsRef, aboutUsRef }} />
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <Main refs={{ courseProgramRef, tariffsRef, aboutUsRef }} />
-              }
-            />
-            <Route path="/contacrtOffer" element={<ContacrtOffer />} />
-            <Route path="/privacyPolicy" element={<PrivacyPolicy />} />
-            <Route path="/deliveryPayment" element={<DeliveryPayment />} />
-            <Route path="/orderForm" element={<OrderForm />} />
-          </Routes>
-          <Footer />
-        </BrowserRouter>
-      </div>
+    <div
+      style={{
+        height: "100%",
+      }}
+    >
+      <BrowserRouter>
+        <div
+          style={{
+            minHeight: "100%",
+            display: "flex",
+            flexDirection: "column",
+          }}
+        >
+          <div>
+            <Header refs={{ courseProgramRef, tariffsRef, aboutUsRef }} />
+          </div>
+          <div
+            style={{
+              flex: "1 1 auto",
+            }}
+          >
+            <Routes>
+              <Route
+                path="/"
+                element={
+                  <Main refs={{ courseProgramRef, tariffsRef, aboutUsRef }} />
+                }
+              />
+              <Route path="/contacrtOffer" element={<ContacrtOffer />} />
+              <Route path="/privacyPolicy" element={<PrivacyPolicy />} />
+              <Route path="/deliveryPayment" element={<DeliveryPayment />} />
+              <Route path="/orderForm" element={<OrderForm />} />
+            </Routes>
+          </div>
+          <div>
+            <Footer />
+          </div>
+        </div>
+      </BrowserRouter>
     </div>
   );
 }

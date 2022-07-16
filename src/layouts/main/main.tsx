@@ -12,8 +12,8 @@ function Main({ refs }: { refs: Refs }) {
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>
-        <Subheader />
-        <ForWhomTraining />
+        <Subheader refTrffic={refs.tariffsRef} />
+        <ForWhomTraining refTrffic={refs.tariffsRef} />
         <AfterTrainingYouWillBeAble />
         <div ref={refs.aboutUsRef}>
           <AboutUs />

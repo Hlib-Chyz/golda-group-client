@@ -5,12 +5,14 @@ import TextLanguage from "@components/text-language/text-language";
 function Button({
   text,
   customStyle,
+  type = "button",
 }: {
   text: string;
   customStyle?: { [key: string]: string };
+  type?: "button" | "submit" | "reset";
 }) {
   return (
-    <button style={customStyle} className={styles.button}>
+    <button type={type} style={customStyle} className={styles.button}>
       <TextLanguage prop={text} />
     </button>
   );
