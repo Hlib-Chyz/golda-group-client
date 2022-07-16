@@ -2,10 +2,18 @@
 // eslint-disable-next-line no-restricted-imports
 import styles from "./order-form.module.scss";
 import Button from "@components/button/button";
-import { Props } from "enums";
-import { ChangeEvent, useEffect, useRef, useState } from "react";
+import {
+  FormatOfStudyEnum,
+  LanguageOfStudyEnum,
+  LevelOfStudyEnum,
+  Props,
+} from "enums";
+import { ChangeEvent, useContext, useEffect, useRef, useState } from "react";
+import { Context } from "index";
 
 function OrderForm() {
+  const { courseParameters } = useContext(Context)!;
+
   useEffect(() => {
     window.scroll({
       top: 0,
@@ -116,96 +124,167 @@ function OrderForm() {
     setEmailDirty(true);
   };
 
+  function getFormatText(): string {
+    switch (courseParameters.getCourseParameters().format) {
+      case FormatOfStudyEnum.Textbook:
+        return "BOOK";
+      case FormatOfStudyEnum.TutorialWithTeacher:
+        return "BOOK з учителем";
+      case FormatOfStudyEnum.TutorialWithZlata:
+        return "BOOK зі Златою";
+      default:
+        return "";
+    }
+  }
+
+  function getPrice(): string {
+    switch (courseParameters.getCourseParameters().format) {
+      case FormatOfStudyEnum.Textbook:
+        return "590";
+      case FormatOfStudyEnum.TutorialWithTeacher:
+        return "1290";
+      case FormatOfStudyEnum.TutorialWithZlata:
+        return "2990";
+      default:
+        return "";
+    }
+  }
+
+  function getLanguageText(): string {
+    switch (courseParameters.getCourseParameters().language) {
+      case LanguageOfStudyEnum.English:
+        return "Английский";
+      case LanguageOfStudyEnum.Deutsch:
+        return "Немецкий";
+      case LanguageOfStudyEnum.French:
+        return "Французский";
+      default:
+        return "";
+    }
+  }
+
+  function getLevelText(): string {
+    switch (courseParameters.getCourseParameters().level) {
+      case LevelOfStudyEnum.A1A2:
+        return "A1 - A2";
+      case LevelOfStudyEnum.B1:
+        return "B1";
+      case LevelOfStudyEnum.B2:
+        return "B2";
+      default:
+        return "";
+    }
+  }
+
   return (
-    <div className={styles.container}>
-      <div className={styles.content}>
-        <h3>Оформление заказа</h3>
-        <form onSubmit={(e: any) => submitForm(e)} className={styles.form}>
-          <div className={styles.inputError}>
-            <div>
-              <label
-                className={nameDirty && nameError ? styles.error : ""}
-                ref={refLabelName}
-              >
-                ФИО
-              </label>
-              <input
-                value={name}
-                className={nameDirty && nameError ? styles.error : ""}
-                onBlur={(e: ChangeEvent<HTMLInputElement>) => blurHandle(e)}
-                onChange={(e: ChangeEvent<HTMLInputElement>) => nameHandler(e)}
-                name="name"
-                style={{
-                  marginBottom: nameDirty && nameError ? "" : "26.25px",
-                  marginLeft: `${widthLabelName - 14}px`,
-                  width: `${355 - widthLabelName}px`,
-                }}
-              />
+    <div className={styles.wrapper}>
+      <div className={styles.container}>
+        <div className={styles.contentForm}>
+          <h3>Оформление заказа</h3>
+          <form onSubmit={(e: any) => submitForm(e)} className={styles.form}>
+            <div className={styles.inputError}>
+              <div>
+                <label
+                  className={nameDirty && nameError ? styles.error : ""}
+                  ref={refLabelName}
+                >
+                  ФИО
+                </label>
+                <input
+                  value={name}
+                  className={nameDirty && nameError ? styles.error : ""}
+                  onBlur={(e: ChangeEvent<HTMLInputElement>) => blurHandle(e)}
+                  onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                    nameHandler(e)
+                  }
+                  name="name"
+                  style={{
+                    marginBottom: nameDirty && nameError ? "" : "26.25px",
+                    marginLeft: `${widthLabelName - 14}px`,
+                    width: `${355 - widthLabelName}px`,
+                  }}
+                />
+              </div>
+              {nameDirty && nameError && (
+                <div className={styles.errorMessage}>{nameError}</div>
+              )}
             </div>
-            {nameDirty && nameError && (
-              <div className={styles.errorMessage}>{nameError}</div>
-            )}
-          </div>
-          <div className={styles.inputError}>
-            <div>
-              <label
-                className={emailDirty && emailError ? styles.error : ""}
-                ref={refLabelEmail}
-              >
-                EMAIL
-              </label>
-              <input
-                value={email}
-                className={emailDirty && emailError ? styles.error : ""}
-                onBlur={(e: ChangeEvent<HTMLInputElement>) => blurHandle(e)}
-                onChange={(e: ChangeEvent<HTMLInputElement>) => emailHandler(e)}
-                name="email"
-                style={{
-                  marginBottom: emailDirty && emailError ? "" : "26.25px",
-                  marginLeft: `${widthLabelEmail - 14}px`,
-                  width: `${355 - widthLabelEmail}px`,
-                }}
-              />
+            <div className={styles.inputError}>
+              <div>
+                <label
+                  className={emailDirty && emailError ? styles.error : ""}
+                  ref={refLabelEmail}
+                >
+                  EMAIL
+                </label>
+                <input
+                  value={email}
+                  className={emailDirty && emailError ? styles.error : ""}
+                  onBlur={(e: ChangeEvent<HTMLInputElement>) => blurHandle(e)}
+                  onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                    emailHandler(e)
+                  }
+                  name="email"
+                  style={{
+                    marginBottom: emailDirty && emailError ? "" : "26.25px",
+                    marginLeft: `${widthLabelEmail - 14}px`,
+                    width: `${355 - widthLabelEmail}px`,
+                  }}
+                />
+              </div>
+              {emailDirty && emailError && (
+                <div className={styles.errorMessage}>{emailError}</div>
+              )}
             </div>
-            {emailDirty && emailError && (
-              <div className={styles.errorMessage}>{emailError}</div>
-            )}
-          </div>
-          <div className={styles.inputError}>
-            <div>
-              <label
-                className={phoneDirty && phoneError ? styles.error : ""}
-                ref={refLabelPhone}
-              >
-                ТЕЛЕФОН
-              </label>
-              <input
-                value={phone}
-                className={phoneDirty && phoneError ? styles.error : ""}
-                onBlur={(e: ChangeEvent<HTMLInputElement>) => blurHandle(e)}
-                onChange={(e: ChangeEvent<HTMLInputElement>) => phoneHandler(e)}
-                name="phone"
-                style={{
-                  marginBottom: phoneDirty && phoneError ? "" : "26.25px",
-                  marginLeft: `${widthLabelPhone - 14}px`,
-                  width: `${355 - widthLabelPhone}px`,
-                }}
-              />
+            <div className={styles.inputError}>
+              <div>
+                <label
+                  className={phoneDirty && phoneError ? styles.error : ""}
+                  ref={refLabelPhone}
+                >
+                  ТЕЛЕФОН
+                </label>
+                <input
+                  value={phone}
+                  className={phoneDirty && phoneError ? styles.error : ""}
+                  onBlur={(e: ChangeEvent<HTMLInputElement>) => blurHandle(e)}
+                  onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                    phoneHandler(e)
+                  }
+                  name="phone"
+                  style={{
+                    marginBottom: phoneDirty && phoneError ? "" : "26.25px",
+                    marginLeft: `${widthLabelPhone - 14}px`,
+                    width: `${355 - widthLabelPhone}px`,
+                  }}
+                />
+              </div>
+              {phoneDirty && phoneError && (
+                <div className={styles.errorMessage}>{phoneError}</div>
+              )}
             </div>
-            {phoneDirty && phoneError && (
-              <div className={styles.errorMessage}>{phoneError}</div>
-            )}
+            <Button
+              customStyle={{
+                padding: "25px 0",
+                fontSize: "14px",
+                maxWidth: "300px",
+              }}
+              text={Props.Сheckout}
+              type="submit"
+            />
+          </form>
+        </div>
+        <div className={styles.contentCourseParameters}>
+          <div className={styles.courseParameters}>
+            <p>{getFormatText()} /</p>
+            <p>{getLanguageText()} /</p>
+            <p>{getLevelText()}</p>
           </div>
-          <Button
-            customStyle={{
-              padding: "25px 0",
-              fontSize: "14px",
-              maxWidth: "300px",
-            }}
-            text={Props.Сheckout}
-            type="submit"
-          />
-        </form>
+          <div className={styles.containerPrice}>
+            <div className={styles.dash}></div>
+            <p className={styles.price}>{getPrice()} грн.</p>
+          </div>
+        </div>
       </div>
     </div>
   );

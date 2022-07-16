@@ -4,10 +4,12 @@ import "index.scss";
 import App from "App";
 import LanguageStore from "store/language";
 import CourseProgramStore from "store/course-program";
+import CourseParametersStore from "store/course-parameters";
 
 export const Context = createContext<{
   language: LanguageStore;
   courseProgram: CourseProgramStore;
+  courseParameters: CourseParametersStore;
 } | null>(null);
 
 const root = ReactDOM.createRoot(
@@ -20,6 +22,7 @@ root.render(
       value={{
         language: new LanguageStore(),
         courseProgram: new CourseProgramStore(),
+        courseParameters: new CourseParametersStore(),
       }}
     >
       <App />

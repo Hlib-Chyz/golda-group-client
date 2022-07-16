@@ -1,11 +1,13 @@
+/* eslint-disable indent */
 // eslint-disable-next-line no-restricted-imports
 import styles from "./tariff.module.scss";
 import Button from "@components/button/button";
-import { Props } from "enums";
+import { FormatOfStudyEnum, Props } from "enums";
 import hryvnia from "@assets/images/hryvnia.svg";
 import hryvniaSmall from "@assets/images/hryvnia-small.svg";
-import { NavLink } from "react-router-dom";
 import TextLanguage from "@components/text-language/text-language";
+import ModalChooseTariff from "@components/modal-choose-tariff/modal-choose-tariff";
+import { useState } from "react";
 
 function Tariff({
   whatHaveThisTariff,
@@ -26,6 +28,8 @@ function Tariff({
   heading?: Props;
   backgroundColorButton?: string;
 }) {
+  const [isOpenModal, setOpenModal] = useState<boolean>(false);
+
   return (
     <section
       style={{ backgroundColor }}
@@ -76,19 +80,29 @@ function Tariff({
               <img src={hryvnia} alt="hryvnia" />
             </div>
           </div>
-          <NavLink to="/orderForm">
-            <Button
-              customStyle={{
-                padding: "20px 32px",
-                fontSize: "16px",
-                backgroundColor: backgroundColorButton ?? "",
-              }}
-              text={Props.ChooseTariff}
-            />
-          </NavLink>
+          <Button
+            onClick={() => setOpenModal(true)}
+            customStyle={{
+              padding: "20px 32px",
+              fontSize: "16px",
+              backgroundColor: backgroundColorButton ?? "",
+            }}
+            text={Props.ChooseTariff}
+          />
           <img className={styles.imgEducation} src={img} alt="describe" />
         </div>
       </div>
+      <ModalChooseTariff
+        setOpen={(e: boolean) => setOpenModal(e)}
+        isOpen={isOpenModal}
+        formatProp={
+          newPrice === "590"
+            ? FormatOfStudyEnum.Textbook
+            : newPrice === "1290"
+            ? FormatOfStudyEnum.TutorialWithTeacher
+            : FormatOfStudyEnum.TutorialWithZlata
+        }
+      />
     </section>
   );
 }
