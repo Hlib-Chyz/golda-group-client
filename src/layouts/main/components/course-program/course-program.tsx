@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 // eslint-disable-next-line no-restricted-imports
 import styles from "./course-program.module.scss";
 import Heading from "@components/heading/heading";
@@ -10,27 +11,375 @@ import {
 import Dropdown from "@components/dropdown/dropdown";
 import Describe from "@layouts/main/components/course-program/describe";
 import homeEducation from "@assets/images/home-education.svg";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Context } from "index";
 import { observer } from "mobx-react-lite";
+import TextLanguage from "@components/text-language/text-language";
 
 const CourseProgram = observer(() => {
   const { courseProgram } = useContext(Context)!;
 
-  function getTools(): string[] {
-    if (courseProgram.getFormat === FormatOfStudyEnum.Textbook) {
-      return ["Наш учебник"];
+  const [courseProgramText, setCourseProgramText] = useState<ICourseProgram>({
+    tools: [],
+    sets: [],
+    results: [],
+    grammar: [],
+    addition: [],
+  });
+
+  const [levels, setLevels] = useState<{ id: LevelOfStudyEnum; prop: Props }[]>(
+    [
+      { id: LevelOfStudyEnum.A1A2, prop: Props.A1A2 },
+      { id: LevelOfStudyEnum.B1, prop: Props.B1 },
+      { id: LevelOfStudyEnum.B2, prop: Props.B2 },
+    ]
+  );
+
+  useEffect(() => {
+    if (
+      [LanguageOfStudyEnum.Deutsch, LanguageOfStudyEnum.French].includes(
+        courseProgram.getLanguage
+      )
+    ) {
+      if (courseProgram.getLevel === LevelOfStudyEnum.B2) {
+        courseProgram.setLevel(LevelOfStudyEnum.B1);
+      }
+      setLevels([
+        { id: LevelOfStudyEnum.A1A2, prop: Props.A1A2 },
+        { id: LevelOfStudyEnum.B1, prop: Props.B1 },
+      ]);
+    } else {
+      setLevels([
+        { id: LevelOfStudyEnum.A1A2, prop: Props.A1A2 },
+        { id: LevelOfStudyEnum.B1, prop: Props.B1 },
+        { id: LevelOfStudyEnum.B2, prop: Props.B2 },
+      ]);
+    }
+    setCourseProgramText(getTools());
+  }, [
+    courseProgram.getLevel,
+    courseProgram.getLanguage,
+    courseProgram.getFormat,
+  ]);
+
+  function getTools(): ICourseProgram {
+    // Textbook
+    // English
+    if (
+      courseProgram.getFormat === FormatOfStudyEnum.Textbook &&
+      courseProgram.getLevel === LevelOfStudyEnum.A1A2 &&
+      courseProgram.getLanguage === LanguageOfStudyEnum.English
+    ) {
+      return {
+        tools: [Props.AboutGoalOfProject],
+        sets: [Props.AboutGoalOfProject],
+        results: [Props.AboutGoalOfProject],
+        grammar: [Props.AboutGoalOfProject],
+        addition: [
+          Props.PhoneCallWithTeacher2x,
+          Props.PhoneCallWithTeacher2x,
+          Props.PhoneCallWithTeacher2x,
+        ],
+      };
     }
 
-    if (courseProgram.getFormat === FormatOfStudyEnum.TutorialWithTeacher) {
-      return ["Наш учебник", "Чат с преподом"];
+    if (
+      courseProgram.getFormat === FormatOfStudyEnum.Textbook &&
+      courseProgram.getLevel === LevelOfStudyEnum.B1 &&
+      courseProgram.getLanguage === LanguageOfStudyEnum.English
+    ) {
+      return {
+        tools: [Props.PassiveVoice],
+        sets: [Props.PassiveVoice],
+        results: [Props.PassiveVoice],
+        grammar: [Props.PassiveVoice],
+        addition: [],
+      };
     }
 
-    if (courseProgram.getFormat === FormatOfStudyEnum.TutorialWithZlata) {
-      return ["Наш учебник", "Чат с мармеладкой"];
+    if (
+      courseProgram.getFormat === FormatOfStudyEnum.Textbook &&
+      courseProgram.getLevel === LevelOfStudyEnum.B2 &&
+      courseProgram.getLanguage === LanguageOfStudyEnum.English
+    ) {
+      return {
+        tools: [Props.PassiveVoice],
+        sets: [Props.PassiveVoice],
+        results: [Props.PassiveVoice],
+        grammar: [Props.PassiveVoice],
+        addition: [],
+      };
     }
 
-    return [];
+    // Deutsch
+    if (
+      courseProgram.getFormat === FormatOfStudyEnum.Textbook &&
+      courseProgram.getLevel === LevelOfStudyEnum.A1A2 &&
+      courseProgram.getLanguage === LanguageOfStudyEnum.Deutsch
+    ) {
+      return {
+        tools: [Props.AboutUs2],
+        sets: [Props.AboutUs2],
+        results: [Props.AboutUs2],
+        grammar: [Props.AboutUs2],
+        addition: [],
+      };
+    }
+
+    if (
+      courseProgram.getFormat === FormatOfStudyEnum.Textbook &&
+      courseProgram.getLevel === LevelOfStudyEnum.B1 &&
+      courseProgram.getLanguage === LanguageOfStudyEnum.Deutsch
+    ) {
+      return {
+        tools: [Props.AboutUs3],
+        sets: [Props.AboutUs3],
+        results: [Props.AboutUs3],
+        grammar: [Props.AboutUs3],
+        addition: [],
+      };
+    }
+
+    // French
+    if (
+      courseProgram.getFormat === FormatOfStudyEnum.Textbook &&
+      courseProgram.getLevel === LevelOfStudyEnum.A1A2 &&
+      courseProgram.getLanguage === LanguageOfStudyEnum.French
+    ) {
+      return {
+        tools: [],
+        sets: [],
+        results: [],
+        grammar: [],
+        addition: [],
+      };
+    }
+
+    if (
+      courseProgram.getFormat === FormatOfStudyEnum.Textbook &&
+      courseProgram.getLevel === LevelOfStudyEnum.B1 &&
+      courseProgram.getLanguage === LanguageOfStudyEnum.French
+    ) {
+      return {
+        tools: [],
+        sets: [],
+        results: [],
+        grammar: [],
+        addition: [],
+      };
+    }
+
+    // TutorialWithTeacher
+    // English
+    if (
+      courseProgram.getFormat === FormatOfStudyEnum.TutorialWithTeacher &&
+      courseProgram.getLevel === LevelOfStudyEnum.A1A2 &&
+      courseProgram.getLanguage === LanguageOfStudyEnum.English
+    ) {
+      return {
+        tools: [],
+        sets: [],
+        results: [],
+        grammar: [],
+        addition: [],
+      };
+    }
+
+    if (
+      courseProgram.getFormat === FormatOfStudyEnum.TutorialWithTeacher &&
+      courseProgram.getLevel === LevelOfStudyEnum.B1 &&
+      courseProgram.getLanguage === LanguageOfStudyEnum.English
+    ) {
+      return {
+        tools: [],
+        sets: [],
+        results: [],
+        grammar: [],
+        addition: [],
+      };
+    }
+
+    if (
+      courseProgram.getFormat === FormatOfStudyEnum.TutorialWithTeacher &&
+      courseProgram.getLevel === LevelOfStudyEnum.B2 &&
+      courseProgram.getLanguage === LanguageOfStudyEnum.English
+    ) {
+      return {
+        tools: [],
+        sets: [],
+        results: [],
+        grammar: [],
+        addition: [],
+      };
+    }
+
+    // Deutsch
+    if (
+      courseProgram.getFormat === FormatOfStudyEnum.TutorialWithTeacher &&
+      courseProgram.getLevel === LevelOfStudyEnum.A1A2 &&
+      courseProgram.getLanguage === LanguageOfStudyEnum.Deutsch
+    ) {
+      return {
+        tools: [],
+        sets: [],
+        results: [],
+        grammar: [],
+        addition: [],
+      };
+    }
+
+    if (
+      courseProgram.getFormat === FormatOfStudyEnum.TutorialWithTeacher &&
+      courseProgram.getLevel === LevelOfStudyEnum.B1 &&
+      courseProgram.getLanguage === LanguageOfStudyEnum.Deutsch
+    ) {
+      return {
+        tools: [],
+        sets: [],
+        results: [],
+        grammar: [],
+        addition: [],
+      };
+    }
+
+    // French
+    if (
+      courseProgram.getFormat === FormatOfStudyEnum.TutorialWithTeacher &&
+      courseProgram.getLevel === LevelOfStudyEnum.A1A2 &&
+      courseProgram.getLanguage === LanguageOfStudyEnum.French
+    ) {
+      return {
+        tools: [],
+        sets: [],
+        results: [],
+        grammar: [],
+        addition: [],
+      };
+    }
+
+    if (
+      courseProgram.getFormat === FormatOfStudyEnum.TutorialWithTeacher &&
+      courseProgram.getLevel === LevelOfStudyEnum.B1 &&
+      courseProgram.getLanguage === LanguageOfStudyEnum.French
+    ) {
+      return {
+        tools: [],
+        sets: [],
+        results: [],
+        grammar: [],
+        addition: [],
+      };
+    }
+
+    // TutorialWithZlata
+    // English
+    if (
+      courseProgram.getFormat === FormatOfStudyEnum.TutorialWithZlata &&
+      courseProgram.getLevel === LevelOfStudyEnum.A1A2 &&
+      courseProgram.getLanguage === LanguageOfStudyEnum.English
+    ) {
+      return {
+        tools: [],
+        sets: [],
+        results: [],
+        grammar: [],
+        addition: [],
+      };
+    }
+
+    if (
+      courseProgram.getFormat === FormatOfStudyEnum.TutorialWithZlata &&
+      courseProgram.getLevel === LevelOfStudyEnum.B1 &&
+      courseProgram.getLanguage === LanguageOfStudyEnum.English
+    ) {
+      return {
+        tools: [],
+        sets: [],
+        results: [],
+        grammar: [],
+        addition: [],
+      };
+    }
+
+    if (
+      courseProgram.getFormat === FormatOfStudyEnum.TutorialWithZlata &&
+      courseProgram.getLevel === LevelOfStudyEnum.B2 &&
+      courseProgram.getLanguage === LanguageOfStudyEnum.English
+    ) {
+      return {
+        tools: [],
+        sets: [],
+        results: [],
+        grammar: [],
+        addition: [],
+      };
+    }
+
+    // Deutsch
+    if (
+      courseProgram.getFormat === FormatOfStudyEnum.TutorialWithZlata &&
+      courseProgram.getLevel === LevelOfStudyEnum.A1A2 &&
+      courseProgram.getLanguage === LanguageOfStudyEnum.Deutsch
+    ) {
+      return {
+        tools: [],
+        sets: [],
+        results: [],
+        grammar: [],
+        addition: [],
+      };
+    }
+
+    if (
+      courseProgram.getFormat === FormatOfStudyEnum.TutorialWithZlata &&
+      courseProgram.getLevel === LevelOfStudyEnum.B1 &&
+      courseProgram.getLanguage === LanguageOfStudyEnum.Deutsch
+    ) {
+      return {
+        tools: [],
+        sets: [],
+        results: [],
+        grammar: [],
+        addition: [],
+      };
+    }
+
+    // French
+    if (
+      courseProgram.getFormat === FormatOfStudyEnum.TutorialWithZlata &&
+      courseProgram.getLevel === LevelOfStudyEnum.A1A2 &&
+      courseProgram.getLanguage === LanguageOfStudyEnum.French
+    ) {
+      return {
+        tools: [],
+        sets: [],
+        results: [],
+        grammar: [],
+        addition: [],
+      };
+    }
+
+    if (
+      courseProgram.getFormat === FormatOfStudyEnum.TutorialWithZlata &&
+      courseProgram.getLevel === LevelOfStudyEnum.B1 &&
+      courseProgram.getLanguage === LanguageOfStudyEnum.French
+    ) {
+      return {
+        tools: [],
+        sets: [],
+        results: [],
+        grammar: [],
+        addition: [],
+      };
+    }
+
+    return {
+      tools: [],
+      sets: [],
+      results: [],
+      grammar: [],
+      addition: [],
+    };
   }
 
   return (
@@ -73,54 +422,53 @@ const CourseProgram = observer(() => {
               setter={(level: LevelOfStudyEnum) =>
                 courseProgram.setLevel(level)
               }
-              formats={[
-                { id: LevelOfStudyEnum.A1A2, prop: Props.A1A2 },
-                { id: LevelOfStudyEnum.B1, prop: Props.B1 },
-                { id: LevelOfStudyEnum.B2, prop: Props.B2 },
-              ]}
+              formats={levels}
             />
           </div>
-          <div className={styles.info}>
-            <div className={styles.infoLeft}>
-              <Describe
-                heading={Props.Grammar}
-                what={[
-                  "Времена категории Simple",
-                  "Предлоги",
-                  "Часы",
-                  "Артикли",
-                  "Степени сравнения",
-                ]}
-              />
-              <div className={styles.fake}></div>
-              <Describe
-                heading={Props.Sets}
-                what={[
-                  "Набор семья",
-                  "Набор рутина",
-                  "Набор учеба / работа",
-                  "Набор путешествия",
-                  "Набор природа",
-                ]}
-              />
+          <div className={styles.infoAddition}>
+            <div className={styles.info}>
+              <div className={styles.infoLeft}>
+                <Describe
+                  heading={Props.Grammar}
+                  what={courseProgramText.grammar}
+                />
+                <div className={styles.fake}></div>
+                <Describe heading={Props.Sets} what={courseProgramText.sets} />
+              </div>
+              <div className={styles.dash}></div>
+              <div className={styles.infoRight}>
+                <Describe
+                  heading={Props.Result}
+                  what={courseProgramText.results}
+                  isDone={true}
+                />
+                <div className={styles.fake}></div>
+                <Describe
+                  heading={Props.Tools}
+                  what={courseProgramText.tools}
+                  isDone={true}
+                />
+              </div>
+              <div className={styles.homeEducation}>
+                <img src={homeEducation} alt="home education" />
+              </div>
             </div>
-            <div className={styles.dash}></div>
-            <div className={styles.infoRight}>
-              <Describe
-                heading={Props.Result}
-                what={[
-                  "Понимание базовой грамматики",
-                  "Освоение основных тем",
-                  "Понимание основ языка",
-                ]}
-                isDone={true}
-              />
-              <div className={styles.fake}></div>
-              <Describe heading={Props.Tools} what={getTools()} isDone={true} />
-            </div>
-            <div className={styles.homeEducation}>
-              <img src={homeEducation} alt="home education" />{" "}
-            </div>
+            {courseProgramText.addition.length ? (
+              <section className={styles.addition}>
+                <h5>
+                  <TextLanguage prop={Props.Addition} />
+                </h5>
+                <ul>
+                  {courseProgramText.addition.map((item: Props) => (
+                    <li className={styles.additionItem} key={item}>
+                      <TextLanguage prop={item} />
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            ) : (
+              ""
+            )}
           </div>
         </div>
       </div>
@@ -129,3 +477,11 @@ const CourseProgram = observer(() => {
 });
 
 export default CourseProgram;
+
+export interface ICourseProgram {
+  results: Props[];
+  grammar: Props[];
+  sets: Props[];
+  tools: Props[];
+  addition: Props[];
+}

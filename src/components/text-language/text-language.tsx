@@ -151,6 +151,7 @@ const TextLanguage = observer(({ prop }: { prop: string | undefined }) => {
       GrammarComprehensionForAdvanced: "Розуміння граматики для продовжуючих",
       ConfidentSpeaking: "Впевнене говоріння",
       PerceptionOfInformationByEar: "Сприйняття інформації на слух",
+      Addition: "Доповнення",
     },
     RU: {
       AboutCourse: "О курсах",
@@ -291,6 +292,7 @@ const TextLanguage = observer(({ prop }: { prop: string | undefined }) => {
       GrammarComprehensionForAdvanced: "Понимание грамматики для продолжающих",
       ConfidentSpeaking: "Уверенное говорение",
       PerceptionOfInformationByEar: "Восприятие информации на слух",
+      Addition: "Дополнение",
     },
   };
   if (prop) {

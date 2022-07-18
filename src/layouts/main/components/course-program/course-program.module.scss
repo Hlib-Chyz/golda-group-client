@@ -9,50 +9,85 @@
       display: flex;
       margin-bottom: 32px;
     }
-
-    .info {
-      display: flex;
-      position: relative;
-
-      width: 988px;
-      min-height: 400px;
-      height: 100%;
-      padding: 60px 30px;
-
+    .infoAddition {
       background-color: white;
       box-shadow: 0px 8px 20px 4px #e3ebf9;
       border-radius: 16px;
+      padding: 60px 30px;
 
-      .infoLeft,
-      .infoRight {
-        width: 50%;
-      }
+      .info {
+        position: relative;
+        display: flex;
 
-      .dash {
-        width: 1px;
-        background-color: #4a74ba;
-        height: 100%;
-        min-height: 100px;
-      }
+        width: 988px;
 
-      .infoLeft {
-        .fake {
-          height: 50px;
+        .infoLeft,
+        .infoRight {
+          width: 50%;
+        }
+
+        .dash {
+          width: 1px;
+          background-color: #4a74ba;
+          min-height: 100px;
+        }
+
+        .infoLeft {
+          .fake {
+            height: 50px;
+          }
+        }
+
+        .infoRight {
+          padding-left: 32px;
+
+          .fake {
+            height: 50px;
+          }
+        }
+
+        .homeEducation {
+          position: absolute;
+          bottom: 0;
+          right: 0;
         }
       }
 
-      .infoRight {
-        padding-left: 32px;
-
-        .fake {
-          height: 50px;
+      .addition {
+        padding-top: 48px;
+        h5 {
+          font-weight: 600;
+          font-size: 28px;
+          color: #4a74ba;
+          padding-bottom: 24px;
         }
-      }
 
-      .homeEducation {
-        position: absolute;
-        bottom: 0;
-        right: 0;
+        ul {
+          li {
+            font-weight: 600;
+            font-size: 28px;
+            color: #0a0808;
+            padding-bottom: 24px;
+
+            display: flex;
+            align-items: center;
+
+            &:before {
+              content: "";
+              display: block;
+              width: 24px;
+              height: 24px;
+              margin-right: 18px;
+
+              background-color: rgba(255, 168, 87, 0.9);
+              border-radius: 50%;
+            }
+          }
+
+          li:last-child {
+            padding-bottom: 0;
+          }
+        }
       }
     }
   }

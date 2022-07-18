@@ -1,15 +1,11 @@
 // eslint-disable-next-line no-restricted-imports
 import styles from "../contract-offer/contract-offer.module.scss";
-import {
-  Subheading,
-  Subsubheading,
-} from "@pages/contract-offer/contract-offer";
 
 function PrivacyPolicy() {
   return (
     <section className={styles.container}>
       <h3 className={styles.heading}>Политика конфиденциальности </h3>
-      <div className={styles.dash}></div>
+      {/* <div className={styles.dash}></div>
       <Subheading text="Политика конфиденциальности " />
       <Subsubheading text="1. Основные понятия" />
       <p className={styles.text}>
@@ -207,9 +203,8 @@ function PrivacyPolicy() {
         согласия Пользователя использованы иначе, как для ответа по теме
         полученного запроса или в случаях, прямо предусмотренных
         законодательством.
-      </p>
+      </p> */}
     </section>
   );
 }
-
 export default PrivacyPolicy;

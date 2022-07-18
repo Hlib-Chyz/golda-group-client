@@ -138,6 +138,7 @@ export enum Props {
   ContractOffer = "ContractOffer",
   PrivacyPolicy = "PrivacyPolicy",
   ShippingAndPayment = "ShippingAndPayment",
+  Addition = "Addition",
 }
 
 export type PosipilityProps = keyof typeof Props;

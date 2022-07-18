@@ -9,50 +9,50 @@ function DeliveryPayment() {
       <h3 className={styles.heading}>Оплата. Доставка.</h3>
       <div className={styles.dash}></div>
       <Subheading text="Оплата. Доставка." />
-      <p className={stylesCurrent.text}>Уважаемые клиенты.</p>
+      <p className={stylesCurrent.text}>Шановні клієнти.</p>
       <p className={stylesCurrent.text}>
-        Отправка осуществляется в течение 1-2 рабочих дней с момента обработки
-        заказа. Заказы отправляются по электронному адресу или Telegram.
+        Відправлення здійснюється протягом 1-2 робочих днів з моменту обробки
+        замовлення. Замовлення надсилаються на електронну адресу або Telegram.
       </p>
-      <p className={stylesCurrent.text}>Товар отправляем по полной оплате.</p>
-      <p className={stylesCurrent.text}>Внимание.</p>
-      <p className={stylesCurrent.text}>Способы оплаты:</p>
+      <p className={stylesCurrent.text}>Товар відправляємо на повну оплату.</p>
+      <p className={stylesCurrent.text}>Увага.</p>
+      <p className={stylesCurrent.text}>Спосіб оплати:</p>
       <p className={stylesCurrent.text}>
-        1. Банковский перевод - оплата стоимости на карту MonoBank;
-      </p>
-      <p className={stylesCurrent.text}>
-        2. Оплата через LiqPay - быстрые и безопасные платежи;
+        1. Банківський переказ – оплата вартості на картку MonoBank;
       </p>
       <p className={stylesCurrent.text}>
-        - Все отправки заказов осуществляется только после полной оплаты.
-      </p>
-      <p className={stylesCurrent.text}>Обработка заказов</p>
-      <p className={stylesCurrent.text}>
-        Отправка заказов осуществляется в сроки от одного до двух рабочих дней с
-        момента оформления заказа.
+        2. Оплата через LiqPay - швидкі та безпечні платежі;
       </p>
       <p className={stylesCurrent.text}>
-        Рабочие дни - понедельник - пятница - 09:00 - 18:30 выходные: суббота и
-        воскресенье.
+        - Усі відправлення замовлень здійснюється лише після повної оплати.
+      </p>
+      <p className={stylesCurrent.text}>Обробка замовлень</p>
+      <p className={stylesCurrent.text}>
+        Відправка замовлень здійснюється у строки від одного до двох робочих
+        днів з моменту оформлення замовлення.
+      </p>
+      <p className={stylesCurrent.text}>
+        Робочі дні - понеділок - п'ятниця - 09:00 - 18:30 вихідні: субота та
+        Неділя.
       </p>
       <p className={stylesCurrent.text}>Доставка</p>
-      <p className={stylesCurrent.text}>Доставка бесплатно по gmail.</p>
+      <p className={stylesCurrent.text}>Доставка безкоштовно по gmail.</p>
       <p className={stylesCurrent.text}>
-        Время доставки - от одного до двух рабочих дней
+        Час доставки – від одного до двох робочих днів
       </p>
       <p className={stylesCurrent.text}>
-        Обратить внимание! С целью более корректного и быстрого оформления
-        Вашего заказа
+        Звернути увагу! З метою більш коректного та швидкого оформлення Вашого
+        замовлення
       </p>
       <p className={stylesCurrent.text}>
-        звоните в рабочее время по телефонам:
+        дзвоніть у робочий час за телефонами:
       </p>
       <p className={stylesCurrent.text}>+38 (066) 652 59 58.</p>
       <p className={stylesCurrent.text}>
-        По отзывов и предложений звонить по телефону: +38 (066) 652 59 58
+        За відгуками та пропозиціями дзвонити за телефоном: +38 (066) 652 59 58
       </p>
-      <p className={stylesCurrent.text}>ВОЗВРАТ И ОБМЕН</p>
-      <p className={stylesCurrent.text}>Товар возврату не подлежит.</p>
+      <p className={stylesCurrent.text}>ПОВЕРНЕННЯ ТА ОБМІН</p>
+      <p className={stylesCurrent.text}>Товар поверненню не підлягає.</p>
     </section>
   );
 }

@@ -9,7 +9,7 @@ function Describe({
   isDone,
 }: {
   heading: Props;
-  what: string[];
+  what: Props[];
   isDone?: boolean;
 }) {
   return (
@@ -18,9 +18,9 @@ function Describe({
         <TextLanguage prop={heading} />
       </h3>
       <ul>
-        {what.map((item: string) => (
+        {what.map((item: Props) => (
           <li className={isDone ? styles.done : ""} key={item}>
-            {item}
+            <TextLanguage prop={item} />
           </li>
         ))}
       </ul>

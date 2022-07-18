@@ -44,10 +44,40 @@ function ModalChooseTariff({
 
   const [level, setLevel] = useState<LevelOfStudyEnum>(LevelOfStudyEnum.A1A2);
 
+  const [levels, setLevels] = useState<{ id: LevelOfStudyEnum; prop: Props }[]>(
+    [
+      { id: LevelOfStudyEnum.A1A2, prop: Props.A1A2 },
+      { id: LevelOfStudyEnum.B1, prop: Props.B1 },
+      { id: LevelOfStudyEnum.B2, prop: Props.B2 },
+    ]
+  );
+
   useEffect(() => {
     setIsOpen(isOpen);
     setFormat(formatProp);
   }, [isOpen, formatProp]);
+
+  useEffect(() => {
+    if (
+      [LanguageOfStudyEnum.Deutsch, LanguageOfStudyEnum.French].includes(
+        language
+      )
+    ) {
+      if (level === LevelOfStudyEnum.B2) {
+        setLevel(LevelOfStudyEnum.B1);
+      }
+      setLevels([
+        { id: LevelOfStudyEnum.A1A2, prop: Props.A1A2 },
+        { id: LevelOfStudyEnum.B1, prop: Props.B1 },
+      ]);
+    } else {
+      setLevels([
+        { id: LevelOfStudyEnum.A1A2, prop: Props.A1A2 },
+        { id: LevelOfStudyEnum.B1, prop: Props.B1 },
+        { id: LevelOfStudyEnum.B2, prop: Props.B2 },
+      ]);
+    }
+  }, [language]);
 
   function closeModal(): void {
     setIsOpen(false);
@@ -86,11 +116,7 @@ function ModalChooseTariff({
         <Dropdown
           prop={Props[level]}
           setter={(level: LevelOfStudyEnum) => setLevel(level)}
-          formats={[
-            { id: LevelOfStudyEnum.A1A2, prop: Props.A1A2 },
-            { id: LevelOfStudyEnum.B1, prop: Props.B1 },
-            { id: LevelOfStudyEnum.B2, prop: Props.B2 },
-          ]}
+          formats={levels}
         />
         <NavLink to="/orderForm">
           <Button onClick={() => submitForm()} text={Props.StartLearning} />
