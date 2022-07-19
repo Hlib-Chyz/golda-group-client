@@ -1,3 +1,5 @@
+// eslint-disable-next-line no-restricted-imports
+import styles from "./modal-choose-tariff.module.scss";
 import Button from "@components/button/button";
 import Dropdown from "@components/dropdown/dropdown";
 import {
@@ -10,6 +12,7 @@ import { Context } from "index";
 import { useContext, useEffect, useState } from "react";
 import Modal from "react-modal";
 import { NavLink } from "react-router-dom";
+import cross from "@assets/images/cross.svg";
 
 const customStyles = {
   content: {
@@ -19,7 +22,10 @@ const customStyles = {
     bottom: "auto",
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
-    height: "500px",
+    borderRadius: "32px",
+    backgroundColor: "#E1F5FF",
+    border: "none",
+    padding: "64px",
   },
 };
 
@@ -52,9 +58,20 @@ function ModalChooseTariff({
     ]
   );
 
+  const [languages, setLanguages] = useState<
+    { id: LanguageOfStudyEnum; prop: Props }[]
+  >([
+    { id: LanguageOfStudyEnum.English, prop: Props.English },
+    { id: LanguageOfStudyEnum.Deutsch, prop: Props.Deutsch },
+    { id: LanguageOfStudyEnum.French, prop: Props.French },
+  ]);
+
   useEffect(() => {
     setIsOpen(isOpen);
     setFormat(formatProp);
+    if (formatProp === FormatOfStudyEnum.TutorialWithZlata) {
+      setLanguages([{ id: LanguageOfStudyEnum.English, prop: Props.English }]);
+    }
   }, [isOpen, formatProp]);
 
   useEffect(() => {
@@ -101,29 +118,91 @@ function ModalChooseTariff({
       contentLabel="Example Modal"
       appElement={document.getElementById("root") || undefined}
     >
-      <h2>Какой язык и уровень изволите?</h2>
-      <button onClick={closeModal}>крестик закрытия</button>
-      <form>
-        <Dropdown
-          prop={Props[language]}
-          setter={(language: LanguageOfStudyEnum) => setLanguage(language)}
-          formats={[
-            { id: LanguageOfStudyEnum.English, prop: Props.English },
-            { id: LanguageOfStudyEnum.Deutsch, prop: Props.Deutsch },
-            { id: LanguageOfStudyEnum.French, prop: Props.French },
-          ]}
-        />
-        <Dropdown
-          prop={Props[level]}
-          setter={(level: LevelOfStudyEnum) => setLevel(level)}
-          formats={levels}
-        />
-        <NavLink to="/orderForm">
-          <Button onClick={() => submitForm()} text={Props.StartLearning} />
-        </NavLink>
-      </form>
+      <button className={styles.cross} onClick={closeModal}>
+        <img src={cross} alt="cross" />
+      </button>
+      <div className={styles.container}>
+        <form>
+          <div className={styles.item}>
+            <label className={styles.label}>
+              <p>Яку мову бажаєте ?</p>
+            </label>
+            <Dropdown
+              prop={Props[language]}
+              setter={(language: LanguageOfStudyEnum) => setLanguage(language)}
+              formats={languages}
+              backgroundColor="white"
+              padding="26px 36px"
+              width="353px"
+              marginItem="6px 0"
+              colorText="#080808"
+            />
+          </div>
+          <div className={styles.item}>
+            <label className={styles.label}>
+              <p>Який рівень бажаєте ?</p>
+            </label>
+            <Dropdown
+              prop={Props[level]}
+              setter={(level: LevelOfStudyEnum) => setLevel(level)}
+              formats={levels}
+              backgroundColor="white"
+              padding="26px 36px"
+              width="353px"
+              marginItem="6px 0"
+              colorText="#080808"
+            />
+          </div>
+          <div style={{ textAlign: "center" }}>
+            <NavLink to="/orderForm">
+              <Button
+                customStyle={{
+                  width: "225px",
+                  height: "70px",
+                  fontWeight: "600",
+                  fontSize: "16px",
+                  lineHeight: "20px",
+                  color: "#0A0808",
+                  padding: "0",
+                  marginBottom: "73px",
+                }}
+                onClick={() => submitForm()}
+                text={Props.StartLearning}
+              />
+            </NavLink>
+          </div>
+          <CheckboxWithLabel
+            text="Я погоджуюсь з умовами договору - оферти"
+            id="1"
+            customStyle={{
+              marginBottom: "32px",
+            }}
+          />
+          <CheckboxWithLabel
+            text="Я погоджуюсь з умовами політики конфіденційності"
+            id="2"
+          />
+        </form>
+      </div>
     </Modal>
   );
 }
 
 export default ModalChooseTariff;
+
+function CheckboxWithLabel({
+  id,
+  text,
+  customStyle,
+}: {
+  id: string;
+  text: string;
+  customStyle?: { [key: string]: string };
+}) {
+  return (
+    <div className={styles.checkboxWithLabel} style={customStyle}>
+      <input id={id} type="checkbox" />
+      <label htmlFor={id}>{text}</label>
+    </div>
+  );
+}

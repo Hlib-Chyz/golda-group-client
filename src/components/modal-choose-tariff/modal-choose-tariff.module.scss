@@ -1,0 +1,59 @@
+.container {
+  form {
+    .item {
+      padding-bottom: 55px;
+      .label {
+        color: #0a0808;
+        font-weight: 600;
+        font-size: 20px;
+        p {
+          padding-bottom: 16px;
+        }
+      }
+    }
+  }
+}
+
+.cross {
+  position: absolute;
+  right: 48px;
+  top: 39px;
+}
+
+.checkboxWithLabel {
+  input {
+    width: 0;
+    height: 0;
+  }
+
+  input:checked ~ label {
+    &:before {
+      background-color: #4a74ba;
+      background-image: url("/assets/images/checked.svg");
+      background-size: 8px 6px;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+  }
+
+  input ~ label {
+    position: relative;
+    font-weight: 600;
+    font-size: 16px;
+    color: #080808;
+    cursor: pointer;
+    padding-left: 26px;
+    &:before {
+      position: absolute;
+      cursor: pointer;
+      top: 2px;
+      left: 0;
+      content: "";
+      display: block;
+      border: 1px solid #4a74ba;
+      border-radius: 2px;
+      width: 16px;
+      height: 16px;
+    }
+  }
+}

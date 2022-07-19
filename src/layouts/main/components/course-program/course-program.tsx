@@ -71,10 +71,26 @@ const CourseProgram = observer(() => {
       courseProgram.getLanguage === LanguageOfStudyEnum.English
     ) {
       return {
-        tools: [Props.AboutGoalOfProject],
-        sets: [Props.AboutGoalOfProject],
-        results: [Props.AboutGoalOfProject],
-        grammar: [Props.AboutGoalOfProject],
+        tools: [Props.OurTextbook],
+        sets: [
+          Props.FamilySet,
+          Props.RoutineSet,
+          Props.RecruitmentStudyWork,
+          Props.TravelSet,
+          Props.NatureSet,
+        ],
+        results: [
+          Props.BasicVocabulary,
+          Props.MakingSimpleSentences,
+          Props.BasicCommunicationSkill,
+        ],
+        grammar: [
+          Props.SimpleTenses,
+          Props.Prepositions,
+          Props.Watch,
+          Props.Articles,
+          Props.DegreesOfComparison,
+        ],
         addition: [
           Props.PhoneCallWithTeacher2x,
           Props.PhoneCallWithTeacher2x,

@@ -139,6 +139,9 @@ export enum Props {
   PrivacyPolicy = "PrivacyPolicy",
   ShippingAndPayment = "ShippingAndPayment",
   Addition = "Addition",
+  BasicVocabulary = "BasicVocabulary",
+  MakingSimpleSentences = "MakingSimpleSentences",
+  BasicCommunicationSkill = "BasicCommunicationSkill",
 }
 
 export type PosipilityProps = keyof typeof Props;

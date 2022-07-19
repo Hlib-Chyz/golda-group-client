@@ -10,11 +10,19 @@ function Dropdown({
   formats,
   setter,
   width = "200px",
+  backgroundColor,
+  padding,
+  marginItem,
+  colorText,
 }: {
   prop: Props;
   setter: Function;
   formats: IDropdown[];
   width?: string;
+  backgroundColor?: string;
+  padding?: string;
+  marginItem?: string;
+  colorText?: string;
 }) {
   const [isOpen, setOpen] = useState<boolean>(false);
 
@@ -42,7 +50,7 @@ function Dropdown({
     <div className={styles.container}>
       <div ref={lungeRef}>
         <div
-          style={{ width }}
+          style={{ width, backgroundColor, padding, color: colorText }}
           onClick={() => setOpen(!isOpen)}
           className={styles.dropdown}
         >
@@ -60,6 +68,9 @@ function Dropdown({
         <div
           style={{
             display: isOpen ? "block" : "none",
+            backgroundColor,
+            padding,
+            color: colorText,
           }}
           className={styles.items}
         >
@@ -71,6 +82,7 @@ function Dropdown({
                   ? styles.item + " " + styles.active
                   : styles.item
               }
+              style={{ margin: marginItem }}
               key={item.id}
             >
               <TextLanguage prop={item.prop} />

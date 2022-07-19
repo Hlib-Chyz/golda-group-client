@@ -152,6 +152,9 @@ const TextLanguage = observer(({ prop }: { prop: string | undefined }) => {
       ConfidentSpeaking: "Впевнене говоріння",
       PerceptionOfInformationByEar: "Сприйняття інформації на слух",
       Addition: "Доповнення",
+      BasicVocabulary: "Базовий словниковий запас",
+      MakingSimpleSentences: "Складання простих речень",
+      BasicCommunicationSkill: "Навичка основної комунікації",
     },
     RU: {
       AboutCourse: "О курсах",
@@ -293,6 +296,9 @@ const TextLanguage = observer(({ prop }: { prop: string | undefined }) => {
       ConfidentSpeaking: "Уверенное говорение",
       PerceptionOfInformationByEar: "Восприятие информации на слух",
       Addition: "Дополнение",
+      BasicVocabulary: "Базовый словарный запас",
+      MakingSimpleSentences: "Составление простых предложений",
+      BasicCommunicationSkill: "Навык основной коммуникации",
     },
   };
   if (prop) {
