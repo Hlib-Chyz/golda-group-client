@@ -101,10 +101,28 @@ const CourseProgram = observer(() => {
       courseProgram.getLanguage === LanguageOfStudyEnum.English
     ) {
       return {
-        tools: [Props.PassiveVoice],
-        sets: [Props.PassiveVoice],
-        results: [Props.PassiveVoice],
-        grammar: [Props.PassiveVoice],
+        tools: [Props.OurTextbook],
+        sets: [
+          Props.FoodAndHealthSet,
+          Props.TourismSet,
+          Props.RecruitmentStudyWork,
+          Props.SocialNetworksSet,
+          Props.BookMovieSet,
+        ],
+        results: [
+          Props.GrammarKnowledgeForAdvanced,
+          Props.AdvancedVocabulary,
+          Props.ListeningComprehension,
+          Props.AbilityToHoldConversation,
+          Props.PartialUnderstandingOfFilmsAndBooksInTheOriginal,
+        ],
+        grammar: [
+          Props.TwelveBasicTimes,
+          Props.ModalVerbs,
+          Props.ConditionalSentences1and2levels,
+          Props.Gerund,
+          Props.PassiveVoice,
+        ],
         addition: [],
       };
     }
@@ -115,10 +133,29 @@ const CourseProgram = observer(() => {
       courseProgram.getLanguage === LanguageOfStudyEnum.English
     ) {
       return {
-        tools: [Props.PassiveVoice],
-        sets: [Props.PassiveVoice],
-        results: [Props.PassiveVoice],
-        grammar: [Props.PassiveVoice],
+        tools: [Props.OurTextbook],
+        sets: [
+          Props.BodyAndFeelingsSet,
+          Props.SetStory,
+          Props.RecruitmentStudyWork,
+          Props.EnvironmentSet,
+          Props.SocietyProblemSet,
+        ],
+        results: [
+          Props.AdvancedGrammarKnowledge,
+          Props.AdvancedVocabulary,
+          Props.WatchingMoviesAndReadingBooksInTheOriginal,
+          Props.ListeningToTheSpeakersSpeech,
+          Props.AbilityToHoldConversation,
+          Props.FreeWordingAndExpressionOfThought,
+        ],
+        grammar: [
+          Props.ConditionalSentencesAllLevels,
+          Props.TurnoversIwishIfOnly,
+          Props.DirectAndIndirectSpeech,
+          Props.ComplexObject,
+          Props.ComplexSubject,
+        ],
         addition: [],
       };
     }
@@ -130,10 +167,30 @@ const CourseProgram = observer(() => {
       courseProgram.getLanguage === LanguageOfStudyEnum.Deutsch
     ) {
       return {
-        tools: [Props.AboutUs2],
-        sets: [Props.AboutUs2],
-        results: [Props.AboutUs2],
-        grammar: [Props.AboutUs2],
+        tools: [Props.OurTextbook],
+        sets: [
+          Props.AcquaintanceSet,
+          Props.FamilySet,
+          Props.RecruitmentStudyWork,
+          Props.HobbySet,
+          Props.FriendshipSet,
+          Props.NatureSet,
+          Props.HealthSet,
+        ],
+        results: [
+          Props.BasicVocabulary,
+          Props.SimpleTenses,
+          Props.BasicCommunicationSkill,
+        ],
+        grammar: [
+          Props.SoundsAndDiphthongs,
+          Props.Articles,
+          Props.ConjugationOfVerbs,
+          Props.PrepositionsAndAdverbs,
+          Props.DegreesOfComparison,
+          Props.VerbsWithPrefixes,
+          Props.ModalVerbs,
+        ],
         addition: [],
       };
     }
@@ -144,10 +201,31 @@ const CourseProgram = observer(() => {
       courseProgram.getLanguage === LanguageOfStudyEnum.Deutsch
     ) {
       return {
-        tools: [Props.AboutUs3],
-        sets: [Props.AboutUs3],
-        results: [Props.AboutUs3],
-        grammar: [Props.AboutUs3],
+        tools: [Props.OurTextbook],
+        sets: [
+          Props.TravelSet,
+          Props.BookMovieSet,
+          Props.RecruitmentStudyWork,
+          Props.NatureSet,
+          Props.ArtSet,
+        ],
+        results: [
+          Props.GrammarKnowledgeForAdvanced,
+          Props.AdvancedVocabulary,
+          Props.ListeningComprehension,
+          Props.AbilityToHoldConversation,
+          Props.PartialUnderstandingOfFilmsAndBooksInTheOriginal,
+        ],
+        grammar: [
+          Props.FutureTime,
+          Props.Unions,
+          Props.PronounDeclensions,
+          Props.PastTense,
+          Props.ConditionalClausesSuggestions,
+          Props.AdverbialClausesOfTheCorollary,
+          Props.ZuinfinitivConstruction,
+          Props.RelativeClauses,
+        ],
         addition: [],
       };
     }
@@ -159,10 +237,29 @@ const CourseProgram = observer(() => {
       courseProgram.getLanguage === LanguageOfStudyEnum.French
     ) {
       return {
-        tools: [],
-        sets: [],
-        results: [],
-        grammar: [],
+        tools: [Props.OurTextbook],
+        sets: [
+          Props.SetAboutMe,
+          Props.RoutineSet,
+          Props.RecruitmentStudyWork,
+          Props.TravelSet,
+          Props.NatureSet,
+          Props.FamilySet,
+        ],
+        results: [
+          Props.BasicVocabulary,
+          Props.MakingSimpleSentences,
+          Props.BasicCommunicationSkill,
+        ],
+
+        grammar: [
+          Props.SoundsAndTheirPronunciation,
+          Props.Articles,
+          Props.Childbirth,
+          Props.PresentTense,
+          Props.FutureTime,
+          Props.Prepositions,
+        ],
         addition: [],
       };
     }
@@ -173,10 +270,28 @@ const CourseProgram = observer(() => {
       courseProgram.getLanguage === LanguageOfStudyEnum.French
     ) {
       return {
-        tools: [],
-        sets: [],
-        results: [],
-        grammar: [],
+        tools: [Props.OurTextbook],
+        sets: [
+          Props.AppearanceCharacter,
+          Props.SportsSet,
+          Props.RecruitmentStudyWork,
+          Props.EnvironmentSet,
+          Props.ArtSet,
+          Props.TravelSet,
+        ],
+        results: [
+          Props.GrammarKnowledgeForAdvanced,
+          Props.AdvancedVocabulary,
+          Props.ListeningComprehension,
+          Props.PartialUnderstandingOfFilmsAndBooksInTheOriginal,
+        ],
+        grammar: [
+          Props.PastTenses,
+          Props.RelativePronouns,
+          Props.PassiveFormOfTheVerb,
+          Props.FutureTime,
+          Props.ConditionalMoods,
+        ],
         addition: [],
       };
     }
@@ -189,10 +304,28 @@ const CourseProgram = observer(() => {
       courseProgram.getLanguage === LanguageOfStudyEnum.English
     ) {
       return {
-        tools: [],
-        sets: [],
-        results: [],
-        grammar: [],
+        tools: [Props.OurTextbook, Props.Teacher],
+        sets: [
+          Props.FamilySet,
+          Props.RoutineSet,
+          Props.RecruitmentStudyWork,
+          Props.TravelSet,
+          Props.NatureSet,
+        ],
+        results: [
+          Props.BasicVocabulary,
+          Props.MakingSimpleSentences,
+          Props.BasicCommunicationSkill,
+          Props.PartialListeningComprehension,
+          Props.FormulationOfThought,
+        ],
+        grammar: [
+          Props.SimpleTenses,
+          Props.Prepositions,
+          Props.Watch,
+          Props.Articles,
+          Props.DegreesOfComparison,
+        ],
         addition: [],
       };
     }
@@ -203,24 +336,28 @@ const CourseProgram = observer(() => {
       courseProgram.getLanguage === LanguageOfStudyEnum.English
     ) {
       return {
-        tools: [],
-        sets: [],
-        results: [],
-        grammar: [],
-        addition: [],
-      };
-    }
-
-    if (
-      courseProgram.getFormat === FormatOfStudyEnum.TutorialWithTeacher &&
-      courseProgram.getLevel === LevelOfStudyEnum.B2 &&
-      courseProgram.getLanguage === LanguageOfStudyEnum.English
-    ) {
-      return {
-        tools: [],
-        sets: [],
-        results: [],
-        grammar: [],
+        tools: [Props.OurTextbook, Props.Teacher],
+        sets: [
+          Props.FamilySet,
+          Props.RoutineSet,
+          Props.RecruitmentStudyWork,
+          Props.TravelSet,
+          Props.NatureSet,
+        ],
+        results: [
+          Props.GrammarKnowledgeForAdvanced,
+          Props.AdvancedVocabulary,
+          Props.ListeningToTheSpeakersSpeech,
+          Props.AbilityToHoldConversation,
+          Props.PartialUnderstandingOfFilmsAndBooksInTheOriginal,
+        ],
+        grammar: [
+          Props.TwelveBasicTimes,
+          Props.ModalVerbs,
+          Props.ConditionalSentences1and2levels,
+          Props.Gerund,
+          Props.PassiveVoice,
+        ],
         addition: [],
       };
     }
@@ -232,10 +369,32 @@ const CourseProgram = observer(() => {
       courseProgram.getLanguage === LanguageOfStudyEnum.Deutsch
     ) {
       return {
-        tools: [],
-        sets: [],
-        results: [],
-        grammar: [],
+        tools: [Props.OurTextbook, Props.Teacher],
+        sets: [
+          Props.AcquaintanceSet,
+          Props.FamilySet,
+          Props.RecruitmentStudyWork,
+          Props.HobbySet,
+          Props.FriendshipSet,
+          Props.NatureSet,
+          Props.HealthSet,
+        ],
+        results: [
+          Props.BasicVocabulary,
+          Props.SimpleTenses,
+          Props.BasicCommunicationSkill,
+          Props.PartialListeningComprehension,
+          Props.FormulationOfThought,
+        ],
+        grammar: [
+          Props.SoundsAndDiphthongs,
+          Props.Articles,
+          Props.ConjugationOfVerbs,
+          Props.PrepositionsAndAdverbs,
+          Props.DegreesOfComparison,
+          Props.VerbsWithPrefixes,
+          Props.ModalVerbs,
+        ],
         addition: [],
       };
     }
@@ -246,10 +405,31 @@ const CourseProgram = observer(() => {
       courseProgram.getLanguage === LanguageOfStudyEnum.Deutsch
     ) {
       return {
-        tools: [],
-        sets: [],
-        results: [],
-        grammar: [],
+        tools: [Props.OurTextbook, Props.Teacher],
+        sets: [
+          Props.TravelSet,
+          Props.BookMovieSet,
+          Props.RecruitmentStudyWork,
+          Props.NatureSet,
+          Props.ArtSet,
+        ],
+        results: [
+          Props.GrammarKnowledgeForAdvanced,
+          Props.AdvancedVocabulary,
+          Props.ListeningComprehension,
+          Props.AbilityToHoldConversation,
+          Props.PartialUnderstandingOfFilmsAndBooksInTheOriginal,
+        ],
+        grammar: [
+          Props.FutureTime,
+          Props.Unions,
+          Props.PronounDeclensions,
+          Props.PastTense,
+          Props.ConditionalClausesSuggestions,
+          Props.AdverbialClausesOfTheCorollary,
+          Props.ZuinfinitivConstruction,
+          Props.RelativeClauses,
+        ],
         addition: [],
       };
     }
@@ -261,10 +441,31 @@ const CourseProgram = observer(() => {
       courseProgram.getLanguage === LanguageOfStudyEnum.French
     ) {
       return {
-        tools: [],
-        sets: [],
-        results: [],
-        grammar: [],
+        tools: [Props.OurTextbook, Props.Teacher],
+        sets: [
+          Props.SetAboutMe,
+          Props.RoutineSet,
+          Props.RecruitmentStudyWork,
+          Props.TravelSet,
+          Props.NatureSet,
+          Props.FamilySet,
+        ],
+        results: [
+          Props.BasicVocabulary,
+          Props.MakingSimpleSentences,
+          Props.BasicCommunicationSkill,
+          Props.PartialListeningComprehension,
+          Props.FormulationOfThought,
+        ],
+
+        grammar: [
+          Props.SoundsAndTheirPronunciation,
+          Props.Articles,
+          Props.Childbirth,
+          Props.PresentTense,
+          Props.FutureTime,
+          Props.Prepositions,
+        ],
         addition: [],
       };
     }
@@ -275,10 +476,29 @@ const CourseProgram = observer(() => {
       courseProgram.getLanguage === LanguageOfStudyEnum.French
     ) {
       return {
-        tools: [],
-        sets: [],
-        results: [],
-        grammar: [],
+        tools: [Props.OurTextbook, Props.Teacher],
+        sets: [
+          Props.AppearanceCharacter,
+          Props.SportsSet,
+          Props.RecruitmentStudyWork,
+          Props.EnvironmentSet,
+          Props.ArtSet,
+          Props.TravelSet,
+        ],
+        results: [
+          Props.GrammarKnowledgeForAdvanced,
+          Props.AdvancedVocabulary,
+          Props.ListeningComprehension,
+          Props.PartialUnderstandingOfFilmsAndBooksInTheOriginal,
+          Props.AbilityToHoldConversation,
+        ],
+        grammar: [
+          Props.PastTenses,
+          Props.RelativePronouns,
+          Props.PassiveFormOfTheVerb,
+          Props.FutureTime,
+          Props.ConditionalMoods,
+        ],
         addition: [],
       };
     }
@@ -291,10 +511,28 @@ const CourseProgram = observer(() => {
       courseProgram.getLanguage === LanguageOfStudyEnum.English
     ) {
       return {
-        tools: [],
-        sets: [],
-        results: [],
-        grammar: [],
+        tools: [Props.OurTextbook, Props.Teacher],
+        sets: [
+          Props.FamilySet,
+          Props.RoutineSet,
+          Props.RecruitmentStudyWork,
+          Props.TravelSet,
+          Props.NatureSet,
+        ],
+        results: [
+          Props.BasicVocabulary,
+          Props.MakingSimpleSentences,
+          Props.BasicCommunicationSkill,
+          Props.PartialListeningComprehension,
+          Props.FormulationOfThought,
+        ],
+        grammar: [
+          Props.SimpleTenses,
+          Props.Prepositions,
+          Props.Watch,
+          Props.Articles,
+          Props.DegreesOfComparison,
+        ],
         addition: [],
       };
     }
@@ -305,10 +543,28 @@ const CourseProgram = observer(() => {
       courseProgram.getLanguage === LanguageOfStudyEnum.English
     ) {
       return {
-        tools: [],
-        sets: [],
-        results: [],
-        grammar: [],
+        tools: [Props.OurTextbook, Props.Teacher],
+        sets: [
+          Props.FamilySet,
+          Props.RoutineSet,
+          Props.RecruitmentStudyWork,
+          Props.TravelSet,
+          Props.NatureSet,
+        ],
+        results: [
+          Props.GrammarKnowledgeForAdvanced,
+          Props.AdvancedVocabulary,
+          Props.ListeningToTheSpeakersSpeech,
+          Props.AbilityToHoldConversation,
+          Props.PartialUnderstandingOfFilmsAndBooksInTheOriginal,
+        ],
+        grammar: [
+          Props.TwelveBasicTimes,
+          Props.ModalVerbs,
+          Props.ConditionalSentences1and2levels,
+          Props.Gerund,
+          Props.PassiveVoice,
+        ],
         addition: [],
       };
     }
@@ -319,68 +575,29 @@ const CourseProgram = observer(() => {
       courseProgram.getLanguage === LanguageOfStudyEnum.English
     ) {
       return {
-        tools: [],
-        sets: [],
-        results: [],
-        grammar: [],
-        addition: [],
-      };
-    }
-
-    // Deutsch
-    if (
-      courseProgram.getFormat === FormatOfStudyEnum.TutorialWithZlata &&
-      courseProgram.getLevel === LevelOfStudyEnum.A1A2 &&
-      courseProgram.getLanguage === LanguageOfStudyEnum.Deutsch
-    ) {
-      return {
-        tools: [],
-        sets: [],
-        results: [],
-        grammar: [],
-        addition: [],
-      };
-    }
-
-    if (
-      courseProgram.getFormat === FormatOfStudyEnum.TutorialWithZlata &&
-      courseProgram.getLevel === LevelOfStudyEnum.B1 &&
-      courseProgram.getLanguage === LanguageOfStudyEnum.Deutsch
-    ) {
-      return {
-        tools: [],
-        sets: [],
-        results: [],
-        grammar: [],
-        addition: [],
-      };
-    }
-
-    // French
-    if (
-      courseProgram.getFormat === FormatOfStudyEnum.TutorialWithZlata &&
-      courseProgram.getLevel === LevelOfStudyEnum.A1A2 &&
-      courseProgram.getLanguage === LanguageOfStudyEnum.French
-    ) {
-      return {
-        tools: [],
-        sets: [],
-        results: [],
-        grammar: [],
-        addition: [],
-      };
-    }
-
-    if (
-      courseProgram.getFormat === FormatOfStudyEnum.TutorialWithZlata &&
-      courseProgram.getLevel === LevelOfStudyEnum.B1 &&
-      courseProgram.getLanguage === LanguageOfStudyEnum.French
-    ) {
-      return {
-        tools: [],
-        sets: [],
-        results: [],
-        grammar: [],
+        tools: [Props.OurTextbook, Props.Teacher],
+        sets: [
+          Props.BodyAndFeelingsSet,
+          Props.SetStory,
+          Props.RecruitmentStudyWork,
+          Props.EnvironmentSet,
+          Props.SocietyProblemSet,
+        ],
+        results: [
+          Props.AdvancedGrammarKnowledge,
+          Props.AdvancedVocabulary,
+          Props.WatchingMoviesAndReadingBooksInTheOriginal,
+          Props.ListeningToTheSpeakersSpeech,
+          Props.AbilityToHoldConversation,
+          Props.FreeWordingAndExpressionOfThought,
+        ],
+        grammar: [
+          Props.ConditionalSentencesAllLevels,
+          Props.TurnoversIwishIfOnly,
+          Props.DirectAndIndirectSpeech,
+          Props.ComplexObject,
+          Props.ComplexSubject,
+        ],
         addition: [],
       };
     }

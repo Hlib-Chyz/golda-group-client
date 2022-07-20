@@ -155,6 +155,23 @@ const TextLanguage = observer(({ prop }: { prop: string | undefined }) => {
       BasicVocabulary: "Базовий словниковий запас",
       MakingSimpleSentences: "Складання простих речень",
       BasicCommunicationSkill: "Навичка основної комунікації",
+      GrammarKnowledgeForAdvanced: "Граматичні знання для продовжуючих",
+      AdvancedVocabulary: "Словниковий запас просунутого рівня",
+      ListeningComprehension: "Сприйняття мови на слух",
+      AbilityToHoldConversation: "Здатність підтримати розмову",
+      PartialUnderstandingOfFilmsAndBooksInTheOriginal:
+        "Часткове розуміння фільмів та книг в оригіналі",
+      AdvancedGrammarKnowledge: "Поглиблені граматичні знання",
+      WatchingMoviesAndReadingBooksInTheOriginal:
+        "Перегляд фільмів та читання книг в оригіналі",
+      ListeningToTheSpeakersSpeech: "Сприйняття мови носія на слух",
+      AbilityToCarryOnAConversationWithANativeSpeaker:
+        "Здатність підтримати розмову з носієм",
+      FreeWordingAndExpressionOfThought:
+        "Вільне формулювання та вираження думки",
+      Teacher: "Викладач",
+      PartialListeningComprehension: "Часткове сприйняття на слух",
+      FormulationOfThought: "Формулювання думки",
     },
     RU: {
       AboutCourse: "О курсах",
@@ -299,6 +316,23 @@ const TextLanguage = observer(({ prop }: { prop: string | undefined }) => {
       BasicVocabulary: "Базовый словарный запас",
       MakingSimpleSentences: "Составление простых предложений",
       BasicCommunicationSkill: "Навык основной коммуникации",
+      GrammarKnowledgeForAdvanced: "Грамматические знания для продолжающих",
+      AdvancedVocabulary: "Словарный запас продвинутого уровня",
+      ListeningComprehension: "Восприятие речи на слух",
+      AbilityToHoldConversation: "Способность поддержать разговор",
+      PartialUnderstandingOfFilmsAndBooksInTheOriginal:
+        "Частичное понимание фильмов и книг в оригинале",
+      AdvancedGrammarKnowledge: "Углубленные грамматические знания",
+      WatchingMoviesAndReadingBooksInTheOriginal:
+        "Просмотр фильмов и чтение книг в оригинале",
+      ListeningToTheSpeakersSpeech: "Восприятие речи носителя на слух",
+      AbilityToCarryOnAConversationWithANativeSpeaker:
+        "Способность поддержать разговор с носителем",
+      FreeWordingAndExpressionOfThought:
+        "Свободная формулировка и выражение мысли",
+      Teacher: "Преподаватель",
+      PartialListeningComprehension: "Частичное восприятие на слух",
+      FormulationOfThought: "Формулирование мысли",
     },
   };
   if (prop) {

@@ -142,6 +142,19 @@ export enum Props {
   BasicVocabulary = "BasicVocabulary",
   MakingSimpleSentences = "MakingSimpleSentences",
   BasicCommunicationSkill = "BasicCommunicationSkill",
+  GrammarKnowledgeForAdvanced = "GrammarKnowledgeForAdvanced",
+  AdvancedVocabulary = "AdvancedVocabulary",
+  ListeningComprehension = "ListeningComprehension",
+  AbilityToHoldConversation = "AbilityToHoldConversation",
+  PartialUnderstandingOfFilmsAndBooksInTheOriginal = "PartialUnderstandingOfFilmsAndBooksInTheOriginal",
+  AdvancedGrammarKnowledge = "AdvancedGrammarKnowledge",
+  WatchingMoviesAndReadingBooksInTheOriginal = "WatchingMoviesAndReadingBooksInTheOriginal",
+  ListeningToTheSpeakersSpeech = "ListeningToTheSpeakersSpeech",
+  AbilityToCarryOnAConversationWithANativeSpeaker = "AbilityToCarryOnAConversationWithANativeSpeaker",
+  FreeWordingAndExpressionOfThought = "FreeWordingAndExpressionOfThought",
+  Teacher = "Teacher",
+  PartialListeningComprehension = "PartialListeningComprehension",
+  FormulationOfThought = "FormulationOfThought",
 }
 
 export type PosipilityProps = keyof typeof Props;
