@@ -9,7 +9,7 @@ import {
   Props,
 } from "enums";
 import { Context } from "index";
-import { useContext, useEffect, useState } from "react";
+import { ChangeEvent, useContext, useEffect, useState } from "react";
 import Modal from "react-modal";
 import { NavLink } from "react-router-dom";
 import cross from "@assets/images/cross.svg";
@@ -43,12 +43,17 @@ function ModalChooseTariff({
   const [modalIsOpen, setIsOpen] = useState<boolean>(false);
 
   const [format, setFormat] = useState<FormatOfStudyEnum | null>(null);
-
   const [language, setLanguage] = useState<LanguageOfStudyEnum>(
     LanguageOfStudyEnum.English
   );
-
   const [level, setLevel] = useState<LevelOfStudyEnum>(LevelOfStudyEnum.A1A2);
+
+  const [checkboxContractOffer, setCheckboxContractOffer] =
+    useState<boolean>(false);
+  const [checkboxPrivacyPolicy, setCheckboxPrivacyPolicy] =
+    useState<boolean>(false);
+
+  const [showError, setShowError] = useState<boolean>(false);
 
   const [levels, setLevels] = useState<{ id: LevelOfStudyEnum; prop: Props }[]>(
     [
@@ -57,7 +62,6 @@ function ModalChooseTariff({
       { id: LevelOfStudyEnum.B2, prop: Props.B2 },
     ]
   );
-
   const [languages, setLanguages] = useState<
     { id: LanguageOfStudyEnum; prop: Props }[]
   >([
@@ -101,7 +105,14 @@ function ModalChooseTariff({
     setOpen(false);
   }
 
-  function submitForm(): void {
+  function submitForm(e: any): void {
+    if (!checkboxContractOffer || !checkboxPrivacyPolicy) {
+      e.stopPropagation();
+      e.preventDefault();
+      setShowError(true);
+      return;
+    }
+
     setIsOpen(false);
     courseParameters.setCourseParameters({
       level,
@@ -154,7 +165,7 @@ function ModalChooseTariff({
             />
           </div>
           <div style={{ textAlign: "center" }}>
-            <NavLink to="/orderForm">
+            <NavLink style={{ color: "#080808" }} to="/orderForm">
               <Button
                 customStyle={{
                   width: "225px",
@@ -166,7 +177,7 @@ function ModalChooseTariff({
                   padding: "0",
                   marginBottom: "73px",
                 }}
-                onClick={() => submitForm()}
+                onClick={(e: any) => submitForm(e)}
                 text={Props.StartLearning}
               />
             </NavLink>
@@ -175,12 +186,20 @@ function ModalChooseTariff({
             text="Я погоджуюсь з умовами договору - оферти"
             id="1"
             customStyle={{
-              marginBottom: "32px",
+              marginBottom: "24px",
             }}
+            messageError="Жмякни"
+            value={checkboxContractOffer}
+            setValue={setCheckboxContractOffer}
+            isShowErrorMessage={showError && !checkboxContractOffer}
           />
           <CheckboxWithLabel
             text="Я погоджуюсь з умовами політики конфіденційності"
             id="2"
+            messageError="Жмякни"
+            value={checkboxPrivacyPolicy}
+            setValue={setCheckboxPrivacyPolicy}
+            isShowErrorMessage={showError && !checkboxPrivacyPolicy}
           />
         </form>
       </div>
@@ -194,15 +213,45 @@ function CheckboxWithLabel({
   id,
   text,
   customStyle,
+  messageError,
+  isShowErrorMessage,
+  value,
+  setValue,
 }: {
   id: string;
   text: string;
+  messageError: string;
+  value: boolean;
+  setValue: Function;
+  isShowErrorMessage: boolean;
   customStyle?: { [key: string]: string };
 }) {
   return (
     <div className={styles.checkboxWithLabel} style={customStyle}>
-      <input id={id} type="checkbox" />
+      <input
+        checked={value}
+        onChange={(e: ChangeEvent<HTMLInputElement>) =>
+          setValue(e.target.checked)
+        }
+        id={id}
+        type="checkbox"
+      />
       <label htmlFor={id}>{text}</label>
+      {isShowErrorMessage ? (
+        <p
+          style={{
+            paddingTop: "5px",
+            fontWeight: "500",
+            fontSize: "13px",
+            color: "#ff4d4d",
+            position: "absolute",
+          }}
+        >
+          {messageError}
+        </p>
+      ) : (
+        ""
+      )}
     </div>
   );
 }

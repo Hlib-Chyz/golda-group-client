@@ -15,7 +15,7 @@ function Button({
 }) {
   return (
     <button
-      onClick={onClick ? () => onClick() : () => {}}
+      onClick={onClick ? (e: any) => onClick(e) : () => {}}
       type={type}
       style={customStyle}
       className={styles.button}

@@ -91,11 +91,7 @@ const CourseProgram = observer(() => {
           Props.Articles,
           Props.DegreesOfComparison,
         ],
-        addition: [
-          Props.PhoneCallWithTeacher2x,
-          Props.PhoneCallWithTeacher2x,
-          Props.PhoneCallWithTeacher2x,
-        ],
+        addition: [Props.PhoneCallWithTeacher2x],
       };
     }
 
