@@ -35,11 +35,21 @@ const CourseProgram = observer(() => {
     ]
   );
 
+  const [languages, setLanguages] = useState<
+    { id: LanguageOfStudyEnum; prop: Props }[]
+  >([
+    { id: LanguageOfStudyEnum.English, prop: Props.English },
+    { id: LanguageOfStudyEnum.Deutsch, prop: Props.Deutsch },
+    { id: LanguageOfStudyEnum.French, prop: Props.French },
+  ]);
+
   useEffect(() => {
     if (
       [LanguageOfStudyEnum.Deutsch, LanguageOfStudyEnum.French].includes(
         courseProgram.getLanguage
-      )
+      ) ||
+      (courseProgram.getFormat === FormatOfStudyEnum.TutorialWithTeacher &&
+        courseProgram.getLanguage === LanguageOfStudyEnum.English)
     ) {
       if (courseProgram.getLevel === LevelOfStudyEnum.B2) {
         courseProgram.setLevel(LevelOfStudyEnum.B1);
@@ -53,6 +63,17 @@ const CourseProgram = observer(() => {
         { id: LevelOfStudyEnum.A1A2, prop: Props.A1A2 },
         { id: LevelOfStudyEnum.B1, prop: Props.B1 },
         { id: LevelOfStudyEnum.B2, prop: Props.B2 },
+      ]);
+    }
+
+    if (courseProgram.getFormat === FormatOfStudyEnum.TutorialWithZlata) {
+      courseProgram.setLanguage(LanguageOfStudyEnum.English);
+      setLanguages([{ id: LanguageOfStudyEnum.English, prop: Props.English }]);
+    } else {
+      setLanguages([
+        { id: LanguageOfStudyEnum.English, prop: Props.English },
+        { id: LanguageOfStudyEnum.Deutsch, prop: Props.Deutsch },
+        { id: LanguageOfStudyEnum.French, prop: Props.French },
       ]);
     }
     setCourseProgramText(getTools());
@@ -640,11 +661,7 @@ const CourseProgram = observer(() => {
               setter={(language: LanguageOfStudyEnum) =>
                 courseProgram.setLanguage(language)
               }
-              formats={[
-                { id: LanguageOfStudyEnum.English, prop: Props.English },
-                { id: LanguageOfStudyEnum.Deutsch, prop: Props.Deutsch },
-                { id: LanguageOfStudyEnum.French, prop: Props.French },
-              ]}
+              formats={languages}
             />
             <Dropdown
               prop={Props[courseProgram.getLevel]}

@@ -17,6 +17,7 @@
 
       .info {
         position: relative;
+        z-index: 501;
         display: flex;
 
         width: 988px;
@@ -48,8 +49,9 @@
 
         .homeEducation {
           position: absolute;
-          bottom: 0;
-          right: 0;
+          bottom: -45px;
+          right: -40px;
+          z-index: -1;
         }
       }
 

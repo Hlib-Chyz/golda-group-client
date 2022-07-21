@@ -76,27 +76,35 @@ function ModalChooseTariff({
     if (formatProp === FormatOfStudyEnum.TutorialWithZlata) {
       setLanguages([{ id: LanguageOfStudyEnum.English, prop: Props.English }]);
     }
+    if (formatProp === FormatOfStudyEnum.TutorialWithTeacher) {
+      setLevels([
+        { id: LevelOfStudyEnum.A1A2, prop: Props.A1A2 },
+        { id: LevelOfStudyEnum.B1, prop: Props.B1 },
+      ]);
+    }
   }, [isOpen, formatProp]);
 
   useEffect(() => {
-    if (
-      [LanguageOfStudyEnum.Deutsch, LanguageOfStudyEnum.French].includes(
-        language
-      )
-    ) {
-      if (level === LevelOfStudyEnum.B2) {
-        setLevel(LevelOfStudyEnum.B1);
+    if (format === FormatOfStudyEnum.Textbook) {
+      if (
+        [LanguageOfStudyEnum.Deutsch, LanguageOfStudyEnum.French].includes(
+          language
+        )
+      ) {
+        if (level === LevelOfStudyEnum.B2) {
+          setLevel(LevelOfStudyEnum.B1);
+        }
+        setLevels([
+          { id: LevelOfStudyEnum.A1A2, prop: Props.A1A2 },
+          { id: LevelOfStudyEnum.B1, prop: Props.B1 },
+        ]);
+      } else {
+        setLevels([
+          { id: LevelOfStudyEnum.A1A2, prop: Props.A1A2 },
+          { id: LevelOfStudyEnum.B1, prop: Props.B1 },
+          { id: LevelOfStudyEnum.B2, prop: Props.B2 },
+        ]);
       }
-      setLevels([
-        { id: LevelOfStudyEnum.A1A2, prop: Props.A1A2 },
-        { id: LevelOfStudyEnum.B1, prop: Props.B1 },
-      ]);
-    } else {
-      setLevels([
-        { id: LevelOfStudyEnum.A1A2, prop: Props.A1A2 },
-        { id: LevelOfStudyEnum.B1, prop: Props.B1 },
-        { id: LevelOfStudyEnum.B2, prop: Props.B2 },
-      ]);
     }
   }, [language]);
 
