@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 // eslint-disable-next-line no-restricted-imports
 import styles from "./modal-choose-tariff.module.scss";
 import Button from "@components/button/button";

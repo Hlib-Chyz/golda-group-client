@@ -112,7 +112,7 @@ const CourseProgram = observer(() => {
           Props.Articles,
           Props.DegreesOfComparison,
         ],
-        addition: [Props.PhoneCallWithTeacher2x],
+        addition: [],
       };
     }
 
@@ -347,7 +347,11 @@ const CourseProgram = observer(() => {
           Props.Articles,
           Props.DegreesOfComparison,
         ],
-        addition: [],
+        addition: [
+          Props.PhoneCallWithTeacher2x,
+          Props.CheckingHomework,
+          Props.ConversationClubs2x,
+        ],
       };
     }
 
@@ -379,7 +383,11 @@ const CourseProgram = observer(() => {
           Props.Gerund,
           Props.PassiveVoice,
         ],
-        addition: [],
+        addition: [
+          Props.PhoneCallWithTeacher2x,
+          Props.CheckingHomework,
+          Props.ConversationClubs2x,
+        ],
       };
     }
 
@@ -416,7 +424,11 @@ const CourseProgram = observer(() => {
           Props.VerbsWithPrefixes,
           Props.ModalVerbs,
         ],
-        addition: [],
+        addition: [
+          Props.PhoneCallWithTeacher2x,
+          Props.CheckingHomework,
+          Props.ConversationClubs2x,
+        ],
       };
     }
 
@@ -451,7 +463,11 @@ const CourseProgram = observer(() => {
           Props.ZuinfinitivConstruction,
           Props.RelativeClauses,
         ],
-        addition: [],
+        addition: [
+          Props.PhoneCallWithTeacher2x,
+          Props.CheckingHomework,
+          Props.ConversationClubs2x,
+        ],
       };
     }
 
@@ -487,7 +503,11 @@ const CourseProgram = observer(() => {
           Props.FutureTime,
           Props.Prepositions,
         ],
-        addition: [],
+        addition: [
+          Props.PhoneCallWithTeacher2x,
+          Props.CheckingHomework,
+          Props.ConversationClubs2x,
+        ],
       };
     }
 
@@ -520,7 +540,11 @@ const CourseProgram = observer(() => {
           Props.FutureTime,
           Props.ConditionalMoods,
         ],
-        addition: [],
+        addition: [
+          Props.PhoneCallWithTeacher2x,
+          Props.CheckingHomework,
+          Props.ConversationClubs2x,
+        ],
       };
     }
 
@@ -554,7 +578,11 @@ const CourseProgram = observer(() => {
           Props.Articles,
           Props.DegreesOfComparison,
         ],
-        addition: [],
+        addition: [
+          Props.PhoneCallWithTeacher2x,
+          Props.CheckingHomework,
+          Props.ConversationClubs2x,
+        ],
       };
     }
 
@@ -586,7 +614,11 @@ const CourseProgram = observer(() => {
           Props.Gerund,
           Props.PassiveVoice,
         ],
-        addition: [],
+        addition: [
+          Props.PhoneCallWithTeacher2x,
+          Props.CheckingHomework,
+          Props.ConversationClubs2x,
+        ],
       };
     }
 
@@ -619,7 +651,11 @@ const CourseProgram = observer(() => {
           Props.ComplexObject,
           Props.ComplexSubject,
         ],
-        addition: [],
+        addition: [
+          Props.PhoneCallWithTeacher2x,
+          Props.CheckingHomework,
+          Props.ConversationClubs2x,
+        ],
       };
     }
 
