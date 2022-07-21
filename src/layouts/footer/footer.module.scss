@@ -1,31 +1,35 @@
 @import "styles/variables.scss";
+
 .container {
   background-color: #e1f5ff;
   display: flex;
   margin: $padding-beetwen-blocks 0 0 0;
   .footer {
     margin: 0 auto;
-    padding: 40px 0;
+    padding: 30px 0;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     .top {
-      width: $max-width-content;
-      padding: 0 100px;
       display: flex;
-
-      .left {
-        width: 70%;
+      flex-direction: column;
+      .first {
         .logo {
-          padding-bottom: 30px;
+          color: #0a0808;
           a {
             font-weight: 600;
             font-size: 40px;
-            color: #30366c;
+            color: #0a0808;
           }
         }
-
+      }
+      .second {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 20px 0;
+        width: 100%;
         .email {
           display: flex;
           align-items: center;
@@ -35,9 +39,26 @@
             color: #0a0808;
             padding-left: 14px;
           }
-          padding-bottom: 32px;
         }
+        ul {
+          font-weight: 600;
+          font-size: 28px;
+          color: #0a0808;
+          margin-left: 200px;
 
+          display: flex;
+          li {
+            padding-left: 16px;
+            a {
+              color: #0a0808;
+            }
+          }
+        }
+      }
+      .third {
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px;
         .namesCards {
           display: flex;
           align-items: center;
@@ -46,48 +67,31 @@
             padding-right: 20px;
           }
         }
-      }
+        .contractsLinks {
+          display: flex;
+          align-items: center;
 
-      .right {
-        width: 30%;
-
-        ul {
-          font-weight: 600;
-          font-size: 28px;
-          color: #0a0808;
-          li {
-            padding-bottom: 25px;
-            a {
-              color: #0a0808;
+          a {
+            vertical-align: middle;
+            font-weight: 600;
+            font-size: 14px;
+            color: #878383;
+            &:hover {
+              color: blue;
+            }
+            &.active {
+              color: blue;
             }
           }
-        }
-      }
-    }
 
-    .contractsLinks {
-      display: flex;
-      align-items: center;
-      margin: 24px 0 90px;
-
-      a {
-        font-weight: 600;
-        font-size: 16px;
-        color: #878383;
-        &:hover {
-          color: blue;
+          .dash {
+            display: inline-block;
+            height: 20px;
+            width: 1px;
+            margin: 0 12px;
+            background-color: #878383;
+          }
         }
-        &.active {
-          color: blue;
-        }
-      }
-
-      .dash {
-        display: inline-block;
-        height: 34px;
-        width: 1px;
-        margin: 0 12px;
-        background-color: #878383;
       }
     }
 
@@ -99,12 +103,11 @@
 
     .bottom {
       width: $max-width-content;
-      padding: 0 100px;
       p {
         font-weight: 500;
         font-size: 20px;
         color: #0a0808;
-        margin: 48px 0 30px;
+        margin-top: 30px;
         text-align: center;
       }
     }

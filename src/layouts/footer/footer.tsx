@@ -24,7 +24,7 @@ function Footer() {
     <div className={styles.container}>
       <footer className={styles.footer}>
         <div className={styles.top}>
-          <div className={styles.left}>
+          <div className={styles.first}>
             <div className={styles.logo}>
               <NavLink
                 onClick={() => window.scroll({ top: 0, behavior: "smooth" })}
@@ -33,16 +33,12 @@ function Footer() {
                 Golda Group
               </NavLink>
             </div>
+          </div>
+          <div className={styles.second}>
             <div className={styles.email}>
               <img src={email} alt="email" />
               <p>goldagrooup@gmail.com</p>
             </div>
-            <div className={styles.namesCards}>
-              <img src={visa} alt="Visa" />
-              <img src={mastercard} alt="MasterCard" />
-            </div>
-          </div>
-          <div className={styles.right}>
             <ul>
               <li>
                 <a
@@ -73,31 +69,39 @@ function Footer() {
               </li>
             </ul>
           </div>
-        </div>
-        <div className={styles.contractsLinks}>
-          <NavLink
-            className={currentPath === "contacrtOffer" ? styles.active : ""}
-            onClick={() => setCurrentPathAndMoveToTop("contacrtOffer")}
-            to="/contacrtOffer"
-          >
-            <TextLanguage prop={Props.ContractOffer} />
-          </NavLink>
-          <span className={styles.dash}></span>
-          <NavLink
-            className={currentPath === "privacyPolicy" ? styles.active : ""}
-            onClick={() => setCurrentPathAndMoveToTop("privacyPolicy")}
-            to="/privacyPolicy"
-          >
-            <TextLanguage prop={Props.PrivacyPolicy} />
-          </NavLink>
-          <span className={styles.dash}></span>
-          <NavLink
-            className={currentPath === "deliveryPayment" ? styles.active : ""}
-            onClick={() => setCurrentPathAndMoveToTop("deliveryPayment")}
-            to="/deliveryPayment"
-          >
-            <TextLanguage prop={Props.ShippingAndPayment} />
-          </NavLink>
+          <div className={styles.third}>
+            <div className={styles.namesCards}>
+              <img src={visa} alt="Visa" />
+              <img src={mastercard} alt="MasterCard" />
+            </div>
+            <div className={styles.contractsLinks}>
+              <NavLink
+                className={currentPath === "contacrtOffer" ? styles.active : ""}
+                onClick={() => setCurrentPathAndMoveToTop("contacrtOffer")}
+                to="/contacrtOffer"
+              >
+                <TextLanguage prop={Props.ContractOffer} />
+              </NavLink>
+              <span className={styles.dash}></span>
+              <NavLink
+                className={currentPath === "privacyPolicy" ? styles.active : ""}
+                onClick={() => setCurrentPathAndMoveToTop("privacyPolicy")}
+                to="/privacyPolicy"
+              >
+                <TextLanguage prop={Props.PrivacyPolicy} />
+              </NavLink>
+              <span className={styles.dash}></span>
+              <NavLink
+                className={
+                  currentPath === "deliveryPayment" ? styles.active : ""
+                }
+                onClick={() => setCurrentPathAndMoveToTop("deliveryPayment")}
+                to="/deliveryPayment"
+              >
+                <TextLanguage prop={Props.ShippingAndPayment} />
+              </NavLink>
+            </div>
+          </div>
         </div>
         <div className={styles.dash}></div>
         <div className={styles.bottom}>
