@@ -178,114 +178,120 @@ function OrderForm() {
 
   return (
     <div className={styles.wrapper}>
-      <div className={styles.container}>
-        <div className={styles.contentForm}>
-          <h3>Оформление заказа</h3>
-          <form onSubmit={(e: any) => submitForm(e)} className={styles.form}>
-            <div className={styles.inputError}>
-              <div>
-                <label
-                  className={nameDirty && nameError ? styles.error : ""}
-                  ref={refLabelName}
-                >
-                  ФИО
-                </label>
-                <input
-                  value={name}
-                  className={nameDirty && nameError ? styles.error : ""}
-                  onBlur={(e: ChangeEvent<HTMLInputElement>) => blurHandle(e)}
-                  onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                    nameHandler(e)
-                  }
-                  name="name"
-                  style={{
-                    marginBottom: nameDirty && nameError ? "" : "26.25px",
-                    marginLeft: `${widthLabelName - 14}px`,
-                    width: `${355 - widthLabelName}px`,
-                  }}
-                />
+      {courseParameters.getCourseParameters().format ? (
+        <div className={styles.container}>
+          <div className={styles.contentForm}>
+            <h3>Оформление заказа</h3>
+            <form onSubmit={(e: any) => submitForm(e)} className={styles.form}>
+              <div className={styles.inputError}>
+                <div>
+                  <label
+                    className={nameDirty && nameError ? styles.error : ""}
+                    ref={refLabelName}
+                  >
+                    ФИО
+                  </label>
+                  <input
+                    value={name}
+                    className={nameDirty && nameError ? styles.error : ""}
+                    onBlur={(e: ChangeEvent<HTMLInputElement>) => blurHandle(e)}
+                    onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                      nameHandler(e)
+                    }
+                    name="name"
+                    style={{
+                      marginBottom: nameDirty && nameError ? "" : "26.25px",
+                      marginLeft: `${widthLabelName - 14}px`,
+                      width: `${355 - widthLabelName}px`,
+                    }}
+                  />
+                </div>
+                {nameDirty && nameError && (
+                  <div className={styles.errorMessage}>{nameError}</div>
+                )}
               </div>
-              {nameDirty && nameError && (
-                <div className={styles.errorMessage}>{nameError}</div>
-              )}
-            </div>
-            <div className={styles.inputError}>
-              <div>
-                <label
-                  className={emailDirty && emailError ? styles.error : ""}
-                  ref={refLabelEmail}
-                >
-                  EMAIL
-                </label>
-                <input
-                  value={email}
-                  className={emailDirty && emailError ? styles.error : ""}
-                  onBlur={(e: ChangeEvent<HTMLInputElement>) => blurHandle(e)}
-                  onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                    emailHandler(e)
-                  }
-                  name="email"
-                  style={{
-                    marginBottom: emailDirty && emailError ? "" : "26.25px",
-                    marginLeft: `${widthLabelEmail - 14}px`,
-                    width: `${355 - widthLabelEmail}px`,
-                  }}
-                />
+              <div className={styles.inputError}>
+                <div>
+                  <label
+                    className={emailDirty && emailError ? styles.error : ""}
+                    ref={refLabelEmail}
+                  >
+                    EMAIL
+                  </label>
+                  <input
+                    value={email}
+                    className={emailDirty && emailError ? styles.error : ""}
+                    onBlur={(e: ChangeEvent<HTMLInputElement>) => blurHandle(e)}
+                    onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                      emailHandler(e)
+                    }
+                    name="email"
+                    style={{
+                      marginBottom: emailDirty && emailError ? "" : "26.25px",
+                      marginLeft: `${widthLabelEmail - 14}px`,
+                      width: `${355 - widthLabelEmail}px`,
+                    }}
+                  />
+                </div>
+                {emailDirty && emailError && (
+                  <div className={styles.errorMessage}>{emailError}</div>
+                )}
               </div>
-              {emailDirty && emailError && (
-                <div className={styles.errorMessage}>{emailError}</div>
-              )}
-            </div>
-            <div className={styles.inputError}>
-              <div>
-                <label
-                  className={phoneDirty && phoneError ? styles.error : ""}
-                  ref={refLabelPhone}
-                >
-                  ТЕЛЕФОН
-                </label>
-                <input
-                  value={phone}
-                  className={phoneDirty && phoneError ? styles.error : ""}
-                  onBlur={(e: ChangeEvent<HTMLInputElement>) => blurHandle(e)}
-                  onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                    phoneHandler(e)
-                  }
-                  name="phone"
-                  style={{
-                    marginBottom: phoneDirty && phoneError ? "" : "26.25px",
-                    marginLeft: `${widthLabelPhone - 14}px`,
-                    width: `${355 - widthLabelPhone}px`,
-                  }}
-                />
+              <div className={styles.inputError}>
+                <div>
+                  <label
+                    className={phoneDirty && phoneError ? styles.error : ""}
+                    ref={refLabelPhone}
+                  >
+                    ТЕЛЕФОН
+                  </label>
+                  <input
+                    value={phone}
+                    className={phoneDirty && phoneError ? styles.error : ""}
+                    onBlur={(e: ChangeEvent<HTMLInputElement>) => blurHandle(e)}
+                    onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                      phoneHandler(e)
+                    }
+                    name="phone"
+                    style={{
+                      marginBottom: phoneDirty && phoneError ? "" : "26.25px",
+                      marginLeft: `${widthLabelPhone - 14}px`,
+                      width: `${355 - widthLabelPhone}px`,
+                    }}
+                  />
+                </div>
+                {phoneDirty && phoneError && (
+                  <div className={styles.errorMessage}>{phoneError}</div>
+                )}
               </div>
-              {phoneDirty && phoneError && (
-                <div className={styles.errorMessage}>{phoneError}</div>
-              )}
-            </div>
-            <Button
-              customStyle={{
-                padding: "25px 0",
-                fontSize: "14px",
-                maxWidth: "300px",
-              }}
-              text={Props.Сheckout}
-              type="submit"
-            />
-          </form>
-        </div>
-        <div className={styles.contentCourseParameters}>
-          <div className={styles.courseParameters}>
-            <p>{getFormatText()} /</p>
-            <p>{getLanguageText()} /</p>
-            <p>{getLevelText()}</p>
+              <Button
+                customStyle={{
+                  padding: "25px 0",
+                  fontSize: "14px",
+                  maxWidth: "300px",
+                }}
+                text={Props.Сheckout}
+                type="submit"
+              />
+            </form>
           </div>
-          <div className={styles.containerPrice}>
-            <div className={styles.dash}></div>
-            <p className={styles.price}>{getPrice()} грн.</p>
+          <div className={styles.contentCourseParameters}>
+            <div className={styles.courseParameters}>
+              <p>{getFormatText()} /</p>
+              <p>{getLanguageText()} /</p>
+              <p>{getLevelText()}</p>
+            </div>
+            <div className={styles.containerPrice}>
+              <div className={styles.dash}></div>
+              <p className={styles.price}>{getPrice()} грн.</p>
+            </div>
           </div>
         </div>
-      </div>
+      ) : (
+        <h2 style={{ fontSize: "40px" }}>
+          You have not chosen a tariff go to block tariff
+        </h2>
+      )}
     </div>
   );
 }

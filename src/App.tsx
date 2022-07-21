@@ -53,6 +53,12 @@ function App(): JSX.Element {
               <Route path="/privacyPolicy" element={<PrivacyPolicy />} />
               <Route path="/deliveryPayment" element={<DeliveryPayment />} />
               <Route path="/orderForm" element={<OrderForm />} />
+              <Route
+                path="*"
+                element={
+                  <Main refs={{ courseProgramRef, tariffsRef, aboutUsRef }} />
+                }
+              />
             </Routes>
           </div>
           <div>
