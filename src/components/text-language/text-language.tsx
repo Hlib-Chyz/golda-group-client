@@ -172,6 +172,7 @@ const TextLanguage = observer(({ prop }: { prop: string | undefined }) => {
       Teacher: "Викладач",
       PartialListeningComprehension: "Часткове сприйняття на слух",
       FormulationOfThought: "Формулювання думки",
+      Pay: "Сплатити",
     },
     RU: {
       AboutCourse: "О курсах",
@@ -333,6 +334,7 @@ const TextLanguage = observer(({ prop }: { prop: string | undefined }) => {
       Teacher: "Преподаватель",
       PartialListeningComprehension: "Частичное восприятие на слух",
       FormulationOfThought: "Формулирование мысли",
+      Pay: "Оплатить",
     },
   };
   if (prop) {

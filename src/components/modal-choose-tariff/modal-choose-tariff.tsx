@@ -187,7 +187,7 @@ function ModalChooseTariff({
                   marginBottom: "73px",
                 }}
                 onClick={(e: any) => submitForm(e)}
-                text={Props.StartLearning}
+                text={Props.Сheckout}
               />
             </NavLink>
           </div>

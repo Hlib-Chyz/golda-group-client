@@ -155,6 +155,7 @@ export enum Props {
   Teacher = "Teacher",
   PartialListeningComprehension = "PartialListeningComprehension",
   FormulationOfThought = "FormulationOfThought",
+  Pay = "Pay",
 }
 
 export type PosipilityProps = keyof typeof Props;

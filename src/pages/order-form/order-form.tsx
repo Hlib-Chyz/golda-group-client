@@ -270,7 +270,7 @@ function OrderForm() {
                   fontSize: "14px",
                   maxWidth: "300px",
                 }}
-                text={Props.Сheckout}
+                text={Props.Pay}
                 type="submit"
               />
             </form>

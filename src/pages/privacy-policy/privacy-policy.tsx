@@ -10,7 +10,7 @@ function PrivacyPolicy() {
       <Subsubheading text="1. Основные понятия" />
       <p className={styles.text}>
         Сайт – личный сайт, расположенный в сети Интернет по адресу:
-        https://golda-group.com/.
+        https://www.golda-group.com//.
       </p>
       <p className={styles.text}>Администрация Сайта – ФОП.</p>
       <p className={styles.text}>
