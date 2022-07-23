@@ -25,3 +25,21 @@
     text-align: left;
   }
 }
+
+@media (max-width: 1400px) {
+  .container {
+    .text {
+      font-size: 15px;
+      padding-right: 12px;
+    }
+    .number {
+      font-size: 32px;
+    }
+  }
+
+  .rightText {
+    .text {
+      padding-left: 12px;
+    }
+  }
+}

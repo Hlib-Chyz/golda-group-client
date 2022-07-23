@@ -42,3 +42,16 @@
     }
   }
 }
+
+@media (max-width: 1400px) {
+  .container {
+    h3 {
+      font-size: 28px;
+    }
+    ul {
+      li {
+        font-size: 20px;
+      }
+    }
+  }
+}

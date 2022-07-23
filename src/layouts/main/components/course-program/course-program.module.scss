@@ -98,3 +98,49 @@
     }
   }
 }
+
+@media (max-width: 1400px) {
+  .container {
+    width: $width-1160;
+    margin: 0 auto;
+    .content {
+      .dropdowns {
+        justify-content: center;
+      }
+      .infoAddition {
+        width: 900px;
+        .info {
+          .infoLeft,
+          .infoRight {
+            width: 40%;
+          }
+
+          .homeEducation {
+            right: 140px;
+            img {
+              width: 392px;
+              height: 330px;
+            }
+          }
+        }
+
+        .addition {
+          h5 {
+            font-weight: 600;
+            font-size: 26px;
+            color: #4a74ba;
+            padding-bottom: 40px;
+            text-align: center;
+            text-transform: uppercase;
+          }
+
+          ul {
+            li {
+              font-size: 26px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -36,13 +36,39 @@ function AboutUs() {
             </div>
           </div>
           <div className={styles.rightSide}>
-            <p>
-              Злата начала свое изучение английского в 14 лет самостоятельно.
-              Этот путь был сложный и тернистый, но однозначно возможный. Спустя
-              несколько лет она впервые начала пробовать заниматься с
-              преподователями и покупать курсы связанные с английским языком,
-              вскоре после её уровень языка поднялся до С1.
-            </p>
+            <div className={styles.top}>
+              <div className={styles.leftSide}>
+                <div className={styles.name}>
+                  <img src={user} alt="name" />
+                  <p>Злата Бочкарева</p>
+                </div>
+                <div className={styles.describe}>
+                  <div className={styles.experience}>
+                    <div className={styles.line}>
+                      <div className={styles.dash}></div>
+                      <div className={styles.circle}></div>
+                      <div className={styles.dash}></div>
+                    </div>
+                    <p className={styles.text}>Более 4х лет практики</p>
+                  </div>
+                  <div className={styles.experience}>
+                    <div className={styles.line}>
+                      <div className={styles.dash}></div>
+                      <div className={styles.circle}></div>
+                      <div className={styles.dash}></div>
+                    </div>
+                    <p className={styles.text}>Более 55 учеников</p>
+                  </div>
+                </div>
+              </div>
+              <p>
+                Злата начала свое изучение английского в 14 лет самостоятельно.
+                Этот путь был сложный и тернистый, но однозначно возможный.
+                Спустя несколько лет она впервые начала пробовать заниматься с
+                преподователями и покупать курсы связанные с английским языком,
+                вскоре после её уровень языка поднялся до С1.
+              </p>
+            </div>
             <p>
               С1 К моменту лета 2022 года Злата обучила свыше 55 человек на
               индивидуальных занятиях, и теперь она готова разделить свои знания
@@ -54,6 +80,9 @@ function AboutUs() {
         <div className={styles.secondBlock}>
           <div className={styles.heading}>
             <h3>Злата о целях проекта :</h3>
+          </div>
+          <div className={styles.believe}>
+            <h3>Верь в себя!</h3>
           </div>
           <div className={styles.zlata}>
             <img src={zlata} alt="Zlata" />

@@ -2,6 +2,7 @@
 
 .container {
   padding: $padding-beetwen-blocks 0;
+  width: 100% !important;
   .section {
     background-image: url("/assets/images/background-what.png");
     background-repeat: no-repeat;
@@ -31,6 +32,28 @@
         display: flex;
         justify-content: center;
         align-items: center;
+      }
+    }
+  }
+}
+
+@media (max-width: 1400px) {
+  .container {
+    width: $width-1160;
+    .section {
+      -webkit-background-size: 100% 656px;
+      -moz-background-size: 100% 656px;
+      -o-background-size: 100% 656px;
+      background-size: 100% 656px;
+      .content {
+        .center {
+          width: 350px;
+          height: 350px;
+          img {
+            width: 250px;
+            height: 250px;
+          }
+        }
       }
     }
   }

@@ -17,5 +17,25 @@
     font-size: 22px;
     color: #0a0808;
     margin-top: 30px;
+    text-align: start;
+  }
+}
+
+@media (max-width: 1400px) {
+}
+
+@media (min-width: 800px) and (max-width: 1199px) {
+  .container {
+    width: 230px;
+    .blockPicture {
+      height: 205px;
+      img {
+        height: 144px;
+        width: 190px;
+      }
+    }
+    p {
+      margin-top: 24px;
+    }
   }
 }

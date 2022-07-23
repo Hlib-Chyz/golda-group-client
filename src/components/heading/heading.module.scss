@@ -5,3 +5,16 @@
   margin-bottom: 80px;
   text-align: center;
 }
+@media (max-width: 1400px) {
+  .heading {
+    font-size: 32px;
+    margin-bottom: 60px;
+  }
+}
+
+@media (min-width: 800px) and (max-width: 1199px) {
+  .heading {
+    font-size: 24px;
+    margin-bottom: 40px;
+  }
+}
