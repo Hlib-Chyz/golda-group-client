@@ -117,6 +117,7 @@
 
           .homeEducation {
             right: 140px;
+            bottom: -30px;
             img {
               width: 392px;
               height: 330px;
@@ -137,6 +138,52 @@
           ul {
             li {
               font-size: 26px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 800px) and (max-width: 1199px) {
+  .container {
+    max-width: $width-760;
+    padding: $padding-beetwen-blocks-800 0;
+    .content {
+      .dropdowns {
+        > div {
+          width: 200px;
+        }
+      }
+      .infoAddition {
+        padding: 40px;
+        width: 720px;
+        margin: 0 auto;
+        .info {
+          width: 720px;
+          .infoLeft,
+          .infoRight {
+            width: 35%;
+          }
+
+          .homeEducation {
+            right: 310px;
+            img {
+              width: 292px;
+              height: 230px;
+            }
+          }
+        }
+
+        .addition {
+          h5 {
+            font-size: 20px;
+          }
+
+          ul {
+            li {
+              font-size: 20px;
             }
           }
         }

@@ -43,3 +43,20 @@
     }
   }
 }
+
+@media (min-width: 800px) and (max-width: 1199px) {
+  .container {
+    flex-direction: row-reverse;
+    .text {
+      text-align: start;
+    }
+    .number {
+      padding-right: 12px;
+    }
+  }
+  .rightText {
+    .text {
+      padding-left: 0;
+    }
+  }
+}

@@ -117,8 +117,9 @@
 
 @media (min-width: 800px) and (max-width: 1199px) {
   .header {
+    width: $width-760;
     .container {
-      width: $width-760;
+      min-width: $width-760;
       .leftSide {
         .logo {
           margin-right: 68px;

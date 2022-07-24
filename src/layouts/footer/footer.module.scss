@@ -119,3 +119,48 @@
     min-width: $width-1160;
   }
 }
+
+@media (min-width: 800px) and (max-width: 1199px) {
+  .container {
+    min-width: $width-760;
+    margin: $padding-beetwen-blocks-800 auto 0;
+    .footer {
+      .top {
+        .first {
+          .logo {
+            a {
+              font-size: 30px;
+            }
+          }
+        }
+        .second {
+          .email {
+            p {
+              font-size: 20px;
+            }
+          }
+          ul {
+            font-size: 20px;
+            margin-left: 160px;
+          }
+        }
+        .third {
+          .contractsLinks {
+            a {
+              font-size: 12px;
+            }
+            .dash {
+              height: 16px;
+            }
+          }
+        }
+      }
+
+      .bottom {
+        p {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}

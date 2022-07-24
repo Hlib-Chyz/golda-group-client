@@ -89,5 +89,12 @@
 @media (max-width: 1400px) {
   .container {
     margin-bottom: 100px;
+    height: 790px;
+  }
+}
+
+@media (min-width: 800px) and (max-width: 1199px) {
+  .container {
+    margin-bottom: 70px;
   }
 }

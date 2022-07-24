@@ -46,3 +46,9 @@
     max-width: $width-1160;
   }
 }
+
+@media (min-width: 800px) and (max-width: 1199px) {
+  .container {
+    max-width: $width-760;
+  }
+}

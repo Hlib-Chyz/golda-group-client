@@ -24,6 +24,7 @@
 @media (min-width: 800px) and (max-width: 1199px) {
   .container {
     width: $width-760;
+    padding: 150px 0 $padding-beetwen-blocks-800;
     .reasons {
       margin-bottom: 53px;
     }

@@ -174,7 +174,7 @@
         }
 
         .zlata {
-          top: 30px;
+          top: 28px;
           img {
             width: 321px;
             height: 327px;
@@ -189,6 +189,44 @@
               margin-bottom: 30px;
             }
           }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 800px) and (max-width: 1199px) {
+  .container {
+    width: $width-760;
+    padding: $padding-beetwen-blocks-800 0;
+    .section {
+      .firstBlock {
+        margin-bottom: 40px;
+        .rightSide {
+          .top {
+            height: 220px;
+            .leftSide {
+              margin-bottom: 30px;
+            }
+            > p {
+              margin-bottom: 30px;
+            }
+          }
+        }
+      }
+      .secondBlock {
+        width: 608px;
+        .zlata {
+          top: 54px;
+          right: -50px;
+          img {
+            width: 350px;
+            height: 400px;
+          }
+        }
+
+        .text {
+          padding: 0 270px 44px 40px;
         }
       }
     }

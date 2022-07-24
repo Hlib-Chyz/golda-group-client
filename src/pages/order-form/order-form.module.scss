@@ -122,3 +122,16 @@
     }
   }
 }
+
+@media (min-width: 800px) and (max-width: 1199px) {
+  .wrapper {
+    .container {
+      width: $width-760;
+      display: flex;
+      justify-content: space-between;
+      .contentCourseParameters {
+        margin: 66px 0 0 0;
+      }
+    }
+  }
+}
