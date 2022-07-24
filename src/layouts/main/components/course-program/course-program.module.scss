@@ -8,6 +8,15 @@
     .dropdowns {
       display: flex;
       margin-bottom: 32px;
+      > div > div > div {
+        width: 200px;
+      }
+      > div:first-child > div > div {
+        width: 330px !important;
+      }
+      > div:last-child {
+        margin-right: 0 !important;
+      }
     }
     .infoAddition {
       background-color: white;
@@ -152,8 +161,11 @@
     padding: $padding-beetwen-blocks-800 0;
     .content {
       .dropdowns {
-        > div {
-          width: 200px;
+        > div > div > div {
+          width: 150px;
+        }
+        > div:first-child > div > div {
+          width: 250px !important;
         }
       }
       .infoAddition {
@@ -164,11 +176,11 @@
           width: 720px;
           .infoLeft,
           .infoRight {
-            width: 35%;
+            width: 45%;
           }
 
           .homeEducation {
-            right: 310px;
+            right: 80px;
             img {
               width: 292px;
               height: 230px;

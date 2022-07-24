@@ -24,5 +24,6 @@
 @media (min-width: 800px) and (max-width: 1199px) {
   .container {
     width: $width-760;
+    padding: $padding-beetwen-blocks-800 0;
   }
 }

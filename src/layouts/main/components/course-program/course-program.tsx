@@ -676,7 +676,6 @@ const CourseProgram = observer(() => {
           <div className={styles.dropdowns}>
             <Dropdown
               prop={Props[courseProgram.getFormat]}
-              width="330px"
               setter={(format: FormatOfStudyEnum) =>
                 courseProgram.setFormat(format)
               }

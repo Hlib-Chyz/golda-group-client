@@ -65,3 +65,29 @@
     transform: scaleY(1);
   }
 }
+
+@media (min-width: 800px) and (max-width: 1199px) {
+  .container {
+    .dropdown {
+      // width: 150px !important;
+      p {
+        font-size: 15px;
+      }
+
+      .arrow {
+        height: 11px;
+
+        &.arrowTop {
+          transform: rotate(180deg);
+        }
+
+        img {
+          height: 11px;
+        }
+      }
+    }
+    .items {
+      font-size: 15px;
+    }
+  }
+}
