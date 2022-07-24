@@ -10,6 +10,7 @@ import {
 } from "enums";
 import { ChangeEvent, useContext, useEffect, useRef, useState } from "react";
 import { Context } from "index";
+import TextLanguage from "@components/text-language/text-language";
 
 function OrderForm() {
   const { courseParameters } = useContext(Context)!;
@@ -124,14 +125,14 @@ function OrderForm() {
     setEmailDirty(true);
   };
 
-  function getFormatText(): string {
+  function getFormatText(): Props | string {
     switch (courseParameters.getCourseParameters().format) {
       case FormatOfStudyEnum.Textbook:
-        return "BOOK";
+        return Props.BOOK;
       case FormatOfStudyEnum.TutorialWithTeacher:
-        return "BOOK з учителем";
+        return Props.BOOKWithTeacher;
       case FormatOfStudyEnum.TutorialWithZlata:
-        return "BOOK зі Златою";
+        return Props.BOOKWithZlata;
       default:
         return "";
     }
@@ -150,14 +151,14 @@ function OrderForm() {
     }
   }
 
-  function getLanguageText(): string {
+  function getLanguageText(): Props | string {
     switch (courseParameters.getCourseParameters().language) {
       case LanguageOfStudyEnum.English:
-        return "Английский";
+        return Props.English;
       case LanguageOfStudyEnum.Deutsch:
-        return "Немецкий";
+        return Props.Deutsch;
       case LanguageOfStudyEnum.French:
-        return "Французский";
+        return Props.French;
       default:
         return "";
     }
@@ -181,7 +182,9 @@ function OrderForm() {
       {courseParameters.getCourseParameters().format ? (
         <div className={styles.container}>
           <div className={styles.contentForm}>
-            <h3>Оформление заказа</h3>
+            <h3>
+              <TextLanguage prop={Props.Checkout} />
+            </h3>
             <form onSubmit={(e: any) => submitForm(e)} className={styles.form}>
               <div className={styles.inputError}>
                 <div>
@@ -189,7 +192,7 @@ function OrderForm() {
                     className={nameDirty && nameError ? styles.error : ""}
                     ref={refLabelName}
                   >
-                    ФИО
+                    <TextLanguage prop={Props.Fullname} />
                   </label>
                   <input
                     value={name}
@@ -243,7 +246,7 @@ function OrderForm() {
                     className={phoneDirty && phoneError ? styles.error : ""}
                     ref={refLabelPhone}
                   >
-                    ТЕЛЕФОН
+                    <TextLanguage prop={Props.Phone} />
                   </label>
                   <input
                     value={phone}
@@ -277,8 +280,12 @@ function OrderForm() {
           </div>
           <div className={styles.contentCourseParameters}>
             <div className={styles.courseParameters}>
-              <p>{getFormatText()} /</p>
-              <p>{getLanguageText()} /</p>
+              <p>
+                <TextLanguage prop={getFormatText()} /> /
+              </p>
+              <p>
+                <TextLanguage prop={getLanguageText()} /> /
+              </p>
               <p>{getLevelText()}</p>
             </div>
             <div className={styles.containerPrice}>

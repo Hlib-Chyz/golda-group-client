@@ -156,6 +156,17 @@ export enum Props {
   PartialListeningComprehension = "PartialListeningComprehension",
   FormulationOfThought = "FormulationOfThought",
   Pay = "Pay",
+  BelieveInYourself = "BelieveInYourself",
+  WhichLanguageDoYouWant = "WhichLanguageDoYouWant",
+  WhatLevelDoYouWant = "WhatLevelDoYouWant",
+  IAgreeWithTheTermsOfTheContractOffers = "IAgreeWithTheTermsOfTheContractOffers",
+  IAgreeToTheTermsOfThePrivacyPolicy = "IAgreeToTheTermsOfThePrivacyPolicy",
+  Checkout = "Checkout",
+  Fullname = "Fullname",
+  Phone = "Phone",
+  BOOK = "BOOK",
+  BOOKWithTeacher = "BOOKWithTeacher",
+  BOOKWithZlata = "BOOKWithZlata",
 }
 
 export type PosipilityProps = keyof typeof Props;

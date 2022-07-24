@@ -14,6 +14,7 @@ import { ChangeEvent, useContext, useEffect, useState } from "react";
 import Modal from "react-modal";
 import { NavLink } from "react-router-dom";
 import cross from "@assets/images/cross.svg";
+import TextLanguage from "@components/text-language/text-language";
 
 const customStyles = {
   content: {
@@ -145,7 +146,9 @@ function ModalChooseTariff({
         <form>
           <div className={styles.item}>
             <label className={styles.label}>
-              <p>Яку мову бажаєте ?</p>
+              <p>
+                <TextLanguage prop={Props.WhichLanguageDoYouWant} />
+              </p>
             </label>
             <Dropdown
               prop={Props[language]}
@@ -160,7 +163,9 @@ function ModalChooseTariff({
           </div>
           <div className={styles.item}>
             <label className={styles.label}>
-              <p>Який рівень бажаєте ?</p>
+              <p>
+                <TextLanguage prop={Props.WhatLevelDoYouWant} />
+              </p>
             </label>
             <Dropdown
               prop={Props[level]}
@@ -192,7 +197,7 @@ function ModalChooseTariff({
             </NavLink>
           </div>
           <CheckboxWithLabel
-            text="Я погоджуюсь з умовами договору - оферти"
+            text={Props.IAgreeWithTheTermsOfTheContractOffers}
             id="1"
             customStyle={{
               marginBottom: "24px",
@@ -203,7 +208,7 @@ function ModalChooseTariff({
             isShowErrorMessage={showError && !checkboxContractOffer}
           />
           <CheckboxWithLabel
-            text="Я погоджуюсь з умовами політики конфіденційності"
+            text={Props.IAgreeToTheTermsOfThePrivacyPolicy}
             id="2"
             messageError="Жмякни"
             value={checkboxPrivacyPolicy}
@@ -228,7 +233,7 @@ function CheckboxWithLabel({
   setValue,
 }: {
   id: string;
-  text: string;
+  text: Props;
   messageError: string;
   value: boolean;
   setValue: Function;
@@ -245,7 +250,9 @@ function CheckboxWithLabel({
         id={id}
         type="checkbox"
       />
-      <label htmlFor={id}>{text}</label>
+      <label htmlFor={id}>
+        <TextLanguage prop={text} />
+      </label>
       {isShowErrorMessage ? (
         <p
           style={{
