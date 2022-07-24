@@ -12,8 +12,7 @@ function Subheader({ refTrffic }: { refTrffic: RefObject<HTMLDivElement> }) {
     <div className={styles.subheader}>
       <section className={styles.leftSide}>
         <h1>
-          <TextLanguage prop={Props.HeadingH1First} />
-          <br />
+          <TextLanguage prop={Props.HeadingH1First} />{" "}
           <TextLanguage prop={Props.HeadingH1Second} />
         </h1>
         <p>

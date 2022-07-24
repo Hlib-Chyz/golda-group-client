@@ -30,3 +30,80 @@
     }
   }
 }
+
+@media (min-width: 428px) and (max-width: 799px) {
+  .container {
+    width: $width-388;
+    padding: 250px 0 $padding-beetwen-blocks-428;
+    .reasons {
+      height: 370px;
+      width: 85%;
+      margin-bottom: 35px;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      > div {
+        position: absolute;
+        &:first-child {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          right: 20px;
+          div {
+            width: 94px;
+            height: 94px;
+            border-radius: 15px;
+            img {
+              width: 76px;
+              height: 70px;
+            }
+          }
+          p {
+            width: 94px;
+            padding-left: 8px;
+            font-size: 8px;
+            font-weight: 600;
+          }
+        }
+        &:last-child {
+          top: 62px;
+          div {
+            width: 130px;
+            height: 130px;
+            img {
+              width: 100px;
+              height: 80px;
+            }
+          }
+          p {
+            width: 140px;
+            font-size: 12px;
+            padding-left: 8px;
+            font-weight: 600;
+          }
+        }
+        &:nth-child(2) {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          right: 0;
+          top: 152px;
+          div {
+            height: 175px;
+            width: 175px;
+            img {
+              height: 120px;
+              width: 135px;
+            }
+          }
+          p {
+            width: 185px;
+            font-size: 14px;
+            padding-left: 8px;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
+}

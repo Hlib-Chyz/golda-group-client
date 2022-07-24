@@ -42,3 +42,12 @@
     background-size: 100% 500px;
   }
 }
+
+@media (min-width: 428px) and (max-width: 799px) {
+  .wrapper {
+    -webkit-background-size: 100% 450px;
+    -moz-background-size: 100% 450px;
+    -o-background-size: 100% 450px;
+    background-size: 100% 450px;
+  }
+}

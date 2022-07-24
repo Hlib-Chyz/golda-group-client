@@ -149,11 +149,47 @@
           }
         }
       }
+      .buttonMenu {
+        display: none;
+      }
     }
   }
 }
 
 @media (min-width: 428px) and (max-width: 799px) {
+  .header {
+    min-width: $width-388;
+    .container {
+      min-width: $width-388;
+      .leftSide {
+        .logo {
+          margin-right: 0;
+          a {
+            font-size: 20px;
+          }
+        }
+        .nav {
+          display: none;
+        }
+      }
+      .rightSide {
+        display: none;
+      }
+      .buttonMenu {
+        display: block;
+        width: 18px;
+        height: 18px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .dash {
+          width: 18px;
+          height: 2px;
+          background-color: #30366c;
+        }
+      }
+    }
+  }
 }
 
 @media (min-width: 428px) and (max-width: 799px) {

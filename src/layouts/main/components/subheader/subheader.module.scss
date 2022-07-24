@@ -78,3 +78,29 @@
     }
   }
 }
+
+@media (min-width: 428px) and (max-width: 799px) {
+  .subheader {
+    width: $width-388;
+    padding-top: 100px;
+    flex-direction: column;
+    .leftSide {
+      h1 {
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+      p {
+        font-size: 13px;
+        margin-bottom: 20px;
+      }
+    }
+    .rightSide {
+      bottom: -185px;
+      right: 20px;
+      img {
+        width: 223px;
+        height: 235px;
+      }
+    }
+  }
+}

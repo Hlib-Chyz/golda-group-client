@@ -83,3 +83,34 @@
     }
   }
 }
+
+@media (min-width: 428px) and (max-width: 799px) {
+  .container {
+    padding: $padding-beetwen-blocks-428 0;
+    width: $width-388;
+    .section {
+      -webkit-background-size: 100% 384px;
+      -moz-background-size: 100% 384px;
+      -o-background-size: 100% 384px;
+      background-size: 100% 384px;
+      .content {
+        height: 125px;
+        .center {
+          width: 100px;
+          height: 100px;
+          min-width: 100px;
+          height: 100px;
+          margin: 0;
+          align-self: center;
+          img {
+            width: 65px;
+            height: 65px;
+          }
+        }
+        .what {
+          margin: 0;
+        }
+      }
+    }
+  }
+}

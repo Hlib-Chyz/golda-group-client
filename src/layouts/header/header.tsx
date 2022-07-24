@@ -126,6 +126,11 @@ const Header = observer(({ refs }: { refs: Refs }) => {
               </button>
             </div>
           </div>
+          <div className={styles.buttonMenu}>
+            <div className={styles.dash}></div>
+            <div className={styles.dash}></div>
+            <div className={styles.dash}></div>
+          </div>
         </div>
       </header>
     </>
