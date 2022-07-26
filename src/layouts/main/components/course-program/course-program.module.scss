@@ -210,6 +210,12 @@
     padding: $padding-beetwen-blocks-428 0;
     .content {
       .dropdowns {
+        padding: 0 20px;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        > div {
+          margin-bottom: 10px;
+        }
         > div > div > div {
           width: 120px !important;
         }
@@ -254,9 +260,8 @@
         }
 
         .dash {
-          position: absolute;
           width: 240px;
-          left: 124px;
+          margin-left: -20px;
           background-color: #4a74ba;
           min-height: 1px;
         }
