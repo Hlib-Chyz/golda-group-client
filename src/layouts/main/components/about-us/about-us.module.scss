@@ -1,7 +1,7 @@
 @import "styles/variables.scss";
 
 .container {
-  width: $max-width-content;
+  min-width: $max-width-content;
   margin: 0 auto;
   padding: $padding-beetwen-blocks 0;
   .section {
@@ -129,7 +129,7 @@
 
 @media (max-width: 1400px) {
   .container {
-    width: $width-1160;
+    min-width: $width-1160;
     .section {
       .firstBlock {
         margin-bottom: 50px;
@@ -205,7 +205,7 @@
 
 @media (min-width: 800px) and (max-width: 1199px) {
   .container {
-    width: $width-760;
+    min-width: $width-760;
     padding: $padding-beetwen-blocks-800 0;
     .section {
       .firstBlock {
@@ -244,7 +244,7 @@
 
 @media (max-width: 799px) {
   .container {
-    width: $width-388;
+    min-width: $width-360;
     padding: $padding-beetwen-blocks-428 0;
     .section {
       .firstBlock {
@@ -260,7 +260,7 @@
             .leftSide {
               margin: 0;
               margin-bottom: 16px;
-              min-width: 148px;
+              min-width: 168px;
               padding: 10px;
               .name {
                 img {
@@ -318,7 +318,7 @@
         }
 
         .zlata {
-          top: 284px;
+          top: 254px;
           position: absolute;
           img {
             width: 175px;

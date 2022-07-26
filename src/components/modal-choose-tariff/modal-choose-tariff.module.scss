@@ -118,3 +118,27 @@
     }
   }
 }
+@media (max-width: 799px) {
+  .container {
+    form {
+      .item {
+        padding-bottom: 25px;
+      }
+    }
+  }
+
+  .cross {
+    right: 40px;
+    top: 45px;
+    img {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  .checkboxWithLabel {
+    input ~ label {
+      font-size: 14px;
+    }
+  }
+}

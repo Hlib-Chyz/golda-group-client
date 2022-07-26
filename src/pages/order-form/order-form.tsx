@@ -185,6 +185,21 @@ function OrderForm() {
             <h3>
               <TextLanguage prop={Props.Checkout} />
             </h3>
+            <div className={styles.contentCourseParametersForMobile}>
+              <div className={styles.courseParameters}>
+                <p>
+                  <TextLanguage prop={getFormatText()} /> /
+                </p>
+                <p>
+                  <TextLanguage prop={getLanguageText()} /> /
+                </p>
+                <p>{getLevelText()}</p>
+              </div>
+              <div className={styles.containerPrice}>
+                <div className={styles.dash}></div>
+                <p className={styles.price}>{getPrice()} грн.</p>
+              </div>
+            </div>
             <form onSubmit={(e: any) => submitForm(e)} className={styles.form}>
               <div className={styles.inputError}>
                 <div>

@@ -1,7 +1,7 @@
 @import "styles/variables.scss";
 
 .subheader {
-  width: $max-width-content;
+  min-width: $max-width-content;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -33,7 +33,7 @@
 
 @media (max-width: 1400px) {
   .subheader {
-    width: $width-1160;
+    min-width: $width-1160;
     padding-top: 220px;
     .leftSide {
       h1 {
@@ -56,7 +56,7 @@
 
 @media (min-width: 800px) and (max-width: 1199px) {
   .subheader {
-    width: $width-760;
+    min-width: $width-760;
     padding-top: 150px;
     .leftSide {
       h1 {
@@ -81,10 +81,12 @@
 
 @media (max-width: 799px) {
   .subheader {
-    width: $width-388;
-    padding-top: 100px;
+    min-width: $width-360;
     flex-direction: column;
+    align-items: flex-start;
+    padding: 100px 20px 0;
     .leftSide {
+      width: 100%;
       h1 {
         font-size: 20px;
         margin-bottom: 10px;

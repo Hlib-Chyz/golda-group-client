@@ -167,7 +167,7 @@
 
 @media (max-width: 799px) {
   .container {
-    min-width: $width-388;
+    min-width: $width-360;
     margin: $padding-beetwen-blocks-428 auto 0;
     .footer {
       padding: 15px 0;
@@ -193,7 +193,9 @@
         }
         .third {
           margin-bottom: 15px;
+          flex-direction: column;
           .contractsLinks {
+            margin-top: 10px;
             a {
               font-size: 8px;
             }

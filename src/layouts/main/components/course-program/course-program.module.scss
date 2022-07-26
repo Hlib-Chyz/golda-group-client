@@ -110,7 +110,7 @@
 
 @media (max-width: 1400px) {
   .container {
-    width: $width-1160;
+    min-width: $width-1160;
     margin: 0 auto;
     .content {
       .dropdowns {
@@ -157,7 +157,7 @@
 
 @media (min-width: 800px) and (max-width: 1199px) {
   .container {
-    max-width: $width-760;
+    min-width: $width-760;
     padding: $padding-beetwen-blocks-800 0;
     .content {
       .dropdowns {
@@ -206,7 +206,7 @@
 
 @media (max-width: 799px) {
   .container {
-    max-width: $width-388;
+    min-width: $width-360;
     padding: $padding-beetwen-blocks-428 0;
     .content {
       .dropdowns {

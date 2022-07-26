@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react-hooks/exhaustive-deps */
 // eslint-disable-next-line no-restricted-imports
 import styles from "./course-program.module.scss";
@@ -673,7 +674,7 @@ const CourseProgram = observer(() => {
       <div>
         <Heading text={Props.CourseProgram} />
         <div className={styles.content}>
-          <div className={styles.dropdowns}>
+          {/* <div className={styles.dropdowns}>
             <Dropdown
               prop={Props[courseProgram.getFormat]}
               setter={(format: FormatOfStudyEnum) =>
@@ -705,7 +706,7 @@ const CourseProgram = observer(() => {
               }
               formats={levels}
             />
-          </div>
+          </div> */}
           <div className={styles.infoAddition}>
             <div className={styles.info}>
               <div className={styles.infoLeft}>

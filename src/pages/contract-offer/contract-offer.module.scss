@@ -1,7 +1,7 @@
 @import "/src/styles/variables.scss";
 
 .container {
-  max-width: $max-width-content;
+  min-width: $max-width-content;
   margin: 0 auto;
   padding: 190px 0 100px;
   .heading {
@@ -43,12 +43,19 @@
 
 @media (max-width: 1400px) {
   .container {
-    max-width: $width-1160;
+    min-width: $width-1160;
   }
 }
 
 @media (min-width: 800px) and (max-width: 1199px) {
   .container {
-    max-width: $width-760;
+    min-width: $width-760;
+  }
+}
+
+@media (max-width: 799px) {
+  .container {
+    min-width: $width-360;
+    padding: 190px 20px 100px;
   }
 }

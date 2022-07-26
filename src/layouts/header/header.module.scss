@@ -82,7 +82,7 @@
 
 @media (max-width: 1400px) {
   .header {
-    width: $width-1160;
+    min-width: $width-1160;
     margin: 0 auto;
     .container {
       min-width: $width-1160;
@@ -120,7 +120,7 @@
 
 @media (min-width: 800px) and (max-width: 1199px) {
   .header {
-    width: $width-760;
+    min-width: $width-760;
     .container {
       min-width: $width-760;
       .leftSide {
@@ -162,12 +162,12 @@
 @media (max-width: 799px) {
   .header {
     margin: 0 auto;
-    min-width: $width-388;
+    min-width: $width-360;
     left: 50%;
     transform: translateX(-50%);
+    padding: 16px 0;
     .container {
-      max-width: $width-388;
-      min-width: $width-388;
+      min-width: $width-360;
       .leftSide {
         .logo {
           margin-right: 0;
@@ -178,9 +178,6 @@
         .nav {
           display: none;
         }
-      }
-      .rightSide {
-        display: none;
       }
       .buttonMenu {
         display: block;

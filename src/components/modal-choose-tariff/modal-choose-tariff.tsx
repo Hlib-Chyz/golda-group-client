@@ -23,17 +23,11 @@ const customStyles = {
     left: "50%",
     right: "auto",
     bottom: "auto",
-    marginRight: "-50%",
     transform: "translate(-50%, -50%)",
     borderRadius: "32px",
     backgroundColor: "#E1F5FF",
     border: "none",
-    padding:
-      getWindowSize().innerWidth < 1400
-        ? "40px"
-        : getWindowSize().innerWidth < 801
-        ? "20px"
-        : "64px",
+    padding: getWindowSize().innerWidth < 1400 ? "40px" : "64px",
   },
 };
 
@@ -202,7 +196,12 @@ function ModalChooseTariff({
                   lineHeight: "20px",
                   color: "#0A0808",
                   padding: "0",
-                  marginBottom: windowSize.innerWidth < 1400 ? "50px" : "73px",
+                  marginBottom:
+                    windowSize.innerWidth < 801
+                      ? "20px"
+                      : windowSize.innerWidth < 1400
+                      ? "50px"
+                      : "73px",
                 }}
                 onClick={(e: any) => submitForm(e)}
                 text={Props.Сheckout}

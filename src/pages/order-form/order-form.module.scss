@@ -13,7 +13,7 @@
   padding: 190px 20px 100px;
   height: 100vh;
   .container {
-    width: $max-width-content;
+    min-width: $max-width-content;
     margin: 0 auto;
     display: flex;
 
@@ -120,13 +120,17 @@
         }
       }
     }
+
+    .contentCourseParametersForMobile {
+      display: none;
+    }
   }
 }
 
 @media (max-width: 1400px) {
   .wrapper {
     .container {
-      width: $width-1160;
+      min-width: $width-1160;
     }
   }
 }
@@ -134,11 +138,63 @@
 @media (min-width: 800px) and (max-width: 1199px) {
   .wrapper {
     .container {
-      width: $width-760;
+      min-width: $width-760;
       display: flex;
       justify-content: space-between;
       .contentCourseParameters {
         margin: 66px 0 0 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 799px) {
+  .wrapper {
+    padding: 110px 20px 40px;
+    .container {
+      min-width: $width-360;
+      .contentForm {
+        h3 {
+          text-align: center;
+          font-size: 20px;
+          padding-bottom: 24px;
+        }
+      }
+      .contentCourseParameters {
+        display: none;
+      }
+      .contentCourseParametersForMobile {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        .courseParameters {
+          display: flex;
+          p {
+            font-weight: 600;
+            font-size: 16px;
+            color: #30366c;
+            padding-right: 4px;
+          }
+        }
+
+        .containerPrice {
+          margin-top: 5px;
+          margin-bottom: 24px;
+          display: flex;
+          align-items: center;
+          .dash {
+            background-color: #30366c;
+            height: 1px;
+            width: 50px;
+            margin-right: 13px;
+          }
+          .price {
+            font-weight: 500;
+            font-size: 16px;
+            color: #30366c;
+          }
+        }
       }
     }
   }
