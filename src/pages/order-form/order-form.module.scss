@@ -21,7 +21,7 @@
       h3 {
         font-weight: 600;
         font-size: 28px;
-        color: #0a0808;
+        color: #30366c;
         padding-bottom: 32px;
       }
       .form {
@@ -44,7 +44,7 @@
             border: 1px solid transparent;
 
             font-size: 16px;
-            color: #0a0808;
+            color: #30366c;
             font-weight: 500;
 
             position: absolute;
@@ -119,6 +119,14 @@
           color: #30366c;
         }
       }
+    }
+  }
+}
+
+@media (max-width: 1400px) {
+  .wrapper {
+    .container {
+      width: $width-1160;
     }
   }
 }

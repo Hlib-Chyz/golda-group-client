@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 /* eslint-disable react-hooks/exhaustive-deps */
 // eslint-disable-next-line no-restricted-imports
 import styles from "./modal-choose-tariff.module.scss";
@@ -27,9 +28,19 @@ const customStyles = {
     borderRadius: "32px",
     backgroundColor: "#E1F5FF",
     border: "none",
-    padding: "64px",
+    padding:
+      getWindowSize().innerWidth < 1400
+        ? "40px"
+        : getWindowSize().innerWidth < 801
+        ? "20px"
+        : "64px",
   },
 };
+
+function getWindowSize() {
+  const { innerWidth, innerHeight } = window;
+  return { innerWidth, innerHeight };
+}
 
 function ModalChooseTariff({
   isOpen,
@@ -40,6 +51,8 @@ function ModalChooseTariff({
   setOpen: Function;
   formatProp: FormatOfStudyEnum;
 }) {
+  const windowSize = getWindowSize();
+
   const { courseParameters } = useContext(Context)!;
 
   const [modalIsOpen, setIsOpen] = useState<boolean>(false);
@@ -155,9 +168,9 @@ function ModalChooseTariff({
               setter={(language: LanguageOfStudyEnum) => setLanguage(language)}
               formats={languages}
               backgroundColor="white"
-              padding="26px 36px"
-              width="353px"
-              marginItem="6px 0"
+              padding={windowSize.innerWidth < 801 ? "20px 30px" : "26px 36px"}
+              width={windowSize.innerWidth < 801 ? "253px" : "353px"}
+              marginItem={windowSize.innerWidth < 801 ? "5px 0" : "6px 0"}
               colorText="#080808"
             />
           </div>
@@ -172,9 +185,9 @@ function ModalChooseTariff({
               setter={(level: LevelOfStudyEnum) => setLevel(level)}
               formats={levels}
               backgroundColor="white"
-              padding="26px 36px"
-              width="353px"
-              marginItem="6px 0"
+              padding={windowSize.innerWidth < 801 ? "20px 30px" : "26px 36px"}
+              width={windowSize.innerWidth < 801 ? "253px" : "353px"}
+              marginItem={windowSize.innerWidth < 801 ? "5px 0" : "6px 0"}
               colorText="#080808"
             />
           </div>
@@ -189,7 +202,7 @@ function ModalChooseTariff({
                   lineHeight: "20px",
                   color: "#0A0808",
                   padding: "0",
-                  marginBottom: "73px",
+                  marginBottom: windowSize.innerWidth < 1400 ? "50px" : "73px",
                 }}
                 onClick={(e: any) => submitForm(e)}
                 text={Props.Сheckout}

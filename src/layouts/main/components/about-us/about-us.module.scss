@@ -64,10 +64,15 @@
         .leftSide {
           display: none;
         }
+        .top {
+          p {
+            margin-bottom: 40px;
+          }
+        }
         p {
           font-weight: 500;
           font-size: 22px;
-          color: #0a0808;
+          color: #30366c;
           &:first-child {
             margin-bottom: 40px;
           }
@@ -97,7 +102,7 @@
         h3 {
           font-weight: 600;
           font-size: 26px;
-          color: #0a0808;
+          color: #30366c;
         }
       }
 
@@ -112,7 +117,7 @@
         p {
           font-weight: 500;
           font-size: 22px;
-          color: #0a0808;
+          color: #30366c;
           &:first-child {
             margin-bottom: 40px;
           }
@@ -145,6 +150,9 @@
               border-radius: 8px;
               min-width: 210px;
               padding: 20px;
+            }
+            p {
+              margin-bottom: 0;
             }
             > p {
               margin-bottom: 50px;
@@ -311,7 +319,6 @@
         .zlata {
           top: 284px;
           position: absolute;
-          // display: none;
           img {
             width: 175px;
             height: 259px;
