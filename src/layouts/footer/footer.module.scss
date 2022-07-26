@@ -164,3 +164,52 @@
     }
   }
 }
+
+@media (max-width: 799px) {
+  .container {
+    min-width: $width-388;
+    margin: $padding-beetwen-blocks-428 auto 0;
+    .footer {
+      padding: 15px 0;
+      .top {
+        .first {
+          .logo {
+            a {
+              font-size: 20px;
+            }
+          }
+        }
+        .second {
+          margin: 10px 0;
+          .email {
+            p {
+              font-size: 10px;
+            }
+          }
+          ul {
+            font-size: 10px;
+            margin-left: 0;
+          }
+        }
+        .third {
+          margin-bottom: 15px;
+          .contractsLinks {
+            a {
+              font-size: 8px;
+            }
+            .dash {
+              height: 10px;
+            }
+          }
+        }
+      }
+
+      .bottom {
+        p {
+          font-size: 8px;
+          margin-top: 15px;
+        }
+      }
+    }
+  }
+}

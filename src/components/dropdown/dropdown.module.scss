@@ -69,17 +69,12 @@
 @media (min-width: 800px) and (max-width: 1199px) {
   .container {
     .dropdown {
-      // width: 150px !important;
       p {
         font-size: 15px;
       }
 
       .arrow {
         height: 11px;
-
-        &.arrowTop {
-          transform: rotate(180deg);
-        }
 
         img {
           height: 11px;
@@ -88,6 +83,29 @@
     }
     .items {
       font-size: 15px;
+    }
+  }
+}
+
+@media (max-width: 799px) {
+  .container {
+    margin-right: 14px;
+    .dropdown {
+      padding: 8px 13px;
+      p {
+        font-size: 11px;
+      }
+
+      .arrow {
+        height: 9px;
+
+        img {
+          height: 9px;
+        }
+      }
+    }
+    .items {
+      font-size: 11px;
     }
   }
 }

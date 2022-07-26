@@ -734,19 +734,23 @@ const CourseProgram = observer(() => {
                 <img src={homeEducation} alt="home education" />
               </div>
             </div>
+
             {courseProgramText.addition.length ? (
-              <section className={styles.addition}>
-                <h5>
-                  <TextLanguage prop={Props.Addition} />
-                </h5>
-                <ul>
-                  {courseProgramText.addition.map((item: Props) => (
-                    <li className={styles.additionItem} key={item}>
-                      <TextLanguage prop={item} />
-                    </li>
-                  ))}
-                </ul>
-              </section>
+              <>
+                <div className={styles.dash}></div>
+                <section className={styles.addition}>
+                  <h5>
+                    <TextLanguage prop={Props.Addition} />
+                  </h5>
+                  <ul>
+                    {courseProgramText.addition.map((item: Props) => (
+                      <li className={styles.additionItem} key={item}>
+                        <TextLanguage prop={item} />
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+              </>
             ) : (
               ""
             )}

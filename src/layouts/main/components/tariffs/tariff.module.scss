@@ -98,3 +98,33 @@
     margin-bottom: 70px;
   }
 }
+
+@media (max-width: 799px) {
+  .container {
+    margin-bottom: 40px;
+    width: 240px;
+    padding: 20px 20px 0 20px;
+    height: 700px;
+
+    h4 {
+      font-size: 20px;
+      margin-bottom: 25px;
+    }
+
+    .content {
+      .top {
+        li {
+          font-size: 16px;
+          margin-bottom: 18px;
+        }
+      }
+
+      .bottom {
+        .imgEducation {
+          width: 200px;
+          height: 180px;
+        }
+      }
+    }
+  }
+}

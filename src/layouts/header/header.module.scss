@@ -156,10 +156,14 @@
   }
 }
 
-@media (min-width: 428px) and (max-width: 799px) {
+@media (max-width: 799px) {
   .header {
+    margin: 0 auto;
     min-width: $width-388;
+    left: 50%;
+    transform: translateX(-50%);
     .container {
+      max-width: $width-388;
       min-width: $width-388;
       .leftSide {
         .logo {
@@ -190,10 +194,4 @@
       }
     }
   }
-}
-
-@media (min-width: 428px) and (max-width: 799px) {
-}
-
-@media (min-width: 320px) and (max-width: 427px) {
 }

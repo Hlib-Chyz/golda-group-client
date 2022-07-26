@@ -203,3 +203,85 @@
     }
   }
 }
+
+@media (max-width: 799px) {
+  .container {
+    max-width: $width-388;
+    padding: $padding-beetwen-blocks-428 0;
+    .content {
+      .dropdowns {
+        > div > div > div {
+          width: 120px !important;
+        }
+        > div:first-child > div > div {
+          width: 210px !important;
+        }
+      }
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .infoAddition {
+        padding: 20px;
+        width: 240px;
+        .info {
+          position: relative;
+          flex-direction: column;
+          width: 200px;
+          .infoLeft,
+          .infoRight {
+            width: 100%;
+            padding-bottom: 30px;
+            padding-left: 0;
+            .fake {
+              height: 30px;
+            }
+          }
+          .infoRight {
+            padding-top: 0px;
+            padding-bottom: 150px;
+          }
+
+          .dash {
+            display: none;
+          }
+          .homeEducation {
+            left: 0;
+            img {
+              width: 200px;
+              height: 190px;
+            }
+          }
+        }
+
+        .dash {
+          position: absolute;
+          width: 240px;
+          left: 124px;
+          background-color: #4a74ba;
+          min-height: 1px;
+        }
+
+        .addition {
+          padding-top: 30px;
+          border-top: 0;
+          h5 {
+            font-size: 20px;
+            padding-bottom: 20px;
+          }
+          ul {
+            li {
+              font-size: 12px;
+              padding-bottom: 12px;
+
+              &:before {
+                width: 15px;
+                height: 15px;
+                margin-right: 12px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

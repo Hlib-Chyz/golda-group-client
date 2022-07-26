@@ -27,3 +27,10 @@
     padding: $padding-beetwen-blocks-800 0;
   }
 }
+
+@media (max-width: 799px) {
+  .container {
+    width: $width-388;
+    padding: $padding-beetwen-blocks-428 0;
+  }
+}
