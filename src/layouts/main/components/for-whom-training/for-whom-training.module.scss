@@ -3,6 +3,7 @@
 .container {
   text-align: center;
   min-width: $max-width-content;
+  max-width: $max-width-content;
   margin: 0 auto;
   padding: 250px 0 $padding-beetwen-blocks;
   .reasons {
@@ -15,6 +16,7 @@
 @media (max-width: 1400px) {
   .container {
     min-width: $width-1160;
+    max-width: $width-1160;
     .reasons {
       margin-bottom: 73px;
     }
@@ -24,6 +26,7 @@
 @media (min-width: 800px) and (max-width: 1199px) {
   .container {
     min-width: $width-760;
+    max-width: $width-760;
     padding: 150px 0 $padding-beetwen-blocks-800;
     .reasons {
       margin-bottom: 53px;
@@ -34,6 +37,7 @@
 @media (max-width: 799px) {
   .container {
     min-width: $width-360;
+    max-width: $width-360;
     padding: 250px 0 $padding-beetwen-blocks-428;
     .reasons {
       height: 370px;

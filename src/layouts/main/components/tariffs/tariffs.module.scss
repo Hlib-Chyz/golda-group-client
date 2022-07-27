@@ -2,6 +2,7 @@
 
 .container {
   min-width: $max-width-content;
+  max-width: $max-width-content;
   margin: 0 auto;
   padding: $padding-beetwen-blocks 0;
 
@@ -14,6 +15,7 @@
 @media (max-width: 1400px) {
   .container {
     min-width: $width-1160;
+    max-width: $width-1160;
     .tariffs {
       flex-direction: column;
       align-items: center;
@@ -24,6 +26,7 @@
 @media (min-width: 800px) and (max-width: 1199px) {
   .container {
     min-width: $width-760;
+    max-width: $width-760;
     padding: $padding-beetwen-blocks-800 0;
   }
 }
@@ -31,6 +34,7 @@
 @media (max-width: 799px) {
   .container {
     min-width: $width-360;
+    max-width: $width-360;
     padding: $padding-beetwen-blocks-428 0;
   }
 }
