@@ -27,7 +27,12 @@ const customStyles = {
     borderRadius: "32px",
     backgroundColor: "#E1F5FF",
     border: "none",
-    padding: getWindowSize().innerWidth < 1400 ? "40px" : "64px",
+    padding:
+      getWindowSize().innerWidth < 801
+        ? "25px"
+        : getWindowSize().innerWidth < 1400
+        ? "40px"
+        : "64px",
   },
 };
 

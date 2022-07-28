@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 /* eslint-disable react-hooks/exhaustive-deps */
 // eslint-disable-next-line no-restricted-imports
 import styles from "./course-program.module.scss";
@@ -11,6 +12,8 @@ import {
 import Dropdown from "@components/dropdown/dropdown";
 import Describe from "@layouts/main/components/course-program/describe";
 import homeEducation from "@assets/images/home-education.svg";
+import datingChat from "@assets/images/dating-chat.svg";
+import freelancer from "@assets/images/freelancer.svg";
 import { useContext, useEffect, useState } from "react";
 import { Context } from "index";
 import { observer } from "mobx-react-lite";
@@ -731,7 +734,17 @@ const CourseProgram = observer(() => {
                 />
               </div>
               <div className={styles.homeEducation}>
-                <img src={homeEducation} alt="home education" />
+                <img
+                  src={
+                    courseProgram.getFormat === FormatOfStudyEnum.Textbook
+                      ? homeEducation
+                      : courseProgram.getFormat ===
+                        FormatOfStudyEnum.TutorialWithTeacher
+                      ? freelancer
+                      : datingChat
+                  }
+                  alt="home education"
+                />
               </div>
             </div>
 
