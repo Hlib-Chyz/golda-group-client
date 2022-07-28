@@ -114,16 +114,33 @@ function OrderForm() {
     }
   };
 
-  const submitForm = (e: ChangeEvent<HTMLInputElement>) => {
+  function submitForm(e: ChangeEvent<HTMLInputElement>): void {
     e.preventDefault();
     if (!emailError && !nameError && !phoneError) {
-      console.log(email, name, phone);
+      const { format, language, level } =
+        courseParameters.getCourseParameters();
+      fetch("http://localhost:5000/purchase-information", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        mode: "no-cors",
+        body: JSON.stringify({
+          format,
+          language,
+          level,
+          email,
+          phone,
+          fullName: name,
+          created: new Date().toISOString(),
+        }),
+      });
       return;
     }
     setPhoneDirty(true);
     setNameDirty(true);
     setEmailDirty(true);
-  };
+  }
 
   function getFormatText(): Props | string {
     switch (courseParameters.getCourseParameters().format) {
