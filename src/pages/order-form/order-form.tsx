@@ -90,15 +90,11 @@ function OrderForm() {
 
   const nameHandler = (e: ChangeEvent<HTMLInputElement>): void => {
     setName(e.target.value);
-    const isValidName = new RegExp(/^[a-zA-Z\s]*$/).test(e.target.value);
     if (!e.target.value) {
       setNameError("ФИО не может быть пустым");
       return;
     }
-    if (!isValidName) {
-      setNameError("Поле может содержать только буквы и пробелы");
-      return;
-    }
+
     setNameError("");
   };
 
@@ -409,6 +405,9 @@ function ModalRequisites({
       <div className={styles.container}>
         <h3>Ваши Данные успешно сохраненны</h3>
         <p>К Оплате: {price} грн.</p>
+        <p>
+          В описании оплаты укажите пожалуйста фамилию, которую вводили ранее
+        </p>
         <p>Оплата по реквизитам:</p>
         <p>IBAN: UA303220010000026005320096181</p>
         <p>или</p>
