@@ -119,22 +119,25 @@ function OrderForm() {
     if (!emailError && !nameError && !phoneError) {
       const { format, language, level } =
         courseParameters.getCourseParameters();
-      fetch("http://localhost:5000/purchase-information", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-        mode: "no-cors",
-        body: JSON.stringify({
-          format,
-          language,
-          level,
-          email,
-          phone,
-          fullName: name,
-          created: new Date().toISOString(),
-        }),
-      });
+      fetch(
+        "http://goldagroup-env.eba-vshzb2xq.us-east-1.elasticbeanstalk.com/api/purchase-information",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+          mode: "no-cors",
+          body: JSON.stringify({
+            format,
+            language,
+            level,
+            email,
+            phone,
+            fullName: name,
+            created: new Date().toISOString(),
+          }),
+        }
+      );
       return;
     }
     setPhoneDirty(true);
