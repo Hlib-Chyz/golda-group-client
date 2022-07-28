@@ -11,6 +11,8 @@ import {
 import { ChangeEvent, useContext, useEffect, useRef, useState } from "react";
 import { Context } from "index";
 import TextLanguage from "@components/text-language/text-language";
+import Modal from "react-modal";
+import cross from "@assets/images/cross.svg";
 
 function OrderForm() {
   const { courseParameters } = useContext(Context)!;
@@ -34,6 +36,8 @@ function OrderForm() {
   const [widthLabelName, setWidthLabelName] = useState<number>(0);
   const [widthLabelEmail, setWidthLabelEmail] = useState<number>(0);
   const [widthLabelPhone, setWidthLabelPhone] = useState<number>(0);
+
+  const [isOpenModal, setOpenModal] = useState<boolean>(false);
 
   const [email, setEmail] = useState<string>("");
   const [phone, setPhone] = useState<string>("");
@@ -138,6 +142,7 @@ function OrderForm() {
           }),
         }
       );
+      setOpenModal(true);
       return;
     }
     setPhoneDirty(true);
@@ -198,14 +203,132 @@ function OrderForm() {
   }
 
   return (
-    <div className={styles.wrapper}>
-      {courseParameters.getCourseParameters().format ? (
-        <div className={styles.container}>
-          <div className={styles.contentForm}>
-            <h3>
-              <TextLanguage prop={Props.Checkout} />
-            </h3>
-            <div className={styles.contentCourseParametersForMobile}>
+    <>
+      <div className={styles.wrapper}>
+        {courseParameters.getCourseParameters().format ? (
+          <div className={styles.container}>
+            <div className={styles.contentForm}>
+              <h3>
+                <TextLanguage prop={Props.Checkout} />
+              </h3>
+              <div className={styles.contentCourseParametersForMobile}>
+                <div className={styles.courseParameters}>
+                  <p>
+                    <TextLanguage prop={getFormatText()} /> /
+                  </p>
+                  <p>
+                    <TextLanguage prop={getLanguageText()} /> /
+                  </p>
+                  <p>{getLevelText()}</p>
+                </div>
+                <div className={styles.containerPrice}>
+                  <div className={styles.dash}></div>
+                  <p className={styles.price}>{getPrice()} грн.</p>
+                </div>
+              </div>
+              <form
+                onSubmit={(e: any) => submitForm(e)}
+                className={styles.form}
+              >
+                <div className={styles.inputError}>
+                  <div>
+                    <label
+                      className={nameDirty && nameError ? styles.error : ""}
+                      ref={refLabelName}
+                    >
+                      <TextLanguage prop={Props.Fullname} />
+                    </label>
+                    <input
+                      value={name}
+                      className={nameDirty && nameError ? styles.error : ""}
+                      onBlur={(e: ChangeEvent<HTMLInputElement>) =>
+                        blurHandle(e)
+                      }
+                      onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                        nameHandler(e)
+                      }
+                      name="name"
+                      style={{
+                        marginBottom: nameDirty && nameError ? "" : "26.25px",
+                        marginLeft: `${widthLabelName - 14}px`,
+                        width: `${355 - widthLabelName}px`,
+                      }}
+                    />
+                  </div>
+                  {nameDirty && nameError && (
+                    <div className={styles.errorMessage}>{nameError}</div>
+                  )}
+                </div>
+                <div className={styles.inputError}>
+                  <div>
+                    <label
+                      className={emailDirty && emailError ? styles.error : ""}
+                      ref={refLabelEmail}
+                    >
+                      EMAIL
+                    </label>
+                    <input
+                      value={email}
+                      className={emailDirty && emailError ? styles.error : ""}
+                      onBlur={(e: ChangeEvent<HTMLInputElement>) =>
+                        blurHandle(e)
+                      }
+                      onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                        emailHandler(e)
+                      }
+                      name="email"
+                      style={{
+                        marginBottom: emailDirty && emailError ? "" : "26.25px",
+                        marginLeft: `${widthLabelEmail - 14}px`,
+                        width: `${355 - widthLabelEmail}px`,
+                      }}
+                    />
+                  </div>
+                  {emailDirty && emailError && (
+                    <div className={styles.errorMessage}>{emailError}</div>
+                  )}
+                </div>
+                <div className={styles.inputError}>
+                  <div>
+                    <label
+                      className={phoneDirty && phoneError ? styles.error : ""}
+                      ref={refLabelPhone}
+                    >
+                      <TextLanguage prop={Props.Phone} />
+                    </label>
+                    <input
+                      value={phone}
+                      className={phoneDirty && phoneError ? styles.error : ""}
+                      onBlur={(e: ChangeEvent<HTMLInputElement>) =>
+                        blurHandle(e)
+                      }
+                      onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                        phoneHandler(e)
+                      }
+                      name="phone"
+                      style={{
+                        marginBottom: phoneDirty && phoneError ? "" : "26.25px",
+                        marginLeft: `${widthLabelPhone - 14}px`,
+                        width: `${355 - widthLabelPhone}px`,
+                      }}
+                    />
+                  </div>
+                  {phoneDirty && phoneError && (
+                    <div className={styles.errorMessage}>{phoneError}</div>
+                  )}
+                </div>
+                <Button
+                  customStyle={{
+                    padding: "25px 0",
+                    fontSize: "14px",
+                    maxWidth: "300px",
+                  }}
+                  text={Props.Pay}
+                  type="submit"
+                />
+              </form>
+            </div>
+            <div className={styles.contentCourseParameters}>
               <div className={styles.courseParameters}>
                 <p>
                   <TextLanguage prop={getFormatText()} /> /
@@ -220,122 +343,77 @@ function OrderForm() {
                 <p className={styles.price}>{getPrice()} грн.</p>
               </div>
             </div>
-            <form onSubmit={(e: any) => submitForm(e)} className={styles.form}>
-              <div className={styles.inputError}>
-                <div>
-                  <label
-                    className={nameDirty && nameError ? styles.error : ""}
-                    ref={refLabelName}
-                  >
-                    <TextLanguage prop={Props.Fullname} />
-                  </label>
-                  <input
-                    value={name}
-                    className={nameDirty && nameError ? styles.error : ""}
-                    onBlur={(e: ChangeEvent<HTMLInputElement>) => blurHandle(e)}
-                    onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                      nameHandler(e)
-                    }
-                    name="name"
-                    style={{
-                      marginBottom: nameDirty && nameError ? "" : "26.25px",
-                      marginLeft: `${widthLabelName - 14}px`,
-                      width: `${355 - widthLabelName}px`,
-                    }}
-                  />
-                </div>
-                {nameDirty && nameError && (
-                  <div className={styles.errorMessage}>{nameError}</div>
-                )}
-              </div>
-              <div className={styles.inputError}>
-                <div>
-                  <label
-                    className={emailDirty && emailError ? styles.error : ""}
-                    ref={refLabelEmail}
-                  >
-                    EMAIL
-                  </label>
-                  <input
-                    value={email}
-                    className={emailDirty && emailError ? styles.error : ""}
-                    onBlur={(e: ChangeEvent<HTMLInputElement>) => blurHandle(e)}
-                    onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                      emailHandler(e)
-                    }
-                    name="email"
-                    style={{
-                      marginBottom: emailDirty && emailError ? "" : "26.25px",
-                      marginLeft: `${widthLabelEmail - 14}px`,
-                      width: `${355 - widthLabelEmail}px`,
-                    }}
-                  />
-                </div>
-                {emailDirty && emailError && (
-                  <div className={styles.errorMessage}>{emailError}</div>
-                )}
-              </div>
-              <div className={styles.inputError}>
-                <div>
-                  <label
-                    className={phoneDirty && phoneError ? styles.error : ""}
-                    ref={refLabelPhone}
-                  >
-                    <TextLanguage prop={Props.Phone} />
-                  </label>
-                  <input
-                    value={phone}
-                    className={phoneDirty && phoneError ? styles.error : ""}
-                    onBlur={(e: ChangeEvent<HTMLInputElement>) => blurHandle(e)}
-                    onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                      phoneHandler(e)
-                    }
-                    name="phone"
-                    style={{
-                      marginBottom: phoneDirty && phoneError ? "" : "26.25px",
-                      marginLeft: `${widthLabelPhone - 14}px`,
-                      width: `${355 - widthLabelPhone}px`,
-                    }}
-                  />
-                </div>
-                {phoneDirty && phoneError && (
-                  <div className={styles.errorMessage}>{phoneError}</div>
-                )}
-              </div>
-              <Button
-                customStyle={{
-                  padding: "25px 0",
-                  fontSize: "14px",
-                  maxWidth: "300px",
-                }}
-                text={Props.Pay}
-                type="submit"
-              />
-            </form>
           </div>
-          <div className={styles.contentCourseParameters}>
-            <div className={styles.courseParameters}>
-              <p>
-                <TextLanguage prop={getFormatText()} /> /
-              </p>
-              <p>
-                <TextLanguage prop={getLanguageText()} /> /
-              </p>
-              <p>{getLevelText()}</p>
-            </div>
-            <div className={styles.containerPrice}>
-              <div className={styles.dash}></div>
-              <p className={styles.price}>{getPrice()} грн.</p>
-            </div>
-          </div>
-        </div>
-      ) : (
-        <h2 style={{ fontSize: "40px" }}>
-          You have not chosen a tariff go to block tariff
-        </h2>
-      )}
-    </div>
+        ) : (
+          <h2 style={{ fontSize: "40px" }}>
+            You have not chosen a tariff go to block tariff
+          </h2>
+        )}
+      </div>
+      <ModalRequisites
+        setOpen={(e: boolean) => setOpenModal(e)}
+        isOpen={isOpenModal}
+        price={getPrice()}
+      />
+    </>
   );
 }
 
 export default OrderForm;
+
+const customStyles = {
+  content: {
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    transform: "translate(-50%, -50%)",
+    borderRadius: "32px",
+    backgroundColor: "#E1F5FF",
+    border: "none",
+    padding: "40px",
+  },
+};
+
+function ModalRequisites({
+  isOpen,
+  setOpen,
+  price,
+}: {
+  isOpen: boolean;
+  setOpen: Function;
+  price: string;
+}) {
+  const [modalIsOpen, setIsOpen] = useState<boolean>(false);
+
+  useEffect(() => {
+    setIsOpen(isOpen);
+    setOpen(isOpen);
+  }, [isOpen]);
+
+  function closeModal(): void {
+    setIsOpen(false);
+    setOpen(false);
+  }
+
+  return (
+    <Modal
+      isOpen={modalIsOpen}
+      onRequestClose={closeModal}
+      style={customStyles}
+      appElement={document.getElementById("root") || undefined}
+    >
+      <button className={styles.cross} onClick={closeModal}>
+        <img src={cross} alt="cross" />
+      </button>
+      <div className={styles.container}>
+        <h3>Ваши Данные успешно сохраненны</h3>
+        <p>К Оплате: {price} грн.</p>
+        <p>Оплата по реквизитам:</p>
+        <p>IBAN: UA303220010000026005320096181</p>
+        <p>или</p>
+        <p>По номеру карты: 4035200041790962</p>
+      </div>
+    </Modal>
+  );
+}
