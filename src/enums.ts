@@ -167,6 +167,11 @@ export enum Props {
   BOOK = "BOOK",
   BOOKWithTeacher = "BOOKWithTeacher",
   BOOKWithZlata = "BOOKWithZlata",
+  ToPay = "ToPay",
+  PleaseIncludeTheFollowingInformationInYourPaymentDescription = "PleaseIncludeTheFollowingInformationInYourPaymentDescription",
+  PaymentByDetails = "PaymentByDetails",
+  Or = "Or",
+  ByCardNumber = "ByCardNumber",
 }
 
 export type PosipilityProps = keyof typeof Props;

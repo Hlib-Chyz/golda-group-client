@@ -204,10 +204,39 @@
       }
     }
   }
+  .cross {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 10px;
+    height: 10px;
+  }
+  .information {
+    p {
+      padding-bottom: 8px;
+      font-size: 16px;
+    }
+  }
 }
 
 .cross {
   position: absolute;
   right: 40px;
   top: 40px;
+}
+.information {
+  p {
+    padding-bottom: 12px;
+    span {
+      font-weight: 600;
+    }
+    &.info {
+      padding-bottom: 1px;
+    }
+  }
+  div {
+    border: 1px solid black;
+    margin-top: 10px;
+    padding: 5px;
+  }
 }

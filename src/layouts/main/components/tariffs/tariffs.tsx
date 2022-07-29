@@ -69,8 +69,8 @@ function Tariffs() {
           heading={Props.WithTeacher}
         />
         <Tariff
-          oldPrice="3390"
-          newPrice="2990"
+          oldPrice="2990"
+          newPrice="2790"
           img={datingChat}
           backgroundColor="#FFA857"
           whatHaveThisTariff={[

@@ -166,7 +166,7 @@ function OrderForm() {
       case FormatOfStudyEnum.TutorialWithTeacher:
         return "1290";
       case FormatOfStudyEnum.TutorialWithZlata:
-        return "2990";
+        return "2790";
       default:
         return "";
     }
@@ -350,6 +350,12 @@ function OrderForm() {
         setOpen={(e: boolean) => setOpenModal(e)}
         isOpen={isOpenModal}
         price={getPrice()}
+        language={getLanguageText()}
+        level={getLevelText()}
+        format={getFormatText()}
+        email={email}
+        phone={phone}
+        fullName={name}
       />
     </>
   );
@@ -375,10 +381,22 @@ function ModalRequisites({
   isOpen,
   setOpen,
   price,
+  language,
+  level,
+  format,
+  email,
+  phone,
+  fullName,
 }: {
   isOpen: boolean;
   setOpen: Function;
   price: string;
+  language: Props | string;
+  level: string;
+  format: Props | string;
+  email: string;
+  phone: string;
+  fullName: string;
 }) {
   const [modalIsOpen, setIsOpen] = useState<boolean>(false);
 
@@ -402,16 +420,50 @@ function ModalRequisites({
       <button className={styles.cross} onClick={closeModal}>
         <img src={cross} alt="cross" />
       </button>
-      <div className={styles.container}>
-        <h3>Ваши Данные успешно сохраненны</h3>
-        <p>К Оплате: {price} грн.</p>
+      <div className={styles.information}>
         <p>
-          В описании оплаты укажите пожалуйста фамилию, которую вводили ранее
+          <TextLanguage prop={Props.ToPay} /> {price} грн.
         </p>
-        <p>Оплата по реквизитам:</p>
-        <p>IBAN: UA303220010000026005320096181</p>
-        <p>или</p>
-        <p>По номеру карты: 4035200041790962</p>
+        <p>
+          <TextLanguage
+            prop={
+              Props.PleaseIncludeTheFollowingInformationInYourPaymentDescription
+            }
+          />
+          <div>
+            <p className={styles.info}>
+              <TextLanguage prop={Props.Language} />:{" "}
+              <TextLanguage prop={language} />
+            </p>
+            <p className={styles.info}>
+              <TextLanguage prop={Props.Format} />:{" "}
+              <TextLanguage prop={format} />
+            </p>
+            <p className={styles.info}>
+              <TextLanguage prop={Props.Level} />: {level}
+            </p>
+            <p className={styles.info}>
+              <TextLanguage prop={Props.Fullname} />: {fullName}
+            </p>
+            <p className={styles.info}>Email: {email}</p>
+            <p className={styles.info}>
+              <TextLanguage prop={Props.Phone} />: {phone}
+            </p>
+          </div>
+        </p>
+        <p>
+          <TextLanguage prop={Props.PaymentByDetails} />
+        </p>
+        <p>
+          IBAN: <span>UA303220010000026005320096181</span>
+        </p>
+        <p>
+          <TextLanguage prop={Props.Or} />
+        </p>
+        <p>
+          <TextLanguage prop={Props.ByCardNumber} />{" "}
+          <span>4035200041790962</span>
+        </p>
       </div>
     </Modal>
   );
