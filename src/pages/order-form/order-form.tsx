@@ -120,7 +120,7 @@ function OrderForm() {
       const { format, language, level } =
         courseParameters.getCourseParameters();
       fetch(
-        "https://goldagroup-env.eba-vshzb2xq.us-east-1.elasticbeanstalk.com/api/purchase-information",
+        "https://goldagroup-env-1.us-east-1.elasticbeanstalk.com//api/purchase-information",
         {
           method: "POST",
           headers: {
