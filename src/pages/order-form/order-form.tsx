@@ -117,27 +117,6 @@ function OrderForm() {
   function submitForm(e: ChangeEvent<HTMLInputElement>): void {
     e.preventDefault();
     if (!emailError && !nameError && !phoneError) {
-      const { format, language, level } =
-        courseParameters.getCourseParameters();
-      fetch(
-        "https://goldagroup-env.eba-vshzb2xq.us-east-1.elasticbeanstalk.com/api/purchase-information",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
-          },
-          mode: "no-cors",
-          body: JSON.stringify({
-            format,
-            language,
-            level,
-            email,
-            phone,
-            fullName: name,
-            created: new Date().toISOString(),
-          }),
-        }
-      );
       setOpenModal(true);
       return;
     }
