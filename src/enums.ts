@@ -172,6 +172,7 @@ export enum Props {
   PaymentByDetails = "PaymentByDetails",
   Or = "Or",
   ByCardNumber = "ByCardNumber",
+  FourLessonsWithTeacher = "FourLessonsWithTeacher",
 }
 
 export type PosipilityProps = keyof typeof Props;

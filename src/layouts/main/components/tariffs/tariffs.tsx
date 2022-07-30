@@ -60,6 +60,9 @@ function Tariffs() {
               value: "Speaking Clubs",
               isNotProp: true,
             },
+            {
+              value: Props.FourLessonsWithTeacher,
+            },
           ]}
           whatDoesNotHaveThisTariff={[
             {

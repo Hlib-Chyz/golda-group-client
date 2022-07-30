@@ -88,7 +88,7 @@ const TextLanguage = observer(({ prop }: { prop: string | undefined }) => {
       Exercises: "Вправи",
       VideoMaterials: "Відеоматеріали",
       ChatWithTeacher: "Чат із викладачем",
-      TwoLessonsWithZlata: "2 Уроки зі Златою",
+      TwoLessonsWithZlata: "4 Уроки зі Златою",
       ChatWithZlata: "Чат зі Златою",
       ContractOffer: "Договір Оферти",
       PrivacyPolicy: "Політика конфіденційності",
@@ -191,6 +191,7 @@ const TextLanguage = observer(({ prop }: { prop: string | undefined }) => {
       PaymentByDetails: "Оплата за реквізитами:",
       Or: "або",
       ByCardNumber: "За номером картки:",
+      FourLessonsWithTeacher: "4 уроки з викладачем",
     },
     RU: {
       AboutCourse: "О курсах",
@@ -269,7 +270,7 @@ const TextLanguage = observer(({ prop }: { prop: string | undefined }) => {
       Exercises: "Упражнения",
       VideoMaterials: "Видеоматериалы",
       ChatWithTeacher: "Чат с преподавателем",
-      TwoLessonsWithZlata: "2 Урока со Златой",
+      TwoLessonsWithZlata: "4 Урока со Златой",
       ChatWithZlata: "Чат со Златой",
       ContractOffer: "Договор Оферты",
       PrivacyPolicy: "Политика конфиденциальности",
@@ -372,6 +373,7 @@ const TextLanguage = observer(({ prop }: { prop: string | undefined }) => {
       PaymentByDetails: "Оплата по реквизитам:",
       Or: "или",
       ByCardNumber: "По номеру карты:",
+      FourLessonsWithTeacher: "4 урока с преподавателем",
     },
   };
   if (prop) {
