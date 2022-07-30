@@ -30,14 +30,6 @@ const CourseProgram = observer(() => {
     addition: [],
   });
 
-  const [levels, setLevels] = useState<{ id: LevelOfStudyEnum; prop: Props }[]>(
-    [
-      { id: LevelOfStudyEnum.A1A2, prop: Props.A1A2 },
-      { id: LevelOfStudyEnum.B1, prop: Props.B1 },
-      { id: LevelOfStudyEnum.B2, prop: Props.B2 },
-    ]
-  );
-
   const [languages, setLanguages] = useState<
     { id: LanguageOfStudyEnum; prop: Props }[]
   >([
@@ -47,28 +39,6 @@ const CourseProgram = observer(() => {
   ]);
 
   useEffect(() => {
-    if (
-      [LanguageOfStudyEnum.Deutsch, LanguageOfStudyEnum.French].includes(
-        courseProgram.getLanguage
-      ) ||
-      (courseProgram.getFormat === FormatOfStudyEnum.TutorialWithTeacher &&
-        courseProgram.getLanguage === LanguageOfStudyEnum.English)
-    ) {
-      if (courseProgram.getLevel === LevelOfStudyEnum.B2) {
-        courseProgram.setLevel(LevelOfStudyEnum.B1);
-      }
-      setLevels([
-        { id: LevelOfStudyEnum.A1A2, prop: Props.A1A2 },
-        { id: LevelOfStudyEnum.B1, prop: Props.B1 },
-      ]);
-    } else {
-      setLevels([
-        { id: LevelOfStudyEnum.A1A2, prop: Props.A1A2 },
-        { id: LevelOfStudyEnum.B1, prop: Props.B1 },
-        { id: LevelOfStudyEnum.B2, prop: Props.B2 },
-      ]);
-    }
-
     if (courseProgram.getFormat === FormatOfStudyEnum.TutorialWithZlata) {
       courseProgram.setLanguage(LanguageOfStudyEnum.English);
       setLanguages([{ id: LanguageOfStudyEnum.English, prop: Props.English }]);
@@ -146,39 +116,6 @@ const CourseProgram = observer(() => {
           Props.ConditionalSentences1and2levels,
           Props.Gerund,
           Props.PassiveVoice,
-        ],
-        addition: [],
-      };
-    }
-
-    if (
-      courseProgram.getFormat === FormatOfStudyEnum.Textbook &&
-      courseProgram.getLevel === LevelOfStudyEnum.B2 &&
-      courseProgram.getLanguage === LanguageOfStudyEnum.English
-    ) {
-      return {
-        tools: [Props.OurTextbook],
-        sets: [
-          Props.BodyAndFeelingsSet,
-          Props.SetStory,
-          Props.RecruitmentStudyWork,
-          Props.EnvironmentSet,
-          Props.SocietyProblemSet,
-        ],
-        results: [
-          Props.AdvancedGrammarKnowledge,
-          Props.AdvancedVocabulary,
-          Props.WatchingMoviesAndReadingBooksInTheOriginal,
-          Props.ListeningToTheSpeakersSpeech,
-          Props.AbilityToHoldConversation,
-          Props.FreeWordingAndExpressionOfThought,
-        ],
-        grammar: [
-          Props.ConditionalSentencesAllLevels,
-          Props.TurnoversIwishIfOnly,
-          Props.DirectAndIndirectSpeech,
-          Props.ComplexObject,
-          Props.ComplexSubject,
         ],
         addition: [],
       };
@@ -625,43 +562,6 @@ const CourseProgram = observer(() => {
       };
     }
 
-    if (
-      courseProgram.getFormat === FormatOfStudyEnum.TutorialWithZlata &&
-      courseProgram.getLevel === LevelOfStudyEnum.B2 &&
-      courseProgram.getLanguage === LanguageOfStudyEnum.English
-    ) {
-      return {
-        tools: [Props.OurTextbook, Props.Teacher],
-        sets: [
-          Props.BodyAndFeelingsSet,
-          Props.SetStory,
-          Props.RecruitmentStudyWork,
-          Props.EnvironmentSet,
-          Props.SocietyProblemSet,
-        ],
-        results: [
-          Props.AdvancedGrammarKnowledge,
-          Props.AdvancedVocabulary,
-          Props.WatchingMoviesAndReadingBooksInTheOriginal,
-          Props.ListeningToTheSpeakersSpeech,
-          Props.AbilityToHoldConversation,
-          Props.FreeWordingAndExpressionOfThought,
-        ],
-        grammar: [
-          Props.ConditionalSentencesAllLevels,
-          Props.TurnoversIwishIfOnly,
-          Props.DirectAndIndirectSpeech,
-          Props.ComplexObject,
-          Props.ComplexSubject,
-        ],
-        addition: [
-          Props.PhoneCallWithTeacher2x,
-          Props.CheckingHomework,
-          Props.ConversationClubs2x,
-        ],
-      };
-    }
-
     return {
       tools: [],
       sets: [],
@@ -706,7 +606,10 @@ const CourseProgram = observer(() => {
               setter={(level: LevelOfStudyEnum) =>
                 courseProgram.setLevel(level)
               }
-              formats={levels}
+              formats={[
+                { id: LevelOfStudyEnum.A1A2, prop: Props.A1A2 },
+                { id: LevelOfStudyEnum.B1, prop: Props.B1 },
+              ]}
             />
           </div>
           <div className={styles.infoAddition}>

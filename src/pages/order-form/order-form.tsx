@@ -191,8 +191,6 @@ function OrderForm() {
         return "A1 - A2";
       case LevelOfStudyEnum.B1:
         return "B1";
-      case LevelOfStudyEnum.B2:
-        return "B2";
       default:
         return "";
     }

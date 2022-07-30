@@ -46,7 +46,6 @@ export enum Props {
   Deutsch = "Deutsch",
   A1A2 = "A1A2",
   B1 = "B1",
-  B2 = "B2",
   Сheckout = "Сheckout",
   ChooseTariff = "ChooseTariff",
   ZlataBochkareva = "ZlataBochkareva",
@@ -180,7 +179,6 @@ export type PosipilityProps = keyof typeof Props;
 export enum LevelOfStudyEnum {
   A1A2 = "A1A2",
   B1 = "B1",
-  B2 = "B2",
 }
 
 export enum LanguageOfStudyEnum {
