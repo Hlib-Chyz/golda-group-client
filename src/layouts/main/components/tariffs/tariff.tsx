@@ -96,9 +96,9 @@ function Tariff({
         setOpen={(e: boolean) => setOpenModal(e)}
         isOpen={isOpenModal}
         formatProp={
-          newPrice === "590"
+          newPrice === "690"
             ? FormatOfStudyEnum.Textbook
-            : newPrice === "1290"
+            : newPrice === "1490"
             ? FormatOfStudyEnum.TutorialWithTeacher
             : FormatOfStudyEnum.TutorialWithZlata
         }

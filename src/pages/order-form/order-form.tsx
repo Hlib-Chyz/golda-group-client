@@ -162,11 +162,11 @@ function OrderForm() {
   function getPrice(): string {
     switch (courseParameters.getCourseParameters().format) {
       case FormatOfStudyEnum.Textbook:
-        return "590";
+        return "690";
       case FormatOfStudyEnum.TutorialWithTeacher:
-        return "1290";
+        return "1490";
       case FormatOfStudyEnum.TutorialWithZlata:
-        return "2790";
+        return "2990";
       default:
         return "";
     }
