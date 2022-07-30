@@ -14,7 +14,7 @@ function Tariffs() {
       <div className={styles.tariffs}>
         <Tariff
           oldPrice="690"
-          newPrice="690"
+          newPrice="590"
           img={homeEducation}
           backgroundColor="#EBF8FF"
           whatHaveThisTariff={[
@@ -40,7 +40,7 @@ function Tariffs() {
         />
         <Tariff
           oldPrice="1490"
-          newPrice="1490"
+          newPrice="1290"
           img={freelancer}
           backgroundColor="rgba(255, 221, 189, 0.9)"
           whatHaveThisTariff={[
@@ -73,7 +73,7 @@ function Tariffs() {
         />
         <Tariff
           oldPrice="2990"
-          newPrice="2990"
+          newPrice="2790"
           img={datingChat}
           backgroundColor="#FFA857"
           whatHaveThisTariff={[
